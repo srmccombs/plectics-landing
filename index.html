@@ -79,6 +79,68 @@
             justify-content: center;
         }
         
+        /* Poker card styles */
+        .poker-cards {
+            display: flex;
+            gap: 8px;
+            transform: rotate(-5deg);
+        }
+        
+        .playing-card {
+            width: 65px;
+            height: 90px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            font-family: Georgia, serif;
+            transition: all 0.3s ease;
+        }
+        
+        .playing-card.ace-hearts {
+            transform: rotate(-10deg) translateY(-5px);
+            z-index: 1;
+        }
+        
+        .playing-card.king-hearts {
+            transform: rotate(5deg) translateY(5px);
+            z-index: 2;
+        }
+        
+        .playing-card .rank {
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 4px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .playing-card .suit {
+            font-size: 32px;
+            background: linear-gradient(135deg, #e74c3c 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            filter: drop-shadow(0 1px 2px rgba(231, 76, 60, 0.3));
+        }
+        
+        .playing-card:hover {
+            transform: scale(1.1) rotate(0deg) !important;
+            box-shadow: 0 8px 16px rgba(231, 76, 60, 0.3);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
         .app-title {
             font-size: 1.8rem;
             color: #333;
@@ -169,7 +231,16 @@
         <div class="apps-grid">
             <!-- Texas Hold'em Friends Card -->
             <div class="app-card">
-                <div class="app-icon">🂱🂾</div>
+                <div class="app-icon poker-cards">
+                    <div class="playing-card ace-hearts">
+                        <span class="rank">A</span>
+                        <span class="suit">♥</span>
+                    </div>
+                    <div class="playing-card king-hearts">
+                        <span class="rank">K</span>
+                        <span class="suit">♥</span>
+                    </div>
+                </div>
                 <h2 class="app-title">Texas Hold'em Friends</h2>
                 <p class="app-description">
                     Experience the thrill of Texas Hold'em poker with friends online! Our multiplayer poker platform brings the excitement of the casino to your screen. Create private games, invite friends, and enjoy real-time gameplay with professional features including betting rounds, showdowns, and tournament modes. No real money involved - just pure fun!
