@@ -6,10 +6,10 @@
 <title>Lithonia ESXF LED Floodlight - Front</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  @page { size: 8.5in 11in; margin: 0; }
+  @page { size: 11in 8.5in landscape; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'DM Sans', sans-serif; background: #f0f0f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
-  .card { width: 8.5in; height: 11in; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12); display: flex; flex-direction: column; }
+  .card { width: 11in; height: 8.5in; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12); display: flex; flex-direction: column; }
 
   /* Header */
   .top-band { background: linear-gradient(135deg, #C8102E 0%, #A00D25 100%); padding: 16px 30px; position: relative; }
@@ -20,34 +20,36 @@
   .card-id { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.6); letter-spacing: 1px; }
 
   /* Category stripe */
-  .category-stripe { background: #F7F8FA; padding: 14px 30px; border-bottom: 2px solid #E9ECF0; }
+  .category-stripe { background: #F7F8FA; padding: 12px 30px; border-bottom: 2px solid #E9ECF0; }
   .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #C8102E; }
 
-  /* Hero section */
-  .hero { padding: 16px 30px 12px; background: linear-gradient(to bottom, #fff 0%, #f9fafb 100%); }
-  .hero h1 { font-size: 24px; font-weight: 700; color: #1A1A2E; line-height: 1.2; margin-bottom: 6px; }
-  .hero .tagline { font-size: 14px; color: #C8102E; font-weight: 600; margin-bottom: 8px; }
-  .hero .description { font-size: 11px; color: #4B5563; line-height: 1.4; margin-bottom: 12px; }
+  /* Main content - side by side layout */
+  .main-content { display: flex; flex: 1; }
+
+  /* Left side - Hero and Features */
+  .left-side { flex: 0 0 420px; display: flex; flex-direction: column; border-right: 2px solid #E9ECF0; }
+
+  .hero { padding: 20px 30px; background: linear-gradient(to bottom, #fff 0%, #f9fafb 100%); }
+  .hero h1 { font-size: 24px; font-weight: 700; color: #1A1A2E; line-height: 1.2; margin-bottom: 8px; }
+  .hero .tagline { font-size: 14px; color: #C8102E; font-weight: 600; margin-bottom: 10px; }
+
+  .product-image-section { padding: 0 30px 16px; text-align: center; }
+  .product-image-section img { max-width: 280px; max-height: 220px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
 
   /* Feature badges */
-  .feature-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .feature-badges { display: flex; gap: 8px; flex-wrap: wrap; padding: 0 30px 16px; }
   .badge { display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #fff; border: 2px solid #E9ECF0; border-radius: 5px; }
-  .badge-icon { width: 24px; height: 24px; background: linear-gradient(135deg, #C8102E 0%, #A00D25 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #fff; font-weight: 700; }
+  .badge-icon { width: 24px; height: 24px; background: linear-gradient(135deg, #C8102E 0%, #A00D25 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #fff; font-weight: 700; }
   .badge-text { font-size: 9px; font-weight: 600; color: #1A1A2E; line-height: 1.2; }
 
-  /* Key features grid */
-  .features-section { padding: 0 30px 12px; }
-  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; margin-bottom: 8px; }
-  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-  .feature-item { background: #F7F8FA; padding: 7px 10px; border-radius: 5px; border-left: 3px solid #C8102E; }
-  .feature-item strong { font-size: 9px; color: #C8102E; display: block; margin-bottom: 2px; }
-  .feature-item span { font-size: 8.5px; color: #4B5563; line-height: 1.3; }
+  /* Right side - Models table */
+  .right-side { flex: 1; display: flex; flex-direction: column; }
 
-  /* Models table */
-  .models-section { padding: 0 30px 12px; flex: 1; }
+  .models-section { padding: 20px 30px; flex: 1; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; margin-bottom: 12px; }
   .models-table { width: 100%; border-collapse: collapse; font-size: 10px; }
-  .models-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: #fff; background: #C8102E; text-align: left; padding: 7px 10px; border-bottom: 2px solid #FFB81C; }
-  .models-table tbody td { padding: 6px 10px; border-bottom: 1px solid #E9ECF0; vertical-align: top; }
+  .models-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: #fff; background: #C8102E; text-align: left; padding: 8px 10px; border-bottom: 2px solid #FFB81C; }
+  .models-table tbody td { padding: 7px 10px; border-bottom: 1px solid #E9ECF0; vertical-align: top; }
   .models-table tbody tr:hover { background: #F9FAFB; }
   .models-table .model-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #C8102E; }
   .models-table .lumen-range { font-size: 9px; color: #1A1A2E; font-weight: 600; }
@@ -75,158 +77,133 @@
   </div>
 
   <div class="category-stripe">
-    <div class="cat-label">LED Floodlight • Adjustable Output • Switchable CCT</div>
+    <div class="cat-label">LED Floodlight • Adjustable Output • Switchable CCT • Photocell</div>
   </div>
 
-  <div class="hero">
-    <h1>ESXF LED Floodlight</h1>
-    <div class="tagline">Adjustable • Switchable • Versatile</div>
-    <div class="description">
-      General-purpose LED floodlight offering adjustable lumen output, color temperature switching (3000K/4000K/5000K),
-      and selectable photocell. Perfect for yards, driveways, signage, patios, warehouses, and security applications.
-      DLC listed with IP66 weather rating.
+  <div class="main-content">
+    <div class="left-side">
+      <div class="hero">
+        <h1>ESXF LED Floodlight</h1>
+        <div class="tagline">Adjustable • Switchable • Versatile</div>
+      </div>
+
+      <div class="product-image-section">
+        <img src="LITESFX.png" alt="Lithonia ESXF LED Floodlight">
+      </div>
+
+      <div class="feature-badges">
+        <div class="badge">
+          <div class="badge-icon">ALO</div>
+          <div class="badge-text">Adjustable Lumen<br>Output (3 Levels)</div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">CCT</div>
+          <div class="badge-text">Switchable Color<br>3K/4K/5K</div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">PE</div>
+          <div class="badge-text">Dusk-to-Dawn<br>Photocell</div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">IP66</div>
+          <div class="badge-text">Weather Rated<br>Die-Cast Aluminum</div>
+        </div>
+      </div>
     </div>
 
-    <div class="feature-badges">
-      <div class="badge">
-        <div class="badge-icon">ALO</div>
-        <div class="badge-text">Adjustable Lumen<br>Output (3 Levels)</div>
-      </div>
-      <div class="badge">
-        <div class="badge-icon">CCT</div>
-        <div class="badge-text">Switchable Color<br>3K/4K/5K</div>
-      </div>
-      <div class="badge">
-        <div class="badge-icon">PE</div>
-        <div class="badge-text">Dusk-to-Dawn<br>Photocell</div>
-      </div>
-      <div class="badge">
-        <div class="badge-icon">IP66</div>
-        <div class="badge-text">Weather Rated<br>Die-Cast Aluminum</div>
+    <div class="right-side">
+      <div class="models-section">
+        <div class="section-title">Mayer Stocked Models — Dark Bronze Finish</div>
+        <table class="models-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Lumen Range</th>
+              <th>Voltage</th>
+              <th>Mount</th>
+              <th>Mayer Part #</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="model-name">ESXF1 P0</td>
+              <td>
+                <div class="lumen-range">2,500L</div>
+                <div class="spec-detail">Static output • Replaces 150W Quartz or 75W HID</div>
+              </td>
+              <td class="spec-detail">120-277V</td>
+              <td class="spec-detail">Knuckle Only</td>
+              <td class="model-name">LITESXF1P0SWW2THKDDB</td>
+            </tr>
+            <tr>
+              <td class="model-name">ESXF1 ALO</td>
+              <td>
+                <div class="lumen-range">1,500L / 3,000L / 5,000L</div>
+                <div class="spec-detail">Adjustable • Replaces 500W Quartz or 150W HID</div>
+              </td>
+              <td class="spec-detail">120-277V</td>
+              <td class="spec-detail">Knuckle & Yoke</td>
+              <td class="model-name">LITESXF1ALOSWW2KYDDB</td>
+            </tr>
+            <tr>
+              <td class="model-name">ESXF2 ALO</td>
+              <td>
+                <div class="lumen-range">3,500L / 5,500L / 7,500L</div>
+                <div class="spec-detail">Adjustable • Replaces 500W Quartz or 175W HID</div>
+              </td>
+              <td class="spec-detail">120-277V</td>
+              <td class="spec-detail">Knuckle & Yoke</td>
+              <td class="model-name">LITESXF2ALOSWW2KYDDB</td>
+            </tr>
+            <tr>
+              <td class="model-name">ESXF3 ALO</td>
+              <td>
+                <div class="lumen-range">8,500L / 10,500L / 14,000L</div>
+                <div class="spec-detail">Adjustable • Replaces 250W HID</div>
+              </td>
+              <td class="spec-detail">120-277V</td>
+              <td class="spec-detail">Yoke & Slipfitter</td>
+              <td class="model-name">LITESXF3ALOSWW2YSDDB</td>
+            </tr>
+            <tr>
+              <td class="model-name">ESXF3 ALO UVOLT</td>
+              <td>
+                <div class="lumen-range">8,500L / 10,500L / 14,000L</div>
+                <div class="spec-detail">Adjustable • Replaces 250W HID</div>
+              </td>
+              <td class="spec-detail">120-347V</td>
+              <td class="spec-detail">Yoke & Slipfitter</td>
+              <td class="model-name">LITESXF3ALOSWW2UVOLTYSDDB</td>
+            </tr>
+            <tr>
+              <td class="model-name">ESXF4 ALO</td>
+              <td>
+                <div class="lumen-range">16,000L / 18,000L / 20,000L</div>
+                <div class="spec-detail">Adjustable • Replaces 400W HID</div>
+              </td>
+              <td class="spec-detail">120-277V</td>
+              <td class="spec-detail">Yoke & Slipfitter</td>
+              <td class="model-name">LITESXF4ALOSWW2YSDDB</td>
+            </tr>
+            <tr>
+              <td class="model-name">ESXF4 ALO UVOLT</td>
+              <td>
+                <div class="lumen-range">16,000L / 18,000L / 20,000L</div>
+                <div class="spec-detail">Adjustable • Replaces 400W HID</div>
+              </td>
+              <td class="spec-detail">120-347V</td>
+              <td class="spec-detail">Yoke & Slipfitter</td>
+              <td class="model-name">LITESXF4ALOSWW2UVOLTYSDDB</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>
-
-  <div class="features-section">
-    <div class="section-title">Key Features</div>
-    <div class="features-grid">
-      <div class="feature-item">
-        <strong>Adjustable Lumen Output</strong>
-        <span>Three power levels (Low/Med/High) adjustable in the field</span>
-      </div>
-      <div class="feature-item">
-        <strong>Switchable Color Temperature</strong>
-        <span>3000K Warm, 4000K Neutral, or 5000K Daylight in one fixture</span>
-      </div>
-      <div class="feature-item">
-        <strong>Selectable Photocell</strong>
-        <span>Built-in photocell can be turned on or off as needed</span>
-      </div>
-      <div class="feature-item">
-        <strong>Energy Efficient</strong>
-        <span>Up to 173 lumens per watt • DLC listed</span>
-      </div>
-      <div class="feature-item">
-        <strong>Durable Construction</strong>
-        <span>IP66 rated die-cast aluminum housing with tempered glass lens</span>
-      </div>
-      <div class="feature-item">
-        <strong>Versatile Mounting</strong>
-        <span>Knuckle, Yoke, or Slipfitter options included</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="models-section">
-    <div class="section-title">Mayer Stocked Models — Dark Bronze Finish</div>
-    <table class="models-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Lumen Range</th>
-          <th>Voltage</th>
-          <th>Mount</th>
-          <th>Mayer Part #</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="model-name">ESXF1 P0</td>
-          <td>
-            <div class="lumen-range">2,500L</div>
-            <div class="spec-detail">Static output • Replaces 150W Quartz or 75W HID</div>
-          </td>
-          <td class="spec-detail">120-277V</td>
-          <td class="spec-detail">Knuckle Only</td>
-          <td class="model-name">LITESXF1P0SWW2THKDDB</td>
-        </tr>
-        <tr>
-          <td class="model-name">ESXF1 ALO</td>
-          <td>
-            <div class="lumen-range">1,500L / 3,000L / 5,000L</div>
-            <div class="spec-detail">Adjustable • Replaces 500W Quartz or 150W HID</div>
-          </td>
-          <td class="spec-detail">120-277V</td>
-          <td class="spec-detail">Knuckle & Yoke</td>
-          <td class="model-name">LITESXF1ALOSWW2KYDDB</td>
-        </tr>
-        <tr>
-          <td class="model-name">ESXF2 ALO</td>
-          <td>
-            <div class="lumen-range">3,500L / 5,500L / 7,500L</div>
-            <div class="spec-detail">Adjustable • Replaces 500W Quartz or 175W HID</div>
-          </td>
-          <td class="spec-detail">120-277V</td>
-          <td class="spec-detail">Knuckle & Yoke</td>
-          <td class="model-name">LITESXF2ALOSWW2KYDDB</td>
-        </tr>
-        <tr>
-          <td class="model-name">ESXF3 ALO</td>
-          <td>
-            <div class="lumen-range">8,500L / 10,500L / 14,000L</div>
-            <div class="spec-detail">Adjustable • Replaces 250W HID</div>
-          </td>
-          <td class="spec-detail">120-277V</td>
-          <td class="spec-detail">Yoke & Slipfitter</td>
-          <td class="model-name">LITESXF3ALOSWW2YSDDB</td>
-        </tr>
-        <tr>
-          <td class="model-name">ESXF3 ALO UVOLT</td>
-          <td>
-            <div class="lumen-range">8,500L / 10,500L / 14,000L</div>
-            <div class="spec-detail">Adjustable • Replaces 250W HID</div>
-          </td>
-          <td class="spec-detail">120-347V</td>
-          <td class="spec-detail">Yoke & Slipfitter</td>
-          <td class="model-name">LITESXF3ALOSWW2UVOLTYSDDB</td>
-        </tr>
-        <tr>
-          <td class="model-name">ESXF4 ALO</td>
-          <td>
-            <div class="lumen-range">16,000L / 18,000L / 20,000L</div>
-            <div class="spec-detail">Adjustable • Replaces 400W HID</div>
-          </td>
-          <td class="spec-detail">120-277V</td>
-          <td class="spec-detail">Yoke & Slipfitter</td>
-          <td class="model-name">LITESXF4ALOSWW2YSDDB</td>
-        </tr>
-        <tr>
-          <td class="model-name">ESXF4 ALO UVOLT</td>
-          <td>
-            <div class="lumen-range">16,000L / 18,000L / 20,000L</div>
-            <div class="spec-detail">Adjustable • Replaces 400W HID</div>
-          </td>
-          <td class="spec-detail">120-347V</td>
-          <td class="spec-detail">Yoke & Slipfitter</td>
-          <td class="model-name">LITESXF4ALOSWW2UVOLTYSDDB</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 
   <div class="bottom-cta">
     <div class="cta-text">
-      Pull this card → Take to counter →<br>
+      Pull this card → Take to counter →
       <span class="highlight">Tell us which model and quantity you need</span>
     </div>
     <div class="return-tag">↩ Return Card</div>
