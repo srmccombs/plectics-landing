@@ -204,6 +204,24 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
+        /* Landscape card styling */
+        .card-side.landscape iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 11 / 8.5;
+            max-height: 85vh;
+        }
+
+        .card-full.landscape {
+            flex-direction: column;
+            max-width: 95vw;
+        }
+
+        .card-full.landscape .card-side {
+            max-width: 100%;
+            min-width: 100%;
+        }
+
         @media (max-width: 768px) {
             .cards-grid {
                 grid-template-columns: 1fr;
@@ -216,6 +234,10 @@
             .card-side iframe {
                 height: 70vh;
                 max-height: 700px;
+            }
+
+            .card-side.landscape iframe {
+                max-height: 60vh;
             }
 
             .modal {
@@ -1934,7 +1956,8 @@
             'lithonia-esxf-floodlight': {
                 title: 'Lithonia ESXF LED Floodlight',
                 frontUrl: 'cards/lithonia-esxf-floodlight-front.html',
-                backUrl: 'cards/lithonia-esxf-floodlight-back.html'
+                backUrl: 'cards/lithonia-esxf-floodlight-back.html',
+                landscape: true
             }
         };
 
@@ -1945,16 +1968,25 @@
 
             if (!card) return;
 
+            const landscapeClass = card.landscape ? ' landscape' : '';
+
             cardView.innerHTML = `
-                <div class="card-side">
+                <div class="card-side${landscapeClass}">
                     <div class="card-side-label">▸ FRONT</div>
                     <iframe src="${card.frontUrl}"></iframe>
                 </div>
-                <div class="card-side">
+                <div class="card-side${landscapeClass}">
                     <div class="card-side-label">▸ BACK</div>
                     <iframe src="${card.backUrl}"></iframe>
                 </div>
             `;
+
+            // Add or remove landscape class from card-full container
+            if (card.landscape) {
+                cardView.classList.add('landscape');
+            } else {
+                cardView.classList.remove('landscape');
+            }
 
             modal.classList.add('active');
             // Scroll to top of modal
