@@ -133,8 +133,9 @@
 
         .modal.active {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            -webkit-overflow-scrolling: touch;
         }
 
         .modal-content {
@@ -142,17 +143,19 @@
             width: 100%;
             max-height: 95vh;
             position: relative;
+            margin-top: 60px;
+            margin-bottom: 20px;
         }
 
         .modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
+            position: fixed;
+            top: 10px;
+            right: 10px;
             background: white;
             color: #002B5C;
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             font-size: 24px;
             cursor: pointer;
@@ -160,6 +163,8 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            z-index: 10000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .modal-close:hover {
@@ -211,6 +216,26 @@
             .card-side iframe {
                 height: 70vh;
                 max-height: 700px;
+            }
+
+            .modal {
+                padding: 0;
+            }
+
+            .modal-content {
+                margin-top: 70px;
+                margin-bottom: 10px;
+                padding: 0 10px;
+            }
+
+            .modal-close {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .card-side {
+                min-width: 100%;
             }
         }
     </style>
@@ -1913,13 +1938,13 @@
             `;
 
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            // Scroll to top of modal
+            modal.scrollTop = 0;
         }
 
         function closeCard() {
             const modal = document.getElementById('cardModal');
             modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
         }
 
         // Close modal on escape key
