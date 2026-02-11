@@ -29,10 +29,15 @@
   .sizes-section { padding: 0 20px 14px; flex: 1; }
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 8px; text-transform: uppercase; }
   .size-grid { display: grid; gap: 4px; margin-bottom: 10px; }
-  .size-row { display: grid; grid-template-columns: 70px 1fr; gap: 6px; padding: 6px 8px; background: #F7F8FA; border-radius: 3px; border-left: 3px solid #E87722; }
+  .size-row { display: grid; grid-template-columns: 70px 1fr 100px; gap: 6px; padding: 6px 8px; background: #F7F8FA; border-radius: 3px; border-left: 3px solid #E87722; align-items: center; }
+  .size-row.header { background: #E87722; color: #fff; font-weight: 700; border-left: none; }
   .size-dia { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: #002B5C; }
   .size-capacity { font-size: 7.5px; color: #6B7280; }
-  .size-part { font-family: 'JetBrains Mono', monospace; font-size: 7px; font-weight: 700; color: #4B5563; margin-top: 2px; }
+  .size-part { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; color: #E87722; text-align: right; }
+  .header-text { font-size: 7px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .size-row.header .size-dia { color: #fff; }
+  .size-row.header .size-capacity { color: #fff; font-size: 7px; }
+  .size-row.header .size-part { color: #fff; }
   .colors-section { background: #F7F8FA; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
   .colors-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
   .colors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
@@ -96,40 +101,35 @@
   <div class="sizes-section">
     <div class="section-label">Available Sizes & Capacities</div>
     <div class="size-grid">
+      <div class="size-row header">
+        <div class="size-dia header-text">Size</div>
+        <div class="size-capacity header-text">Capacities</div>
+        <div class="size-part header-text">Mayer Part #</div>
+      </div>
       <div class="size-row">
         <div class="size-dia">1" Dia</div>
-        <div>
-          <div class="size-capacity">20 Cat5e • 15 Cat6 • 10 Cat6A</div>
-          <div class="size-part">ERICAT16HP</div>
-        </div>
+        <div class="size-capacity">20 Cat5e • 15 Cat6 • 10 Cat6A</div>
+        <div class="size-part">ERICAT16HP</div>
       </div>
       <div class="size-row">
         <div class="size-dia">1 5/16" Dia</div>
-        <div>
-          <div class="size-capacity">50 Cat5e • 40 Cat6 • 25 Cat6A</div>
-          <div class="size-part">ERICAT21HP</div>
-        </div>
+        <div class="size-capacity">50 Cat5e • 40 Cat6 • 25 Cat6A</div>
+        <div class="size-part">ERICAT21HP</div>
       </div>
       <div class="size-row">
         <div class="size-dia">2" Dia</div>
-        <div>
-          <div class="size-capacity">90 Cat5e • 60 Cat6 • 35 Cat6A</div>
-          <div class="size-part">ERICAT32HP</div>
-        </div>
+        <div class="size-capacity">90 Cat5e • 60 Cat6 • 35 Cat6A</div>
+        <div class="size-part">ERICAT32HP</div>
       </div>
       <div class="size-row">
         <div class="size-dia">3" Dia</div>
-        <div>
-          <div class="size-capacity">200 Cat5e • 150 Cat6 • 80 Cat6A</div>
-          <div class="size-part">ERICAT48HP</div>
-        </div>
+        <div class="size-capacity">200 Cat5e • 150 Cat6 • 80 Cat6A</div>
+        <div class="size-part">ERICAT48HP</div>
       </div>
       <div class="size-row">
         <div class="size-dia">4" Dia</div>
-        <div>
-          <div class="size-capacity">330 Cat5e • 220 Cat6 • 140 Cat6A</div>
-          <div class="size-part">ERICAT64HP</div>
-        </div>
+        <div class="size-capacity">330 Cat5e • 220 Cat6 • 140 Cat6A</div>
+        <div class="size-part">ERICAT64HP</div>
       </div>
     </div>
 
