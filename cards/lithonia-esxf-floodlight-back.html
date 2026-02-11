@@ -9,39 +9,39 @@
   @page { size: 8.5in 11in; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'DM Sans', sans-serif; background: #f0f0f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
-  .card { width: 8.5in; height: 11in; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12); display: flex; flex-direction: column; padding: 30px; }
+  .card { width: 8.5in; height: 11in; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12); display: flex; flex-direction: column; padding: 24px 30px; }
 
-  .title { font-size: 24px; font-weight: 700; color: #C8102E; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 4px solid #C8102E; }
+  .title { font-size: 20px; font-weight: 700; color: #C8102E; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid #C8102E; }
 
-  .section { margin-bottom: 18px; }
-  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #6B7280; margin-bottom: 10px; background: #F7F8FA; padding: 6px 12px; border-radius: 4px; border-left: 3px solid #C8102E; }
+  .section { margin-bottom: 12px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6B7280; margin-bottom: 8px; background: #F7F8FA; padding: 5px 10px; border-radius: 4px; border-left: 3px solid #C8102E; }
 
-  .info-box { background: linear-gradient(to right, #FFF9F0 0%, #FFFBF5 100%); border-left: 4px solid #FFB81C; padding: 14px 16px; border-radius: 6px; margin-bottom: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-  .info-title { font-size: 12px; font-weight: 700; color: #C8102E; margin-bottom: 6px; }
-  .info-text { font-size: 10px; color: #1A1A2E; line-height: 1.5; }
+  .info-box { background: linear-gradient(to right, #FFF9F0 0%, #FFFBF5 100%); border-left: 3px solid #FFB81C; padding: 10px 12px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+  .info-title { font-size: 10px; font-weight: 700; color: #C8102E; margin-bottom: 4px; }
+  .info-text { font-size: 9px; color: #1A1A2E; line-height: 1.4; }
 
-  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
-  .spec-box { background: #F7F8FA; padding: 10px 12px; border-radius: 5px; border: 1px solid #E9ECF0; }
-  .spec-label { font-size: 9px; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #1A1A2E; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+  .spec-box { background: #F7F8FA; padding: 7px 10px; border-radius: 4px; border: 1px solid #E9ECF0; }
+  .spec-label { font-size: 8px; color: #6B7280; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 3px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: #1A1A2E; }
 
-  .performance-table { width: 100%; border-collapse: collapse; font-size: 10px; margin-bottom: 14px; }
-  .performance-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: #fff; background: #C8102E; text-align: left; padding: 8px 10px; border-bottom: 2px solid #FFB81C; }
-  .performance-table tbody td { padding: 7px 10px; border-bottom: 1px solid #E9ECF0; }
+  .performance-table { width: 100%; border-collapse: collapse; font-size: 9px; margin-bottom: 10px; }
+  .performance-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; color: #fff; background: #C8102E; text-align: left; padding: 6px 8px; border-bottom: 2px solid #FFB81C; }
+  .performance-table tbody td { padding: 5px 8px; border-bottom: 1px solid #E9ECF0; }
   .performance-table tbody tr:hover { background: #F9FAFB; }
-  .performance-table .model-col { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #C8102E; font-size: 10px; }
+  .performance-table .model-col { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #C8102E; font-size: 9px; }
 
-  .applications-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-  .app-item { font-size: 10px; padding: 6px 10px; background: #F7F8FA; border-radius: 4px; color: #1A1A2E; display: flex; align-items: center; }
-  .app-item::before { content: "▸"; color: #C8102E; font-weight: bold; margin-right: 8px; }
+  .applications-list { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .app-item { font-size: 9px; padding: 5px 8px; background: #F7F8FA; border-radius: 4px; color: #1A1A2E; display: flex; align-items: center; }
+  .app-item::before { content: "▸"; color: #C8102E; font-weight: bold; margin-right: 6px; }
 
-  .warranty-box { background: linear-gradient(135deg, #C8102E 0%, #A00D25 100%); padding: 14px 18px; border-radius: 6px; text-align: center; }
-  .warranty-box .warranty-text { font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 1px; }
-  .warranty-box .warranty-detail { font-size: 9px; color: rgba(255,255,255,0.9); margin-top: 4px; }
+  .warranty-box { background: linear-gradient(135deg, #C8102E 0%, #A00D25 100%); padding: 10px 16px; border-radius: 5px; text-align: center; }
+  .warranty-box .warranty-text { font-size: 10px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .warranty-box .warranty-detail { font-size: 8px; color: rgba(255,255,255,0.9); margin-top: 3px; }
 
-  .footer { margin-top: auto; padding-top: 16px; border-top: 2px solid #E9ECF0; display: flex; justify-content: space-between; align-items: center; }
-  .footer-text { font-size: 9px; color: #6B7280; }
-  .footer-brand { font-weight: 700; color: #C8102E; font-size: 10px; }
+  .footer { margin-top: auto; padding-top: 12px; border-top: 2px solid #E9ECF0; display: flex; justify-content: space-between; align-items: center; }
+  .footer-text { font-size: 8px; color: #6B7280; }
+  .footer-brand { font-weight: 700; color: #C8102E; font-size: 9px; }
 </style>
 </head>
 <body>
