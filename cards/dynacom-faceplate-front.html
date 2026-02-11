@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynacom Classic Faceplate - Front</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 5in 9.5in;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── CARD CONTAINER ─── */
+  .card {
+    width: 5in;
+    height: 9.5in;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Top band */
+  .front .top-band {
+    background: linear-gradient(135deg, #DC143C 0%, #B01030 100%);
+    padding: 14px 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1A1A1A 0%, #4A4A4A 100%);
+  }
+
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-mark .logo-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .brand-mark .system-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    font-weight: 600;
+    color: #1A1A1A;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .top-band .card-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* Category stripe */
+  .front .category-stripe {
+    background: #F7F8FA;
+    padding: 10px 20px;
+    border-bottom: 1px solid #E9ECF0;
+  }
+
+  .category-stripe .cat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #DC143C;
+  }
+
+  /* Hero section */
+  .front .hero {
+    flex: 0 0 auto;
+    padding: 16px 20px 12px;
+  }
+
+  .hero h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  .hero .subtitle {
+    font-size: 12px;
+    color: #6B7280;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .hero .product-image {
+    width: 100%;
+    background: #F7F8FA;
+    border-radius: 8px;
+    border: 1px solid #E9ECF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .product-image img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .hero .spec-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .spec-pills .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #FFF0F0;
+    color: #DC143C;
+    letter-spacing: 0.3px;
+  }
+
+  .spec-pills .pill.highlight {
+    background: #DC143C;
+    color: #fff;
+  }
+
+  /* SKU Reference table */
+  .front .sku-section {
+    padding: 0 20px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sku-section .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #DC143C;
+    margin-bottom: 10px;
+  }
+
+  .sku-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+    flex: 1;
+  }
+
+  .sku-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #DC143C;
+    text-align: left;
+    padding: 8px 8px;
+    border-bottom: 2px solid #1A1A1A;
+  }
+
+  .sku-table tbody td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #E9ECF0;
+    vertical-align: middle;
+  }
+
+  .sku-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .sku-table .config-cell {
+    font-weight: 700;
+    color: #1A1A2E;
+    font-size: 10px;
+  }
+
+  .sku-table .part-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    color: #DC143C;
+    letter-spacing: 0.3px;
+  }
+
+  /* Bottom CTA */
+  .front .bottom-cta {
+    background: #1A1A1A;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .bottom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #DC143C 0%, #B01030 100%);
+  }
+
+  .bottom-cta .cta-text {
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .bottom-cta .cta-text .highlight {
+    color: #DC143C;
+  }
+
+  .bottom-cta .return-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    font-weight: 600;
+    color: #DC143C;
+    background: rgba(220, 20, 60, 0.15);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="card front">
+  <!-- Top brand band -->
+  <div class="top-band">
+    <div class="brand-mark">
+      <div class="logo-text">Dynacom</div>
+      <div class="system-badge">10600-PY</div>
+    </div>
+    <div class="card-id">DC-DYC-FACEPLATE</div>
+  </div>
+
+  <!-- Category stripe -->
+  <div class="category-stripe">
+    <div class="cat-label">Classic Single-Gang Wallplates • 1-6 Ports</div>
+  </div>
+
+  <!-- Hero section -->
+  <div class="hero">
+    <h1>Classic Single-Gang<br>Wallplates</h1>
+    <div class="subtitle">Compatible with Dynacom Jacks<br>UL Listed • Fire Retardant</div>
+
+    <div class="product-image">
+      <img src="DYC10600PY.jpg" alt="Dynacom Wallplates">
+    </div>
+
+    <div class="spec-pills">
+      <span class="pill highlight">UL 1863</span>
+      <span class="pill">1-6 PORTS</span>
+      <span class="pill">UL94V-0</span>
+      <span class="pill">SATIN FINISH</span>
+      <span class="pill">COMBO SCREWS</span>
+    </div>
+  </div>
+
+  <!-- SKU quick-reference -->
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference</div>
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>Config</th>
+          <th>White</th>
+          <th>Gray</th>
+          <th>Ivory</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="config-cell">1-Port</td>
+          <td class="part-num">DYC10600P1WH</td>
+          <td class="part-num">DYC10600P1GY</td>
+          <td class="part-num">DYC10600P1IY</td>
+        </tr>
+        <tr>
+          <td class="config-cell">2-Port</td>
+          <td class="part-num">DYC10600P2WH</td>
+          <td class="part-num">DYC10600P2GY</td>
+          <td class="part-num">DYC10600P2IY</td>
+        </tr>
+        <tr>
+          <td class="config-cell">3-Port</td>
+          <td class="part-num">DYC10600P3WH</td>
+          <td class="part-num">DYC10600P3GY</td>
+          <td class="part-num">DYC10600P3IY</td>
+        </tr>
+        <tr>
+          <td class="config-cell">4-Port</td>
+          <td class="part-num">DYC10600P4WH</td>
+          <td class="part-num">DYC10600P4GY</td>
+          <td class="part-num">DYC10600P4IY</td>
+        </tr>
+        <tr>
+          <td class="config-cell">6-Port</td>
+          <td class="part-num">DYC10600P6WH</td>
+          <td class="part-num">DYC10600P6GY</td>
+          <td class="part-num">DYC10600P6IY</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="bottom-cta">
+    <div class="cta-text">
+      Pull this card → Take to counter →<br>
+      <span class="highlight">Tell us the configuration & color you need</span>
+    </div>
+    <div class="return-tag">↩ Return Card</div>
+  </div>
+</div>
+
+</body>
+</html>

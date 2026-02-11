@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynacom Classic Faceplate - Back</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #f0f0f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; -webkit-font-smoothing: antialiased; }
+  .card { width: 5in; height: 9.5in; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); position: relative; display: flex; flex-direction: column; }
+  .back .top-band { background: linear-gradient(135deg, #DC143C 0%, #B01030 100%); padding: 12px 20px 10px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .back .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1A1A1A 0%, #4A4A4A 100%); }
+  .back .top-band .title { font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .back .top-band .card-id { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+  .back .specs-section { padding: 14px 20px 10px; }
+  .back .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 5px 8px; background: #FAFBFC; border-radius: 4px; border: 1px solid #F0F1F3; }
+  .spec-row .spec-label { font-size: 8.5px; color: #6B7280; font-weight: 500; }
+  .spec-row .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; color: #1A1A2E; }
+  .back .features-section { padding: 10px 20px; }
+  .features-list { display: grid; grid-template-columns: 1fr; gap: 4px; }
+  .feature-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; background: #F7F8FA; border-radius: 5px; border: 1px solid #E9ECF0; }
+  .feature-item .feat-marker { flex: 0 0 6px; width: 6px; height: 6px; background: #DC143C; border-radius: 50%; }
+  .feature-item .feat-text { font-size: 9px; font-weight: 500; color: #374151; line-height: 1.3; }
+  .back .compat-section { padding: 10px 20px; }
+  .compat-box { background: linear-gradient(135deg, #FFF8F0 0%, #FFF4E8 100%); border: 1px solid #F5DFC4; border-radius: 8px; padding: 12px 14px; }
+  .compat-box h3 { font-size: 11px; font-weight: 700; color: #DC143C; margin-bottom: 6px; }
+  .compat-box p { font-size: 9px; color: #4B5563; line-height: 1.4; margin-bottom: 6px; }
+  .compat-box .compat-items { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 8px; }
+  .compat-item { font-family: 'JetBrains Mono', monospace; font-size: 8px; padding: 4px 6px; background: #fff; border-radius: 3px; color: #DC143C; font-weight: 600; }
+  .back .install-section { padding: 10px 20px; }
+  .install-box { background: linear-gradient(135deg, #FFF0F0 0%, #FFE8E8 100%); border: 1px solid #FFD0D0; border-radius: 8px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 12px; }
+  .install-box .install-icon { flex: 0 0 36px; width: 36px; height: 36px; background: #DC143C; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .install-box .install-icon svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .install-box .install-content h3 { font-size: 11px; font-weight: 700; color: #DC143C; margin-bottom: 3px; }
+  .install-box .install-content p { font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .install-box .install-content p strong { color: #DC143C; }
+  .back .standards-section { padding: 10px 20px; }
+  .standards-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .standard-badge { font-family: 'JetBrains Mono', monospace; font-size: 7.5px; font-weight: 600; padding: 4px 8px; border-radius: 3px; border: 1px solid #E0E3E8; color: #374151; background: #fff; letter-spacing: 0.3px; }
+  .standard-badge.primary { background: #DC143C; color: #fff; border-color: #DC143C; }
+  .back .bottom-section { margin-top: auto; padding: 10px 20px 14px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+  .bottom-section .qr-placeholder { width: 64px; height: 64px; background: #F7F8FA; border: 2px dashed #D1D5DB; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+  .qr-placeholder svg { width: 24px; height: 24px; stroke: #9CA3AF; fill: none; stroke-width: 1.5; margin-bottom: 2px; }
+  .qr-placeholder span { font-family: 'JetBrains Mono', monospace; font-size: 6px; color: #9CA3AF; letter-spacing: 0.5px; text-transform: uppercase; }
+  .bottom-section .contact-info { flex: 1; text-align: right; }
+  .contact-info .company { font-size: 11px; font-weight: 700; color: #DC143C; margin-bottom: 2px; }
+  .contact-info .tagline { font-size: 8px; color: #6B7280; margin-bottom: 6px; font-style: italic; }
+  .contact-info .details { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #9CA3AF; line-height: 1.6; letter-spacing: 0.3px; }
+  .back .bottom-bar { background: #1A1A1A; padding: 8px 20px; display: flex; align-items: center; justify-content: center; gap: 8px; position: relative; }
+  .back .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #DC143C 0%, #B01030 100%); }
+  .bottom-bar .return-icon { width: 14px; height: 14px; }
+  .bottom-bar .return-icon svg { width: 14px; height: 14px; fill: none; stroke: #DC143C; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .bottom-bar .return-text { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; }
+  .bottom-bar .return-text .highlight { color: #DC143C; }
+</style>
+</head>
+<body>
+
+<div class="card back">
+  <div class="top-band">
+    <div class="title">Classic Wallplates — Details & Specifications</div>
+    <div class="card-id">DC-DYC-FACEPLATE</div>
+  </div>
+
+  <div class="specs-section">
+    <div class="section-label">Technical Specifications</div>
+    <div class="specs-grid">
+      <div class="spec-row"><span class="spec-label">Type</span><span class="spec-value">Single-Gang</span></div>
+      <div class="spec-row"><span class="spec-label">Ports</span><span class="spec-value">1, 2, 3, 4, 6</span></div>
+      <div class="spec-row"><span class="spec-label">Colors</span><span class="spec-value">WH, GY, IY</span></div>
+      <div class="spec-row"><span class="spec-label">Finish</span><span class="spec-value">Satin</span></div>
+      <div class="spec-row"><span class="spec-label">Material</span><span class="spec-value">Fire Retardant Plastic</span></div>
+      <div class="spec-row"><span class="spec-label">Fire Rating</span><span class="spec-value">UL94V-0</span></div>
+      <div class="spec-row"><span class="spec-label">Safety Listing</span><span class="spec-value">UL 1863</span></div>
+      <div class="spec-row"><span class="spec-label">Screws</span><span class="spec-value">Painted Combo</span></div>
+      <div class="spec-row"><span class="spec-label">Box Type</span><span class="spec-value">Standard Electrical</span></div>
+      <div class="spec-row"><span class="spec-label">Customization</span><span class="spec-value">Available</span></div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-label">Key Features & Benefits</div>
+    <div class="features-list">
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>Satin Finish</strong> — Professional appearance that resists fingerprints</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>UL 1863 Safety Listed</strong> — Meets safety standards for communication equipment</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>UL94V-0 Fire Retardant</strong> — Highest fire safety rating for plastic materials</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>Compatible with Dynacom Jacks</strong> — Perfect fit for all Dynacom keystone jacks</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>Standard Electrical Box Compatible</strong> — Fits all standard single-gang boxes</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>Painted Combo Screws Included</strong> — Color-matched screws for clean installation</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>Custom Colors Available</strong> — Contact for special color requirements</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compat-section">
+    <div class="compat-box">
+      <h3>Compatible Dynacom Jacks</h3>
+      <p>These wallplates work seamlessly with all Dynacom keystone jacks. Mix and match jack types in multi-port configurations:</p>
+      <div class="compat-items">
+        <div class="compat-item">Cat 5e (10605K)</div>
+        <div class="compat-item">Cat 6 (10606K)</div>
+        <div class="compat-item">Cat 6A (10606AK)</div>
+        <div class="compat-item">Fiber Adapters</div>
+        <div class="compat-item">Coax Modules</div>
+        <div class="compat-item">Blank Inserts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="install-section">
+    <div class="install-box">
+      <div class="install-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="install-content">
+        <h3>Installation Instructions</h3>
+        <p>Snap keystone jacks into faceplate openings before mounting. Align faceplate with standard single-gang electrical box. Secure with included <strong>painted combo screws</strong> that match faceplate color for a clean, professional finish.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="standards-section">
+    <div class="section-label">Certifications & Standards</div>
+    <div class="standards-row">
+      <span class="standard-badge primary">UL 1863 Listed</span>
+      <span class="standard-badge primary">UL94V-0 Fire Rated</span>
+      <span class="standard-badge">Single-Gang</span>
+      <span class="standard-badge">RoHS Compliant</span>
+      <span class="standard-badge">Satin Finish</span>
+      <span class="standard-badge">Made in Taiwan</span>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="qr-placeholder">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="4" height="4" rx="0.5"/><line x1="21" y1="14" x2="21" y2="21"/><line x1="14" y1="21" x2="21" y2="21"/></svg>
+      <span>Scan to Order</span>
+    </div>
+    <div class="contact-info">
+      <div class="company">Mayer Electric Supply</div>
+      <div class="tagline">Your Connected Solutions Partner</div>
+      <div class="details">dynacomcorp.com<br>Questions? Ask your counter rep</div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="return-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></div>
+    <div class="return-text">Please <span class="highlight">return this card</span> to the display after ordering</div>
+  </div>
+</div>
+
+</body>
+</html>
