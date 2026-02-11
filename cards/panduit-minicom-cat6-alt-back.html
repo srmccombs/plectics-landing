@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panduit Mini-Com TX6 PLUS Cat6 Jack - Alternative Design (Back)</title>
+  <style>
+    @page {
+      size: 5in 9.5in;
+      margin: 0;
+    }
+
+    :root{
+      --w: 5in;
+      --h: 9.5in;
+      --pad: 0.35in;
+      --black: #111;
+      --gray: #6b7280;
+      --light: #f3f4f6;
+      --radius: 16px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: #f0f0f0;
+      font-family: var(--font);
+      color: var(--black);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .page {
+      width: var(--w);
+      height: var(--h);
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+    .pad { padding: var(--pad); }
+
+    .band {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%;
+      height: 0.75in;
+      background: #000;
+      color: #fff;
+      padding: 0.18in var(--pad);
+    }
+    .band .title { font-weight: 800; font-size: 14pt; line-height: 1.05; }
+    .band .sub { font-size: 9.5pt; opacity: .95; margin-top: 6px; }
+
+    .back-content { padding-top: 0.95in; }
+
+    .section { margin-top: 14px; }
+    .section h2 { margin: 0 0 8px; font-size: 11pt; font-weight: 800; }
+    .lines { font-size: 9.5pt; line-height: 1.25; }
+    .lines .line { margin: 6px 0; }
+
+    .specbox {
+      position: absolute;
+      left: var(--pad);
+      right: var(--pad);
+      bottom: 0.85in;
+      height: 3.2in;
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 12px;
+      overflow: hidden;
+    }
+    .specbox h3 { margin: 0 0 8px; font-size: 11pt; font-weight: 800; }
+    .spec-list { margin: 0; padding-left: 16px; font-size: 9pt; line-height: 1.25; }
+    .spec-list li { margin: 6px 0; }
+
+    .qr {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      width: 1.25in;
+      height: 1.25in;
+      background: #fff;
+      border: 1px solid #111;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: var(--gray);
+      font-size: 8pt;
+      text-align: center;
+      padding: 8px;
+    }
+
+    .back-footer {
+      position: absolute;
+      left: var(--pad);
+      right: var(--pad);
+      bottom: 0.45in;
+      font-size: 8pt;
+      color: var(--gray);
+      display: flex;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="page">
+    <header class="band">
+      <div class="title">Panduit Mini-Com TX6 PLUS - Cat 6 Jack Module (CJ688TG**)</div>
+      <div class="sub">Fast selection + fewer trips back to the truck</div>
+    </header>
+
+    <div class="pad back-content">
+      <div class="section">
+        <h2>Best use cases</h2>
+        <div class="lines">
+          <div class="line">- Workstation drops, patch panels, and telecom rooms</div>
+          <div class="line">- New installs or quick swaps; supports T568A or T568B</div>
+          <div class="line">- High-performance copper runs (Category 6 / Class E, 250 MHz)</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Install in about 60 seconds (TG style)</h2>
+        <div class="lines">
+          <div class="line">1) Strip jacket; keep pairs twisted as close as possible.</div>
+          <div class="line">2) Place conductors into the cap following the built-in T568A/B label.</div>
+          <div class="line">3) Close cap (forward motion) - no punchdown tool required.</div>
+          <div class="line">4) Snap jack into Mini-Com faceplate, patch panel, or surface box.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Common add-ons (boosts first-trip completion)</h2>
+        <div class="lines">
+          <div class="line">- Faceplates (1/2/4 port) - Surface mount boxes - Patch panels</div>
+          <div class="line">- Patch cords (match color for ID) - Velcro / cable management</div>
+          <div class="line">- Labels/icons - Dust caps - Port blockers (security)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="specbox">
+      <h3>Specs at a glance</h3>
+      <ul class="spec-list">
+        <li>Category: Cat 6 / Class E (1-250 MHz)</li>
+        <li>Cable range: 22-26 AWG, 4-pair UTP (100 ohm)</li>
+        <li>Termination: TG style, forward motion, maintains pair geometry</li>
+        <li>Wiring: Universal label for T568A &amp; T568B</li>
+        <li>Power: Supports PoE, PoE+ and PoE++ (up to 100W)</li>
+        <li>Compliance: RoHS; UL listings vary by configuration</li>
+      </ul>
+
+      <div class="qr">QR / Link<br/>place here</div>
+    </div>
+
+    <footer class="back-footer">
+      CJ688TG** family - Card back v1.0
+    </footer>
+  </section>
+</body>
+</html>

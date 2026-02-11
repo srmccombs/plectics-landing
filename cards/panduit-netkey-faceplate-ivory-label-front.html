@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit NetKey Faceplate Electric Ivory with Label - Front</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 5in 9.5in;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card {
+    width: 5in;
+    height: 9.5in;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .front .top-band {
+    background: linear-gradient(135deg, #002B5C 0%, #003D7A 100%);
+    padding: 14px 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #E87722 0%, #F5A623 100%);
+  }
+
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-mark .logo-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .brand-mark .system-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    color: #E87722;
+    background: rgba(232, 119, 34, 0.15);
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .top-band .card-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  .front .category-stripe {
+    background: #F7F8FA;
+    padding: 10px 20px;
+    border-bottom: 1px solid #E9ECF0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .category-stripe .cat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #002B5C;
+  }
+
+  .category-stripe .color-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .color-badge .swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(0,0,0,0.15);
+    background: #F5F0DC;
+  }
+
+  .color-badge .label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #6B7280;
+    letter-spacing: 0.5px;
+  }
+
+  .front .hero {
+    flex: 0 0 auto;
+    padding: 16px 20px 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hero .product-image {
+    flex: 0 0 130px;
+    height: 130px;
+    background: #F7F8FA;
+    border-radius: 8px;
+    border: 1px solid #E9ECF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .hero .product-info {
+    flex: 1;
+    padding-top: 4px;
+  }
+
+  .product-info h1 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .product-info .subtitle {
+    font-size: 11.5px;
+    color: #6B7280;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .product-info .spec-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .spec-pills .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #F0F4FF;
+    color: #002B5C;
+    letter-spacing: 0.3px;
+  }
+
+  .spec-pills .pill.highlight {
+    background: #002B5C;
+    color: #fff;
+  }
+
+  .front .sku-section {
+    padding: 0 20px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sku-section .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #002B5C;
+    margin-bottom: 12px;
+  }
+
+  .sku-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    flex: 1;
+  }
+
+  .sku-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #002B5C;
+    text-align: left;
+    padding: 10px 10px;
+    border-bottom: 2px solid #E87722;
+  }
+
+  .sku-table tbody td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #E9ECF0;
+    vertical-align: middle;
+  }
+
+  .sku-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .sku-table .config-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1A1A2E;
+  }
+
+  .sku-table .part-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #002B5C;
+    letter-spacing: 0.5px;
+  }
+
+  .front .bottom-cta {
+    background: #002B5C;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .bottom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #E87722 0%, #F5A623 100%);
+  }
+
+  .bottom-cta .cta-text {
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .bottom-cta .cta-text .highlight {
+    color: #E87722;
+  }
+
+  .bottom-cta .return-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    font-weight: 600;
+    color: #E87722;
+    background: rgba(232, 119, 34, 0.15);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="card front">
+  <div class="top-band">
+    <div class="brand-mark">
+      <div class="logo-text">Panduit</div>
+      <div class="system-badge">NetKey®</div>
+    </div>
+    <div class="card-id">DC-NK-FP-EI-L</div>
+  </div>
+
+  <div class="category-stripe">
+    <div class="cat-label">Faceplate — Electric Ivory with Label</div>
+    <div class="color-badge">
+      <div class="swatch"></div>
+      <span class="label">ELEC. IVORY</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="product-image">
+      <img src="PANNK4FEIY.png" alt="Panduit NetKey Faceplate Electric Ivory with Label">
+    </div>
+    <div class="product-info">
+      <h1>NetKey®<br>Faceplate</h1>
+      <div class="subtitle">Electric Ivory<br>Label Pocket ID</div>
+      <div class="spec-pills">
+        <span class="pill highlight">ELEC IVORY</span>
+        <span class="pill">LABEL POCKET</span>
+        <span class="pill">1,2,4,6 PORT</span>
+        <span class="pill">KEYSTONE</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference</div>
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>Configuration</th>
+          <th>Mayer Part #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="config-label">1-Port Faceplate Elec Ivory</td>
+          <td class="part-num">PANNK1FEIY</td>
+        </tr>
+        <tr>
+          <td class="config-label">2-Port Faceplate Elec Ivory</td>
+          <td class="part-num">PANNK2FEIY</td>
+        </tr>
+        <tr>
+          <td class="config-label">4-Port Faceplate Elec Ivory</td>
+          <td class="part-num">PANNK4FEIY</td>
+        </tr>
+        <tr>
+          <td class="config-label">6-Port Faceplate Elec Ivory</td>
+          <td class="part-num">PANNK6FEIY</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bottom-cta">
+    <div class="cta-text">
+      Pull this card → Take to counter →<br>
+      <span class="highlight">Tell us the port count & quantity you need</span>
+    </div>
+    <div class="return-tag">↩ Return Card</div>
+  </div>
+</div>
+
+</body>
+</html>

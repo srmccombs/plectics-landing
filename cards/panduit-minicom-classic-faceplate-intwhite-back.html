@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit Mini-Com Classic Faceplate - Int. White - Back</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #f0f0f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; -webkit-font-smoothing: antialiased; }
+  .card { width: 5in; height: 9.5in; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); position: relative; display: flex; flex-direction: column; }
+  .back .top-band { background: linear-gradient(135deg, #002B5C 0%, #003D7A 100%); padding: 12px 20px 10px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .back .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E87722 0%, #F5A623 100%); }
+  .back .top-band .title { font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .back .top-band .card-id { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+  .back .specs-section { padding: 14px 20px 10px; }
+  .back .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 5px 8px; background: #FAFBFC; border-radius: 4px; border: 1px solid #F0F1F3; }
+  .spec-row .spec-label { font-size: 8.5px; color: #6B7280; font-weight: 500; }
+  .spec-row .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; color: #1A1A2E; }
+  .back .compat-section { padding: 10px 20px; }
+  .compat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  .compat-card { text-align: center; padding: 10px 6px 8px; background: #F7F8FA; border-radius: 6px; border: 1px solid #E9ECF0; }
+  .compat-card .compat-icon { width: 36px; height: 36px; margin: 0 auto 6px; background: #fff; border-radius: 6px; border: 1px solid #E0E3E8; display: flex; align-items: center; justify-content: center; }
+  .compat-card .compat-icon svg { width: 20px; height: 20px; fill: none; stroke: #002B5C; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .compat-card .compat-title { font-size: 8.5px; font-weight: 700; color: #1A1A2E; margin-bottom: 2px; line-height: 1.2; }
+  .compat-card .compat-desc { font-size: 7.5px; color: #6B7280; line-height: 1.3; }
+  .back .install-section { padding: 10px 20px; }
+  .install-box { background: linear-gradient(135deg, #F0F7FF 0%, #E8F0FE 100%); border: 1px solid #C8D9F0; border-radius: 8px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 12px; }
+  .install-box .install-icon { flex: 0 0 36px; width: 36px; height: 36px; background: #002B5C; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .install-box .install-icon svg { width: 20px; height: 20px; fill: none; stroke: #E87722; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .install-box .install-content h3 { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .install-box .install-content p { font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .back .config-section { padding: 10px 20px; }
+  .config-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .config-option { background: #FAFBFC; border: 1px solid #E9ECF0; border-radius: 6px; padding: 10px 12px; }
+  .config-option .config-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .config-header .port-count { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; }
+  .config-header .port-badge { font-family: 'JetBrains Mono', monospace; font-size: 7px; font-weight: 600; background: #002B5C; color: #fff; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px; }
+  .config-option .config-desc { font-size: 8.5px; color: #6B7280; line-height: 1.4; }
+  .back .bottom-section { margin-top: auto; padding: 10px 20px 14px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+  .bottom-section .qr-placeholder { width: 64px; height: 64px; background: #F7F8FA; border: 2px dashed #D1D5DB; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+  .qr-placeholder svg { width: 24px; height: 24px; stroke: #9CA3AF; fill: none; stroke-width: 1.5; margin-bottom: 2px; }
+  .qr-placeholder span { font-family: 'JetBrains Mono', monospace; font-size: 6px; color: #9CA3AF; letter-spacing: 0.5px; text-transform: uppercase; }
+  .bottom-section .contact-info { flex: 1; text-align: right; }
+  .contact-info .company { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 2px; }
+  .contact-info .tagline { font-size: 8px; color: #6B7280; margin-bottom: 6px; font-style: italic; }
+  .contact-info .details { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #9CA3AF; line-height: 1.6; letter-spacing: 0.3px; }
+  .back .bottom-bar { background: #002B5C; padding: 8px 20px; display: flex; align-items: center; justify-content: center; gap: 8px; position: relative; }
+  .back .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #E87722 0%, #F5A623 100%); }
+  .bottom-bar .return-icon { width: 14px; height: 14px; }
+  .bottom-bar .return-icon svg { width: 14px; height: 14px; fill: none; stroke: #E87722; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .bottom-bar .return-text { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; }
+  .bottom-bar .return-text .highlight { color: #E87722; }
+</style>
+</head>
+<body>
+
+<div class="card back">
+  <div class="top-band">
+    <div class="title">Mini-Com® Classic Series Faceplate — Int. White</div>
+    <div class="card-id">DC-MC-CFPL-IW</div>
+  </div>
+
+  <div class="specs-section">
+    <div class="section-label">Technical Specifications</div>
+    <div class="specs-grid">
+      <div class="spec-row"><span class="spec-label">Series</span><span class="spec-value">Classic</span></div>
+      <div class="spec-row"><span class="spec-label">Mounting</span><span class="spec-value">Single Gang</span></div>
+      <div class="spec-row"><span class="spec-label">Standard</span><span class="spec-value">NEMA</span></div>
+      <div class="spec-row"><span class="spec-label">Material</span><span class="spec-value">ABS</span></div>
+      <div class="spec-row"><span class="spec-label">Color</span><span class="spec-value">Int. White</span></div>
+      <div class="spec-row"><span class="spec-label">Label</span><span class="spec-value">Integrated</span></div>
+    </div>
+  </div>
+
+  <div class="compat-section">
+    <div class="section-label">Compatible With — Mini-Com® Modules</div>
+    <div class="compat-grid">
+      <div class="compat-card">
+        <div class="compat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2"/><line x1="7" y1="12" x2="7" y2="12"/><line x1="12" y1="12" x2="12" y2="12"/><line x1="17" y1="12" x2="17" y2="12"/></svg></div>
+        <div class="compat-title">UTP Jacks</div>
+        <div class="compat-desc">Cat 5e, Cat 6,<br>Cat 6A</div>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6M1 12h6m6 0h6"/></svg></div>
+        <div class="compat-title">Fiber Optic</div>
+        <div class="compat-desc">LC, SC,<br>ST adapters</div>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg></div>
+        <div class="compat-title">A/V Modules</div>
+        <div class="compat-desc">HDMI, USB,<br>Coax, Audio</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="install-section">
+    <div class="install-box">
+      <div class="install-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6m0 4v10M2 12h6m4 0h10"/></svg></div>
+      <div class="install-content">
+        <h3>International White Finish</h3>
+        <div class="config-desc"><strong>Crisp off-white tone</strong> - Modern aesthetic for contemporary spaces. <strong>Integrated label pocket</strong> - Clear port identification. <strong>NEMA standard</strong> - Fits standard single gang boxes. <strong>Residential & commercial</strong> - Offices, homes, classrooms.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="config-section">
+    <div class="section-label">Available Configurations</div>
+    <div class="config-cards">
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">1-Port</div>
+          <div class="port-badge">CFPL1</div>
+        </div>
+        <div class="config-desc">Single module applications</div>
+      </div>
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">2-Port</div>
+          <div class="port-badge">CFPL2</div>
+        </div>
+        <div class="config-desc">Dual module workstations</div>
+      </div>
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">3-Port</div>
+          <div class="port-badge">CFPL3</div>
+        </div>
+        <div class="config-desc">Triple module setup</div>
+      </div>
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">4-Port</div>
+          <div class="port-badge">CFPL4</div>
+        </div>
+        <div class="config-desc">High-density applications</div>
+      </div>
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">6-Port</div>
+          <div class="port-badge">CFPL6</div>
+        </div>
+        <div class="config-desc">Maximum density setup</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="qr-placeholder">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="4" height="4" rx="0.5"/><line x1="21" y1="14" x2="21" y2="21"/><line x1="14" y1="21" x2="21" y2="21"/></svg>
+      <span>Scan to Order</span>
+    </div>
+    <div class="contact-info">
+      <div class="company">Mayer Electric Supply</div>
+      <div class="tagline">Your Connected Solutions Partner</div>
+      <div class="details">panduit.com/mini-com<br>Questions? Ask your counter rep</div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="return-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></div>
+    <div class="return-text">Please <span class="highlight">return this card</span> to the display after ordering</div>
+  </div>
+</div>
+
+</body>
+</html>

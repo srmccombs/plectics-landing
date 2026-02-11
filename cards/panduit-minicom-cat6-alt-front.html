@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panduit Mini-Com TX6 PLUS Cat6 Jack - Alternative Design (Front)</title>
+  <style>
+    @page {
+      size: 5in 9.5in;
+      margin: 0;
+    }
+
+    :root{
+      --w: 5in;
+      --h: 9.5in;
+      --pad: 0.35in;
+      --black: #111;
+      --gray: #6b7280;
+      --light: #f3f4f6;
+      --cream: #fff5cc;
+      --radius: 16px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: #f0f0f0;
+      font-family: var(--font);
+      color: var(--black);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .page {
+      width: var(--w);
+      height: var(--h);
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+    .pad { padding: var(--pad); }
+
+    .band {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%;
+      height: 0.85in;
+      background: #000;
+      color: #fff;
+      padding: 0.2in var(--pad);
+    }
+    .band .title { font-weight: 800; font-size: 14pt; line-height: 1.05; }
+    .band .sub { font-size: 9.5pt; opacity: .95; margin-top: 6px; }
+
+    .front-content { padding-top: 1.05in; }
+
+    .h1 { font-size: 16pt; font-weight: 800; margin: 0; }
+    .lead { font-size: 9.5pt; margin: 6px 0 0; color: #111; }
+    .muted { color: var(--gray); }
+
+    .hero {
+      margin-top: 14px;
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 14px;
+      display: grid;
+      grid-template-columns: 2.05in 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .hero img {
+      width: 100%;
+      height: 2.05in;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      display: block;
+    }
+    .hero h2 {
+      margin: 0;
+      font-size: 11pt;
+      font-weight: 800;
+    }
+    .bullets {
+      margin: 8px 0 0;
+      padding-left: 16px;
+      font-size: 9pt;
+      line-height: 1.25;
+    }
+    .bullets li { margin: 6px 0; }
+
+    .callout {
+      margin-top: 12px;
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 9.5pt;
+      line-height: 1.25;
+    }
+    .callout b { font-weight: 800; }
+    .callout .example { margin-top: 6px; font-weight: 800; }
+
+    .cardbox {
+      position: absolute;
+      left: var(--pad);
+      right: var(--pad);
+      bottom: 0.9in;
+      height: 3.75in;
+      border: 1px solid #d1d5db;
+      border-radius: var(--radius);
+      padding: 12px;
+      overflow: hidden;
+    }
+    .cardbox h3 {
+      margin: 0 0 8px;
+      font-size: 11pt;
+      font-weight: 800;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      line-height: 1.15;
+    }
+    .table th {
+      text-align: left;
+      font-weight: 800;
+      font-size: 8.5pt;
+      padding: 6px 6px;
+      border-bottom: 1px solid #e5e7eb;
+      white-space: nowrap;
+    }
+    .table td {
+      padding: 5px 6px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+    }
+    .swatch {
+      width: 14px; height: 14px;
+      border: 1px solid #111;
+      border-radius: 3px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .code { font-weight: 800; width: 0.6in; white-space: nowrap; }
+    .pn { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 8.3pt; white-space: nowrap; }
+
+    .front-footer {
+      position: absolute;
+      left: var(--pad);
+      right: var(--pad);
+      bottom: 0.45in;
+      font-size: 7.5pt;
+      color: var(--gray);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .front-footer .left { max-width: 75%; }
+    .front-footer .right { text-align: right; white-space: nowrap; }
+  </style>
+</head>
+
+<body>
+  <section class="page">
+    <header class="band">
+      <div class="title">Panduit Mini-Com TX6 PLUS</div>
+      <div class="sub">Category 6 UTP RJ45 Jack Module - TG style termination</div>
+    </header>
+
+    <div class="pad front-content">
+      <h1 class="h1">Quick-Order Counter Card</h1>
+      <p class="lead">
+        Base part family: <b>CJ688TG**</b>
+        <span class="muted">(Example shown: CJ688TGAW / Arctic White)</span>
+      </p>
+
+      <div class="hero">
+        <img src="PANCJ688TGBU.png" alt="Panduit CJ688TG jack" />
+
+        <div>
+          <h2>Why contractors choose this jack</h2>
+          <ul class="bullets">
+            <li>Toolless TG termination (no punchdown tool)</li>
+            <li>250 MHz Category 6 / Class E performance</li>
+            <li>PoE / PoE+ / PoE++ ready (up to 100W)</li>
+            <li>Snaps into Mini-Com faceplates, panels and boxes</li>
+            <li>Color options for clean network ID and standards</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cardbox">
+      <h3>Choose your color</h3>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="width:0.55in;">Code</th>
+            <th style="width:0.95in;">Color</th>
+            <th style="width:1.55in;">Part Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#2563EB;"></span>BU</td>
+            <td>Blue</td>
+            <td class="pn">PANCJ688TGBU</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#ffffff;"></span>WH</td>
+            <td>White</td>
+            <td class="pn">PANCJ688TGWH</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#1A1A1A;"></span>BL</td>
+            <td>Black</td>
+            <td class="pn">PANCJ688TGBL</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#F5F0DC;"></span>EI</td>
+            <td>Elec Ivory</td>
+            <td class="pn">PANCJ688TGEI</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#22C55E;"></span>GR</td>
+            <td>Green</td>
+            <td class="pn">PANCJ688TGGR</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#9CA3AF;"></span>IG</td>
+            <td>Gray</td>
+            <td class="pn">PANCJ688TGIG</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#F0EDE6;"></span>IW</td>
+            <td>Int. White</td>
+            <td class="pn">PANCJ688TGIW</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#F97316;"></span>OR</td>
+            <td>Orange</td>
+            <td class="pn">PANCJ688TGOR</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#EF4444;"></span>RD</td>
+            <td>Red</td>
+            <td class="pn">PANCJ688TGRD</td>
+          </tr>
+          <tr>
+            <td class="code"><span class="swatch" style="background:#EAB308;"></span>YL</td>
+            <td>Yellow</td>
+            <td class="pn">PANCJ688TGYL</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="front-footer">
+      <div class="left">
+        Tip: If your branch stocks bulk packs for this family, note pack sizes on your internal sticker or QR.
+      </div>
+      <div class="right">Counter Card v1.0 - space for branch QR</div>
+    </footer>
+  </section>
+</body>
+</html>

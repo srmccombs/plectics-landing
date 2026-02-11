@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>General Cable Fire Alarm - Back</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #f0f0f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+  .card { width: 5in; height: 9.5in; background: #fff; border-radius: 6px; box-shadow: 0 8px 40px rgba(0,0,0,0.12); display: flex; flex-direction: column; padding: 24px 20px; }
+  .back-header { text-align: center; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 14px; color: #002B5C; margin-bottom: 4px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; margin-top: 10px; }
+  .section-title:first-of-type { margin-top: 0; }
+  .code-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .code-section { background: #F7F8FA; padding: 8px; border-radius: 4px; border-left: 3px solid #DC143C; }
+  .code-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .code-list { font-size: 6.5px; color: #4B5563; line-height: 1.5; }
+  .code-list-compact { font-size: 6.5px; color: #4B5563; line-height: 1.4; }
+  .code-item { display: flex; justify-content: space-between; padding: 1px 0; }
+  .code-label { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; }
+  .features-section { margin-bottom: 10px; }
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 2px 0; padding-left: 12px; position: relative; font-size: 7px; color: #4B5563; line-height: 1.4; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #DC143C; font-weight: bold; font-size: 7px; }
+  .specs-table { margin-bottom: 10px; }
+  .specs-row { display: grid; grid-template-columns: 60px 50px 60px 50px 50px; gap: 3px; padding: 4px; background: #F7F8FA; border-radius: 3px; margin-bottom: 2px; font-size: 6.5px; }
+  .specs-row.header { background: #DC143C; color: #fff; font-weight: 700; }
+  .specs-row.header .spec-cell { color: #fff; }
+  .spec-cell { font-family: 'JetBrains Mono', monospace; color: #002B5C; font-weight: 600; text-align: center; }
+  .applications-section { background: #FFF3E0; border-left: 3px solid #FFB74D; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .app-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 4px; }
+  .app-list { font-size: 7px; color: #4B5563; line-height: 1.4; }
+  .note-box { background: #E3F2FD; border-left: 3px solid #1976D2; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .note-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .note-text { font-size: 6.5px; color: #4B5563; line-height: 1.4; }
+  .footer { margin-top: auto; text-align: center; padding-top: 10px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .footer-text { font-size: 7px; color: #6B7280; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="back-header">
+    <h2>Fire Alarm Cable FPLP</h2>
+    <div class="category">General Cable • Un-Shielded Plenum</div>
+  </div>
+
+  <div class="section-title">Part Number Format: GCCE3502S.XX.YY</div>
+  <div class="code-grid">
+    <div class="code-section">
+      <div class="code-title">Put-Up Codes (XX)</div>
+      <div class="code-list-compact">
+        <div class="code-item"><span class="code-label">.12</span> <span>100' Pull-Pac</span></div>
+        <div class="code-item"><span class="code-label">.15</span> <span>250' Pull-Pac</span></div>
+        <div class="code-item"><span class="code-label">.18</span> <span>500' Reel</span></div>
+        <div class="code-item"><span class="code-label">.30</span> <span>1000' Pull-Pac</span></div>
+        <div class="code-item"><span class="code-label">.41</span> <span>1000' Reel</span></div>
+        <div class="code-item"><span class="code-label">.46</span> <span>5000' Reel</span></div>
+      </div>
+    </div>
+    <div class="code-section">
+      <div class="code-title">Color Codes (YY)</div>
+      <div class="code-list-compact">
+        <div class="code-item"><span class="code-label">.01</span> <span>Black</span></div>
+        <div class="code-item"><span class="code-label">.02</span> <span>White</span></div>
+        <div class="code-item"><span class="code-label">.03</span> <span>Red (Standard)</span></div>
+        <div class="code-item"><span class="code-label">.04</span> <span>Orange</span></div>
+        <div class="code-item"><span class="code-label">.05</span> <span>Yellow</span></div>
+        <div class="code-item"><span class="code-label">.07</span> <span>Blue</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Cable Specifications</div>
+  <div class="specs-table">
+    <div class="specs-row header">
+      <div class="spec-cell">Part #</div>
+      <div class="spec-cell">AWG</div>
+      <div class="spec-cell">Cond.</div>
+      <div class="spec-cell">Ins. Thick</div>
+      <div class="spec-cell">Nom. OD</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E3502S</div>
+      <div class="spec-cell">18</div>
+      <div class="spec-cell">2C</div>
+      <div class="spec-cell">0.010"</div>
+      <div class="spec-cell">0.155"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E3504S</div>
+      <div class="spec-cell">18</div>
+      <div class="spec-cell">4C</div>
+      <div class="spec-cell">0.010"</div>
+      <div class="spec-cell">0.175"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E3512S</div>
+      <div class="spec-cell">16</div>
+      <div class="spec-cell">2C</div>
+      <div class="spec-cell">0.010"</div>
+      <div class="spec-cell">0.172"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E3514S</div>
+      <div class="spec-cell">16</div>
+      <div class="spec-cell">4C</div>
+      <div class="spec-cell">0.010"</div>
+      <div class="spec-cell">0.202"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E3522S</div>
+      <div class="spec-cell">14</div>
+      <div class="spec-cell">2C</div>
+      <div class="spec-cell">0.012"</div>
+      <div class="spec-cell">0.205"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E3524S</div>
+      <div class="spec-cell">14</div>
+      <div class="spec-cell">4C</div>
+      <div class="spec-cell">0.012"</div>
+      <div class="spec-cell">0.243"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E3532S</div>
+      <div class="spec-cell">12</div>
+      <div class="spec-cell">2C</div>
+      <div class="spec-cell">0.012"</div>
+      <div class="spec-cell">0.244"</div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>Fully annealed solid bare copper per ASTM B3</li>
+        <li>Premium Flexguard® PVC insulation & jacket</li>
+        <li>Sequential footage markings</li>
+        <li>Includes ripcord for easy stripping</li>
+        <li>Temperature range: 0°C to +75°C</li>
+        <li>Suggested voltage: 300V</li>
+      </ul>
+      <ul class="features-list">
+        <li>NEC Article 760 Type FPLP rated</li>
+        <li>NEC Article 725 Type CL3P rated</li>
+        <li>NEC Article 800 Type CMP rated</li>
+        <li>Meets NFPA 262 & CSA FT6 plenum tests</li>
+        <li>California compliant</li>
+        <li>RoHS Compliant 2011/65/EU</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="applications-section">
+    <div class="app-title">🔥 Applications</div>
+    <div class="app-list">Fire alarm systems • Smoke detectors • Voice communications • Burglar alarms • Fire protective circuits • Security systems</div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">💡 Ordering Example</div>
+    <div class="note-text">GCCE3502S.41.03 = 18 AWG, 2-Conductor, 1000' Reel (.41), Red Jacket (.03). Contact Mayer for availability of specific put-up and color combinations. Standard stocking: Red jacket (.03) in common put-ups.</div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Quality fire alarm cable solutions • General Cable trusted performance</div>
+  </div>
+</div>
+</body>
+</html>

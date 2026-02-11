@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Cards - Mayer Electric Supply</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .cards-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .card-preview {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .card-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+
+        .card-preview-image {
+            width: 100%;
+            height: 400px;
+            background: #f7f8fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .card-preview-info {
+            padding: 20px;
+        }
+
+        .card-preview-info h3 {
+            font-size: 18px;
+            color: #002B5C;
+            margin-bottom: 8px;
+        }
+
+        .card-preview-info p {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 4px;
+        }
+
+        .card-preview-info .card-id {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: #9CA3AF;
+            margin-top: 10px;
+        }
+
+        /* Modal for full card view */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 1600px;
+            width: 100%;
+            max-height: 95vh;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: white;
+            color: #002B5C;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .modal-close:hover {
+            background: #E87722;
+            color: white;
+        }
+
+        .card-full {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card-side {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        .card-side-label {
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .card-side iframe {
+            width: 100%;
+            height: 90vh;
+            max-height: 1000px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-full {
+                flex-direction: column;
+            }
+
+            .card-side iframe {
+                height: 70vh;
+                max-height: 700px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        <a href="index.html" class="back-link">← Back to Cheatsheet</a>
+
+        <div class="header">
+            <h1>🏷️ Counter Cards</h1>
+            <p>Pull-and-order product cards for branch displays</p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Card 1: Panduit Mini-Com Cat 6 Jack -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-cat6')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCJ688TGBU.png"
+                         alt="Panduit Mini-Com Cat 6 Jack">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Cat 6 UTP Jack</h3>
+                    <p>Panduit Mini-Com® TX6™ PLUS</p>
+                    <p>TG-Style Tool-Free Termination</p>
+                    <p><strong>12 Color SKUs</strong></p>
+                    <div class="card-id">DC-MC-CJ688TG</div>
+                </div>
+            </div>
+
+            <!-- Card 2: Cat 5e Jack -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-cat5e')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCJ5E88TGBU.png" alt="Panduit Mini-Com Cat 5e Jack">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Cat 5e UTP Jack</h3>
+                    <p>Panduit Mini-Com® TX5e™</p>
+                    <p>TG-Style Tool-Free Termination</p>
+                    <p><strong>12 Color SKUs</strong></p>
+                    <div class="card-id">DC-MC-CJ5E88TG</div>
+                </div>
+            </div>
+
+            <!-- Card 3: Cat 6A Jack -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-cat6a')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCJ6X88TGBU.png"
+                         alt="Panduit Mini-Com Cat 6A Jack">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Cat 6A UTP Jack</h3>
+                    <p>Panduit Mini-Com® TX6A™ 10Gig</p>
+                    <p>TG-Style Tool-Free Termination</p>
+                    <p><strong>12 Color SKUs</strong></p>
+                    <div class="card-id">DC-MC-CJ6X88TG</div>
+                </div>
+            </div>
+
+            <!-- Card 4: F-Type Module -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-ftype')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCMFWH.png" alt="Panduit Mini-Com F-Type Module">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® F-Type Module</h3>
+                    <p>Panduit Mini-Com®</p>
+                    <p>3 GHz Coax Coupler</p>
+                    <p><strong>6 Color SKUs</strong></p>
+                    <div class="card-id">DC-MC-CMF</div>
+                </div>
+            </div>
+
+            <!-- Card 5: Mini-Com Classic Faceplate -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-classic-faceplate')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFPL4WHY.png" alt="Panduit Mini-Com Classic Faceplate with Label Pocket">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Classic Faceplate</h3>
+                    <p>Panduit Mini-Com® Classic Series</p>
+                    <p>Single Gang with Label Pocket</p>
+                    <p><strong>5 Port Configs (1/2/3/4/6)</strong></p>
+                    <div class="card-id">DC-MC-CFP</div>
+                </div>
+            </div>
+
+            <!-- Card 5b: Mini-Com Classic Faceplate - No Label -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-classic-faceplate-nolabel')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFP1WH.png" alt="Panduit Mini-Com Classic Faceplate White">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Classic Faceplate</h3>
+                    <p>Panduit Mini-Com® Classic Series</p>
+                    <p>Single Gang • White</p>
+                    <p><strong>4 Port Configs (1/2/4/6)</strong></p>
+                    <div class="card-id">DC-MC-CFP-AL</div>
+                </div>
+            </div>
+
+            <!-- Card 5c: Mini-Com Classic Faceplate - Off White No Label -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-classic-faceplate-offwhite-nolabel')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFP4IW.png" alt="Panduit Mini-Com Classic Faceplate Off White">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Classic Faceplate</h3>
+                    <p>Panduit Mini-Com® Classic Series</p>
+                    <p>Single Gang • Off White</p>
+                    <p><strong>4 Port Configs (1/2/4/6)</strong></p>
+                    <div class="card-id">DC-MC-CFP-IW</div>
+                </div>
+            </div>
+
+            <!-- Card 5d: Mini-Com Classic Faceplate - Electric Ivory No Label -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-classic-faceplate-ivory-nolabel')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFP2EI.png" alt="Panduit Mini-Com Classic Faceplate Electric Ivory">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Classic Faceplate</h3>
+                    <p>Panduit Mini-Com® Classic Series</p>
+                    <p>Single Gang • Electric Ivory</p>
+                    <p><strong>4 Port Configs (1/2/4/6)</strong></p>
+                    <div class="card-id">DC-MC-CFP-EI</div>
+                </div>
+            </div>
+
+            <!-- Card 6: Mini-Com Classic Faceplate - Electric Ivory with Label Pocket -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-classic-faceplate-ivory')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFPL3EIY.jpeg" alt="Panduit Mini-Com Classic Faceplate Electric Ivory with Label Pocket">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Classic Faceplate</h3>
+                    <p>Panduit Mini-Com® Classic Series</p>
+                    <p>Electric Ivory • with Label Pocket</p>
+                    <p><strong>5 Port Configs (1/2/3/4/6)</strong></p>
+                    <div class="card-id">DC-MC-CFPL-EI</div>
+                </div>
+            </div>
+
+            <!-- Card 7: Mini-Com Classic Faceplate - Int. White -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-classic-faceplate-intwhite')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFPL4IWY.png"
+                         alt="Panduit Mini-Com Classic Faceplate Off White with Label Pocket"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect x=%2220%22 y=%2225%22 width=%2260%22 height=%2250%22 rx=%224%22 fill=%22%23F0EDE6%22 stroke=%22%239CA3AF%22 stroke-width=%222%22/%3E%3Crect x=%2230%22 y=%2235%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23fff%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2252%22 y=%2235%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23fff%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2230%22 y=%2251%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23fff%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2252%22 y=%2251%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23fff%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3C/svg%3E'">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Classic Faceplate</h3>
+                    <p>Panduit Mini-Com® Classic Series</p>
+                    <p>Off White • with Label Pocket</p>
+                    <p><strong>5 Port Configs (1/2/3/4/6)</strong></p>
+                    <div class="card-id">DC-MC-CFPL-IW</div>
+                </div>
+            </div>
+
+            <!-- Card 8: Mini-Com Executive Faceplate - White -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-executive-faceplate-white')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFPE6WHY.png"
+                         alt="Panduit Mini-Com Executive Faceplate White with Label Pocket"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect x=%2218%22 y=%2223%22 width=%2264%22 height=%2254%22 rx=%225%22 fill=%22%23fff%22 stroke=%22%239CA3AF%22 stroke-width=%222.5%22/%3E%3Crect x=%2230%22 y=%2235%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2252%22 y=%2235%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2230%22 y=%2251%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2252%22 y=%2251%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3C/svg%3E'">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Executive Faceplate</h3>
+                    <p>Panduit Mini-Com® Executive Series</p>
+                    <p>White • with Label Pocket</p>
+                    <p><strong>4 Port Configs (1/2/4/6)</strong></p>
+                    <div class="card-id">DC-MC-EPE-WH</div>
+                </div>
+            </div>
+
+            <!-- Card 9: Mini-Com Executive Faceplate - Int. White -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-executive-faceplate-intwhite')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFPE6IWY.png"
+                         alt="Panduit Mini-Com Executive Faceplate Off White with Label Pocket"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect x=%2218%22 y=%2223%22 width=%2264%22 height=%2254%22 rx=%225%22 fill=%22%23F0EDE6%22 stroke=%22%239CA3AF%22 stroke-width=%222.5%22/%3E%3Crect x=%2230%22 y=%2235%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2252%22 y=%2235%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2230%22 y=%2251%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2252%22 y=%2251%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3C/svg%3E'">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Executive Faceplate</h3>
+                    <p>Panduit Mini-Com® Executive Series</p>
+                    <p>Off White • with Label Pocket</p>
+                    <p><strong>4 Port Configs (1/2/4/6)</strong></p>
+                    <div class="card-id">DC-MC-EPE-IW</div>
+                </div>
+            </div>
+
+            <!-- Card 10: Mini-Com Executive Faceplate - Electric Ivory -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-executive-faceplate-ivory')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFPE4EIY.png"
+                         alt="Panduit Mini-Com Executive Faceplate Electric Ivory with Label Pocket"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect x=%2218%22 y=%2223%22 width=%2264%22 height=%2254%22 rx=%225%22 fill=%22%23F5F0DC%22 stroke=%22%239CA3AF%22 stroke-width=%222.5%22/%3E%3Crect x=%2230%22 y=%2235%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2252%22 y=%2235%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2230%22 y=%2251%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3Crect x=%2252%22 y=%2251%22 width=%2218%22 height=%2214%22 rx=%222%22 fill=%22%23E5E7EB%22 stroke=%22%236B7280%22 stroke-width=%221.5%22/%3E%3C/svg%3E'">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Executive Faceplate</h3>
+                    <p>Panduit Mini-Com® Executive Series</p>
+                    <p>Electric Ivory • with Label Pocket</p>
+                    <p><strong>4 Port Configs (1/2/4/6)</strong></p>
+                    <div class="card-id">DC-MC-EPE-EI</div>
+                </div>
+            </div>
+
+            <!-- Card 11: Mini-Com Faceplate - Stainless Steel No Label -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-faceplate-stainless')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFP4SY.png"
+                         alt="Panduit Mini-Com Faceplate Stainless Steel">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Faceplate</h3>
+                    <p>Panduit Mini-Com®</p>
+                    <p>Stainless Steel • Accepts Adhesive Labels</p>
+                    <p><strong>3 Port Configs (2/4/6)</strong></p>
+                    <div class="card-id">DC-MC-CFPS</div>
+                </div>
+            </div>
+
+            <!-- Card 11a: Mini-Com Faceplate - Stainless Steel with Label Pocket -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-faceplate-stainless-label')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCFPL4SY.png"
+                         alt="Panduit Mini-Com Faceplate Stainless Steel with Label">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Faceplate</h3>
+                    <p>Panduit Mini-Com®</p>
+                    <p>Stainless Steel • with Label Pocket</p>
+                    <p><strong>3 Port Configs (2/4/6)</strong></p>
+                    <div class="card-id">DC-MC-CFPSL</div>
+                </div>
+            </div>
+
+            <!-- Card 11b: Surface Mount Box - White -->
+            <div class="card-preview" onclick="openCard('panduit-surface-mount-box-white')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCBX2WHAY.png"
+                         alt="Panduit Mini-Com Surface Mount Box White">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Surface Mount Box</h3>
+                    <p>Panduit Mini-Com®</p>
+                    <p>White • Plenum Rated</p>
+                    <p><strong>3 Port Configs (1/2/4)</strong></p>
+                    <div class="card-id">DC-MC-SMBOX-WH</div>
+                </div>
+            </div>
+
+            <!-- Card 12: Alternative Design -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-cat6-alt')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCJ688TGBU.png"
+                         alt="Panduit Mini-Com Cat 6 Jack - Alternative Design">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Cat 6 Jack (Alt Design)</h3>
+                    <p>Panduit Mini-Com® TX6™ PLUS</p>
+                    <p>Minimalist table-based layout</p>
+                    <p><strong>12 Color SKUs</strong></p>
+                    <div class="card-id">ALTERNATIVE FORMAT</div>
+                </div>
+            </div>
+
+            <!-- Card 5: NetKey Cat 6 Jack -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-cat6')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK688MBU.png"
+                         alt="Panduit NetKey Cat 6 Jack">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Cat 6 UTP Jack</h3>
+                    <p>Panduit NetKey® NK6™</p>
+                    <p>110-Style Punchdown Termination</p>
+                    <p><strong>10 Color SKUs</strong></p>
+                    <div class="card-id">DC-NK-NK688M</div>
+                </div>
+            </div>
+
+            <!-- Card 5A: NetKey Cat 6A Jack -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-cat6a')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK6X88MGR.png"
+                         alt="Panduit NetKey Cat 6A Jack">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Cat 6A UTP Jack</h3>
+                    <p>10 Gigabit Ready • 500 MHz</p>
+                    <p>Punchdown Keystone Module</p>
+                    <p><strong>10 Color SKUs</strong></p>
+                    <div class="card-id">DC-NK-6A-UTP</div>
+                </div>
+            </div>
+
+            <!-- Card 6: NetKey Blank Module -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-blank')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNKBNIWX.png"
+                         alt="Panduit NetKey Blank Module">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Blank Module</h3>
+                    <p>Panduit NetKey®</p>
+                    <p>Keystone Blank Insert • 10-Pack</p>
+                    <p><strong>3 Color SKUs</strong></p>
+                    <div class="card-id">DC-NK-NKBM</div>
+                </div>
+            </div>
+
+            <!-- Card 9: NetKey Faceplate - Electric Ivory No Label -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-faceplate-ivory-nolabel')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK1FNEI.png"
+                         alt="Panduit NetKey Faceplate Electric Ivory">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Faceplate</h3>
+                    <p>Electric Ivory • Adhesive Label</p>
+                    <p>1-4 Port Keystone</p>
+                    <p><strong>4 SKUs</strong></p>
+                    <div class="card-id">DC-NK-FP-EI</div>
+                </div>
+            </div>
+
+            <!-- Card 10: NetKey Faceplate - White No Label -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-faceplate-white-nolabel')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK1FNWH.png"
+                         alt="Panduit NetKey Faceplate White">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Faceplate</h3>
+                    <p>White • Adhesive Label</p>
+                    <p>1-4 Port Keystone</p>
+                    <p><strong>4 SKUs</strong></p>
+                    <div class="card-id">DC-NK-FP-WH</div>
+                </div>
+            </div>
+
+            <!-- Card 11: NetKey Faceplate - Int. White No Label -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-faceplate-intwhite-nolabel')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK2FNIW.png"
+                         alt="Panduit NetKey Faceplate International White">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Faceplate</h3>
+                    <p>Int. White • Adhesive Label</p>
+                    <p>1-4 Port Keystone</p>
+                    <p><strong>4 SKUs</strong></p>
+                    <div class="card-id">DC-NK-FP-IW</div>
+                </div>
+            </div>
+
+            <!-- Card 12: NetKey Faceplate - Electric Ivory with Label -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-faceplate-ivory-label')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK4FEIY.png"
+                         alt="Panduit NetKey Faceplate Electric Ivory with Label">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Faceplate</h3>
+                    <p>Electric Ivory • Label Pocket</p>
+                    <p>1,2,4,6 Port Keystone</p>
+                    <p><strong>4 SKUs</strong></p>
+                    <div class="card-id">DC-NK-FP-EI-LBL</div>
+                </div>
+            </div>
+
+            <!-- Card 13: NetKey Faceplate - White with Label -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-faceplate-white-label')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK2FWHY.png"
+                         alt="Panduit NetKey Faceplate White with Label">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Faceplate</h3>
+                    <p>White • Label Pocket</p>
+                    <p>1,2,4,6 Port Keystone</p>
+                    <p><strong>4 SKUs</strong></p>
+                    <div class="card-id">DC-NK-FP-WH-LBL</div>
+                </div>
+            </div>
+
+            <!-- Card 14: NetKey Faceplate - Stainless Steel with Label -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-faceplate-stainless-label')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNKF2S.png"
+                         alt="Panduit NetKey Faceplate Stainless Steel">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Faceplate</h3>
+                    <p>Stainless Steel • Label Pocket</p>
+                    <p>2,4,6 Port Keystone</p>
+                    <p><strong>3 SKUs</strong></p>
+                    <div class="card-id">DC-NK-FP-SS</div>
+                </div>
+            </div>
+
+            <!-- Card 15: NetKey Adapter - Decora -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-adapter-decora')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK2RMFWH.png"
+                         alt="Panduit NetKey Rectangular Adapter Decora">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Rectangular Adapter</h3>
+                    <p>Decora-Style Opening • White</p>
+                    <p>2,4 Port Keystone</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-NK-ADP-DEC</div>
+                </div>
+            </div>
+
+            <!-- Card 16: NetKey Adapter - 106 NEMA -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-adapter-nema')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK2106MFWH.png"
+                         alt="Panduit NetKey 106 NEMA Adapter">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® 106 NEMA Adapter</h3>
+                    <p>Round Opening Style • White</p>
+                    <p>2,4 Port Keystone</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-NK-ADP-NEMA</div>
+                </div>
+            </div>
+
+            <!-- Card 17: NetKey F-Type Module -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-ftype')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNKFEI.png"
+                         alt="Panduit NetKey F-Type Module">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® F-Type Module</h3>
+                    <p>Cable/Satellite Coax • 3.0 GHz</p>
+                    <p>RG-6 & RG-59 Compatible</p>
+                    <p><strong>3 Colors</strong></p>
+                    <div class="card-id">DC-NK-FTYPE</div>
+                </div>
+            </div>
+
+            <!-- Card 18: NetKey Surface Mount Box -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-surface-mount')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK2BXWHA.png"
+                         alt="Panduit NetKey Surface Mount Box">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Surface Mount Box</h3>
+                    <p>2-Port Keystone • Plenum Rated</p>
+                    <p>Complete Mounting Kit Included</p>
+                    <p><strong>3 Colors</strong></p>
+                    <div class="card-id">DC-NK-SMBX-2</div>
+                </div>
+            </div>
+
+            <!-- Card 19: NetKey Cat 5e Patch Panel -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-patch-panel-cat5e')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK5EPPG24Y.png"
+                         alt="Panduit NetKey Cat 5e Patch Panel">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Cat 5e Patch Panel</h3>
+                    <p>Pre-Populated Punchdown • 100 MHz</p>
+                    <p>24 & 48-Port • Flat Style</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-NK-PP-CAT5E</div>
+                </div>
+            </div>
+
+            <!-- Card 20: NetKey Cat 6 Patch Panel -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-patch-panel-cat6-loaded')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNK6PPG48Y.png"
+                         alt="Panduit NetKey Cat 6 Patch Panel">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Cat 6 Patch Panel</h3>
+                    <p>Pre-Populated Punchdown • 250 MHz</p>
+                    <p>24 & 48-Port • Flat Style</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-NK-PP-CAT6</div>
+                </div>
+            </div>
+
+            <!-- Card 21: NetKey Unloaded Patch Panel -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-patch-panel-unloaded')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNKFP48Y.png"
+                         alt="Panduit NetKey Unloaded Patch Panel">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Unloaded Patch Panel</h3>
+                    <p>Accept Any NetKey Modules</p>
+                    <p>24 & 48-Port • Flat Style</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-NK-PP-UNLOADED</div>
+                </div>
+            </div>
+
+            <!-- Card 22: NetKey Flush Mount Patch Panel -->
+            <div class="card-preview" onclick="openCard('panduit-netkey-patch-panel-unloaded-labels')">
+                <div class="card-preview-image">
+                    <img src="cards/PANNKPP48FMY.png"
+                         alt="Panduit NetKey Flush Mount Patch Panel">
+                </div>
+                <div class="card-preview-info">
+                    <h3>NetKey® Flush Mount Patch Panel</h3>
+                    <p>Pre-Numbered Ports • Unloaded</p>
+                    <p>24 & 48-Port • Adhesive Labels</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-NK-PP-FLUSH</div>
+                </div>
+            </div>
+
+            <!-- Card 23: Mini-Com Blank Module -->
+            <div class="card-preview" onclick="openCard('panduit-minicom-blank')">
+                <div class="card-preview-image">
+                    <img src="cards/panduit-minicom-blank.png"
+                         alt="Panduit Mini-Com Blank Module">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Mini-Com® Blank Insert Module</h3>
+                    <p>Panduit Mini-Com®</p>
+                    <p>Snap-in Keystone Design</p>
+                    <p><strong>5 Colors Available</strong></p>
+                    <div class="card-id">DC-MC-CBMX</div>
+                </div>
+            </div>
+
+            <!-- Card 10: Patch Panel Unloaded with Labels -->
+            <div class="card-preview" onclick="openCard('panduit-patch-panel-unloaded-labels')">
+                <div class="card-preview-image">
+                    <img src="cards/panduit-patch-panel-labels.png"
+                         alt="Panduit Patch Panel Unloaded with Labels">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Patch Panel Unloaded with Labels</h3>
+                    <p>Panduit Mini-Com®</p>
+                    <p>24 & 48-Port with Integrated Labels</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-PP-UNLOADED-LBL</div>
+                </div>
+            </div>
+
+            <!-- Card 11: Cat 6 Patch Panel -->
+            <div class="card-preview" onclick="openCard('panduit-patch-panel-cat6')">
+                <div class="card-preview-image">
+                    <img src="cards/panduit-patch-panel-cat6.png"
+                         alt="Panduit Cat 6 Patch Panel">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Cat 6 Patch Panel</h3>
+                    <p>Panduit Loaded</p>
+                    <p>Data-Patch™ DP6™ PLUS</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-PP-CAT6</div>
+                </div>
+            </div>
+
+            <!-- Card 12: Patch Panel Flush Mount -->
+            <div class="card-preview" onclick="openCard('panduit-patch-panel-unloaded-flush')">
+                <div class="card-preview-image">
+                    <img src="cards/panduit-patch-panel-flush.png"
+                         alt="Panduit Patch Panel Flush Mount">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Patch Panel Unloaded</h3>
+                    <p>Panduit Mini-Com®</p>
+                    <p>Flush Mount - 24 & 48 Port</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">DC-PP-FLUSH</div>
+                </div>
+            </div>
+
+            <!-- Card 13: Vertical Wire Manager -->
+            <div class="card-preview" onclick="openCard('panduit-wire-manager-vertical')">
+                <div class="card-preview-image">
+                    <img src="cards/panduit-wire-manager-vertical.png"
+                         alt="Panduit Vertical Wire Manager">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Vertical Wire Manager</h3>
+                    <p>Panduit</p>
+                    <p>Front & Rear Cable Routing</p>
+                    <p><strong>1 SKU</strong></p>
+                    <div class="card-id">DC-WM-VERT</div>
+                </div>
+            </div>
+
+            <!-- Card 14: Horizontal Wire Manager -->
+            <div class="card-preview" onclick="openCard('panduit-wire-manager-horizontal')">
+                <div class="card-preview-image">
+                    <img src="cards/panduit-wire-manager-horizontal.png"
+                         alt="Panduit Horizontal Wire Manager">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Horizontal Wire Manager</h3>
+                    <p>Panduit</p>
+                    <p>1U, 2U, 3U Options</p>
+                    <p><strong>4 SKUs</strong></p>
+                    <div class="card-id">DC-WM-HORIZ</div>
+                </div>
+            </div>
+
+            <!-- Card 15: Hook & Loop Cable Tie Rolls -->
+            <div class="card-preview" onclick="openCard('panduit-velcro')">
+                <div class="card-preview-image">
+                    <img src="cards/PANTTR20R0.png"
+                         alt="Panduit Hook and Loop Cable Tie Rolls">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Hook & Loop Cable Tie Rolls</h3>
+                    <p>Panduit Tak-Ty® & Tak-Tape™</p>
+                    <p>Cut to Any Length • Reusable</p>
+                    <p><strong>3 SKUs</strong></p>
+                    <div class="card-id">DC-VELCRO</div>
+                </div>
+            </div>
+
+            <!-- Card 16: Chatsworth Wall Cabinet 24" Deep -->
+            <div class="card-preview" onclick="openCard('chatsworth-wall-cabinet-24')">
+                <div class="card-preview-image">
+                    <img src="cards/chatsworth-wall-cabinet-24.webp"
+                         alt="Chatsworth Wall Cabinet 24 Deep">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Wall Cabinet 24" Deep</h3>
+                    <p>Chatsworth</p>
+                    <p>Cube-iT Wall-Mount Cabinet</p>
+                    <p><strong>2 SKUs</strong></p>
+                    <div class="card-id">CHAT-CAB-24</div>
+                </div>
+            </div>
+
+            <!-- Card 17: Chatsworth Wall Cabinet 30" Deep -->
+            <div class="card-preview" onclick="openCard('chatsworth-wall-cabinet-30')">
+                <div class="card-preview-image">
+                    <img src="cards/chatsworth-wall-cabinet-30.webp"
+                         alt="Chatsworth Wall Cabinet 30 Deep">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Wall Cabinet 30" Deep</h3>
+                    <p>Chatsworth</p>
+                    <p>Cube-iT Wall-Mount Cabinet</p>
+                    <p><strong>3 SKUs</strong></p>
+                    <div class="card-id">CHAT-CAB-30</div>
+                </div>
+            </div>
+
+            <!-- Card 18: Chatsworth Wall Rack 12" Deep -->
+            <div class="card-preview" onclick="openCard('chatsworth-wall-rack-12')">
+                <div class="card-preview-image">
+                    <img src="cards/chatsworth-wall-rack-12.webp"
+                         alt="Chatsworth Wall Rack 12 Deep">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Wall Rack 12" Deep</h3>
+                    <p>Chatsworth</p>
+                    <p>Swing Gate Wall Rack</p>
+                    <p><strong>1 SKU</strong></p>
+                    <div class="card-id">CHAT-RACK-12</div>
+                </div>
+            </div>
+
+            <!-- Card 19: Chatsworth Wall Rack 18" Deep -->
+            <div class="card-preview" onclick="openCard('chatsworth-wall-rack-18')">
+                <div class="card-preview-image">
+                    <img src="cards/chatsworth-wall-rack-18.webp"
+                         alt="Chatsworth Wall Rack 18 Deep">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Wall Rack 18" Deep</h3>
+                    <p>Chatsworth</p>
+                    <p>Swing Gate Wall Rack</p>
+                    <p><strong>1 SKU</strong></p>
+                    <div class="card-id">CHAT-RACK-18</div>
+                </div>
+            </div>
+
+            <!-- Card 20: Chatsworth Wall Rack 25" Deep -->
+            <div class="card-preview" onclick="openCard('chatsworth-wall-rack-25')">
+                <div class="card-preview-image">
+                    <img src="cards/chatsworth-wall-rack-25.webp"
+                         alt="Chatsworth Wall Rack 25 Deep">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Wall Rack 25" Deep</h3>
+                    <p>Chatsworth</p>
+                    <p>Swing Gate Wall Rack</p>
+                    <p><strong>3 SKUs</strong></p>
+                    <div class="card-id">CHAT-RACK-25</div>
+                </div>
+            </div>
+
+            <!-- Card 21: Corning Fiber Connector ST -->
+            <div class="card-preview" onclick="openCard('corning-fiber-connector-st')">
+                <div class="card-preview-image">
+                    <img src="cards/FBR9500050.png"
+                         alt="Corning ST Fiber Connector">
+                </div>
+                <div class="card-preview-info">
+                    <h3>ST® Fiber Connector</h3>
+                    <p>Corning UniCam®</p>
+                    <p>Field-Installable • No-Epoxy/No-Polish</p>
+                    <p><strong>3 Fiber Types</strong></p>
+                    <div class="card-id">CORN-FBR-ST</div>
+                </div>
+            </div>
+
+            <!-- Card 22: Corning Fiber Connector SC -->
+            <div class="card-preview" onclick="openCard('corning-fiber-connector-sc')">
+                <div class="card-preview-image">
+                    <img src="cards/9505041X.png"
+                         alt="Corning SC Fiber Connector">
+                </div>
+                <div class="card-preview-info">
+                    <h3>SC Fiber Connector</h3>
+                    <p>Corning UniCam®</p>
+                    <p>Push-Pull Design • No-Epoxy/No-Polish</p>
+                    <p><strong>3 Fiber Types</strong></p>
+                    <div class="card-id">CORN-FBR-SC</div>
+                </div>
+            </div>
+
+            <!-- Card 23: Corning Fiber Connector LC -->
+            <div class="card-preview" onclick="openCard('corning-fiber-connector-lc')">
+                <div class="card-preview-image">
+                    <img src="cards/FBR9520099.png"
+                         alt="Corning LC Fiber Connector">
+                </div>
+                <div class="card-preview-info">
+                    <h3>LC Fiber Connector</h3>
+                    <p>Corning UniCam®</p>
+                    <p>Small Form Factor • High Density</p>
+                    <p><strong>3 Fiber Types</strong></p>
+                    <div class="card-id">CORN-FBR-LC</div>
+                </div>
+            </div>
+
+            <!-- Card 24: GenSPEED Cat 6 Plenum Cable -->
+            <div class="card-preview" onclick="openCard('genspeed-cat6-plenum')">
+                <div class="card-preview-image">
+                    <img src="cards/GCC7131100.png"
+                         alt="GenSPEED Category 6 Plenum Cable">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Category 6 Plenum Cable</h3>
+                    <p>GenSPEED® 6 • 1000ft Box</p>
+                    <p>CMP Rated • 24 AWG • Made in USA</p>
+                    <p><strong>8 Colors</strong></p>
+                    <div class="card-id">GEN-CAT6-CMP</div>
+                </div>
+            </div>
+
+            <!-- Card 25: GenSPEED Cat 6 Riser Cable -->
+            <div class="card-preview" onclick="openCard('genspeed-cat6-riser')">
+                <div class="card-preview-image">
+                    <img src="cards/GCC7131100.png"
+                         alt="GenSPEED Category 6 Riser Cable">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Category 6 Riser Cable</h3>
+                    <p>GenSPEED® 6 • 1000ft Box</p>
+                    <p>CMR Rated • 23 AWG • Made in USA</p>
+                    <p><strong>8 Colors</strong></p>
+                    <div class="card-id">GEN-CAT6-CMR</div>
+                </div>
+            </div>
+
+            <!-- Card 26: GenSPEED Cat 6 Outdoor Cable -->
+            <div class="card-preview" onclick="openCard('genspeed-cat6-outdoor')">
+                <div class="card-preview-image">
+                    <img src="cards/7136100.jpeg"
+                         alt="GenSPEED Category 6 Outdoor Cable">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Category 6 Outdoor Cable</h3>
+                    <p>GenSPEED® 6 • 1000ft Reel</p>
+                    <p>Waterproof Gel • UV Resistant • Black</p>
+                    <p><strong>Outside Plant</strong></p>
+                    <div class="card-id">GEN-CAT6-OSP</div>
+                </div>
+            </div>
+
+            <!-- Card 27: Chatsworth Ladder Rack -->
+            <div class="card-preview" onclick="openCard('chatsworth-ladder-rack')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT10250712.png"
+                         alt="Chatsworth Universal Cable Runway">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Universal Cable Runway</h3>
+                    <p>Chatsworth • 9'-11½" Length</p>
+                    <p>Ladder Rack • Welded Steel</p>
+                    <p><strong>12" & 18" Widths</strong></p>
+                    <div class="card-id">CHT-LADDER-RACK</div>
+                </div>
+            </div>
+
+            <!-- Card 28: Chatsworth Runway Elevation Kit -->
+            <div class="card-preview" onclick="openCard('chatsworth-runway-elevation-kit')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT10506706.png"
+                         alt="Chatsworth Runway Elevation Kit">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Runway Elevation Kit</h3>
+                    <p>Chatsworth • 4"-6" Height</p>
+                    <p>Rack Kit or Cabinet Kit</p>
+                    <p><strong>Cable Management Accessory</strong></p>
+                    <div class="card-id">CHT-ELEVATION-KIT</div>
+                </div>
+            </div>
+
+            <!-- Card 29: Chatsworth Rack to Runway Mounting Plate -->
+            <div class="card-preview" onclick="openCard('chatsworth-rack-to-runway-plate')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT10595712.png"
+                         alt="Chatsworth Rack to Runway Mounting Plate">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Rack to Runway Mounting Plate</h3>
+                    <p>Chatsworth • 3" Channel</p>
+                    <p>J-Bolt Installation • Steel</p>
+                    <p><strong>12" & 18" Sizes</strong></p>
+                    <div class="card-id">CHT-MOUNTING-PLATE</div>
+                </div>
+            </div>
+
+            <!-- Card 30: Chatsworth Butt-Splice Kit -->
+            <div class="card-preview" onclick="openCard('chatsworth-butt-splice-kit')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT11301701.png"
+                         alt="Chatsworth Butt-Splice Kit">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Butt-Splice Kit</h3>
+                    <p>Chatsworth • Runway Connection</p>
+                    <p>Complete Hardware Kit • Black</p>
+                    <p><strong>Fits 1-1/2" & 2" Runway</strong></p>
+                    <div class="card-id">CHT-SPLICE-KIT</div>
+                </div>
+            </div>
+
+            <!-- Card 31: Chatsworth Junction-Splice Kit -->
+            <div class="card-preview" onclick="openCard('chatsworth-junction-splice-kit')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT11302701.png"
+                         alt="Chatsworth Junction-Splice Kit">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Junction-Splice Kit</h3>
+                    <p>Chatsworth • 90° Corner Connection</p>
+                    <p>Complete Hardware Kit • Black</p>
+                    <p><strong>Creates Right-Angle Junctions</strong></p>
+                    <div class="card-id">CHT-JUNCTION-KIT</div>
+                </div>
+            </div>
+
+            <!-- Card 32: Chatsworth Triangular Support Bracket -->
+            <div class="card-preview" onclick="openCard('chatsworth-triangular-support-bracket')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT11312712.png"
+                         alt="Chatsworth Triangular Support Bracket">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Triangular Support Bracket</h3>
+                    <p>Chatsworth • Wall Mount</p>
+                    <p>Aluminum • 100 lb Load Rating</p>
+                    <p><strong>12" & 18" Kits</strong></p>
+                    <div class="card-id">CHT-TRIANGLE-BRACKET</div>
+                </div>
+            </div>
+
+            <!-- Card 33: Chatsworth Wall Angle Support Kit -->
+            <div class="card-preview" onclick="openCard('chatsworth-wall-angle-support-kit')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT11421712.png"
+                         alt="Chatsworth Wall Angle Support Kit">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Wall Angle Support Kit</h3>
+                    <p>Chatsworth • Steel L-Angle</p>
+                    <p>2" x 2" • J-Bolt Installation</p>
+                    <p><strong>12" & 18" Kits</strong></p>
+                    <div class="card-id">CHT-WALL-ANGLE</div>
+                </div>
+            </div>
+
+            <!-- Card 34: Chatsworth Wall to Rack Kit -->
+            <div class="card-preview" onclick="openCard('chatsworth-wall-to-rack-kit')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT11911712.png"
+                         alt="Chatsworth Wall to Rack Kit">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Wall to Rack Kit</h3>
+                    <p>Chatsworth • Complete Solution</p>
+                    <p>12" Wide • 54" Length • All Hardware</p>
+                    <p><strong>One Part Number Solution</strong></p>
+                    <div class="card-id">CHT-WALL-RACK-KIT</div>
+                </div>
+            </div>
+
+            <!-- Card 35: Chatsworth Cable Radius Drop -->
+            <div class="card-preview" onclick="openCard('chatsworth-cable-radius-drop')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT12100712.png"
+                         alt="Chatsworth Cable Radius Drop">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Cable Radius Drop</h3>
+                    <p>Chatsworth • Waterfall Accessory</p>
+                    <p>3" Bend Radius • Cable Spools Included</p>
+                    <p><strong>12" & 18" Sizes</strong></p>
+                    <div class="card-id">CHT-RADIUS-DROP</div>
+                </div>
+            </div>
+
+            <!-- Card 36: Chatsworth Rack-Mount Power Strip -->
+            <div class="card-preview" onclick="openCard('chatsworth-rack-power-strip')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT12816701.png"
+                         alt="Chatsworth Rack-Mount Power Strip">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Rack-Mount Power Strip</h3>
+                    <p>Chatsworth • 15A Basic PDU</p>
+                    <p>8 Outlets • 20A Breaker • 1U</p>
+                    <p><strong>1.4 kW Capacity</strong></p>
+                    <div class="card-id">CHT-POWER-STRIP</div>
+                </div>
+            </div>
+
+            <!-- Card 37: Chatsworth Ground Bar -->
+            <div class="card-preview" onclick="openCard('chatsworth-ground-bar')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT13622012.png"
+                         alt="Chatsworth Ground Bar">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Ground Bar Bonding Busbars</h3>
+                    <p>Chatsworth • UL Listed</p>
+                    <p>ANSI/TIA-607 Compliant • Pre-Assembled</p>
+                    <p><strong>Rack & Wall Mount Options</strong></p>
+                    <div class="card-id">CHT-GROUND-BAR</div>
+                </div>
+            </div>
+
+            <!-- Card 38: Chatsworth Standard Rack -->
+            <div class="card-preview" onclick="openCard('chatsworth-standard-rack')">
+                <div class="card-preview-image">
+                    <img src="cards/CHT55053703.png"
+                         alt="Chatsworth Standard Rack">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Standard Rack 2-Post</h3>
+                    <p>Chatsworth • 7' Height / 45U</p>
+                    <p>19" EIA • 3" Channels • UL Listed</p>
+                    <p><strong>OSHPD Certified</strong></p>
+                    <div class="card-id">CHT-STANDARD-RACK</div>
+                </div>
+            </div>
+
+            <!-- Card 39: Quiktron Patch Cord Blue -->
+            <div class="card-preview" onclick="openCard('quiktron-patch-cord-blue')">
+                <div class="card-preview-image">
+                    <img src="cards/576-110-002.png"
+                         alt="Quiktron Q-Series Patch Cord Blue">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Q-Series Cat 6 Patch Cord</h3>
+                    <p>Quiktron • Blue • Booted</p>
+                    <p>TIA-568.2-D • 24AWG Stranded</p>
+                    <p><strong>Multiple Lengths Available</strong></p>
+                    <div class="card-id">QUIK-CAT6-BLUE</div>
+                </div>
+            </div>
+
+            <!-- Card 40: Quiktron Patch Cord White -->
+            <div class="card-preview" onclick="openCard('quiktron-patch-cord-white')">
+                <div class="card-preview-image">
+                    <img src="cards/576-125-003.png"
+                         alt="Quiktron Q-Series Patch Cord White">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Q-Series Cat 6 Patch Cord</h3>
+                    <p>Quiktron • White • Booted</p>
+                    <p>TIA-568.2-D • 24AWG Stranded</p>
+                    <p><strong>Multiple Lengths Available</strong></p>
+                    <div class="card-id">QUIK-CAT6-WHITE</div>
+                </div>
+            </div>
+
+            <!-- Card 41: Simply45 ProSeries Pass-Through -->
+            <div class="card-preview" onclick="openCard('simply45-proseries')">
+                <div class="card-preview-image">
+                    <img src="cards/S45-1500P.jpg"
+                         alt="Simply45 ProSeries Pass-Through RJ45">
+                </div>
+                <div class="card-preview-info">
+                    <h3>ProSeries Pass-Through RJ45</h3>
+                    <p>Simply45® • Patented Cap45®</p>
+                    <p>Cat5e/Cat6/Cat6A • cUL Listed</p>
+                    <p><strong>8 SKUs + Crimp Tool</strong></p>
+                    <div class="card-id">SIMPLY45-PROSERIES</div>
+                </div>
+            </div>
+
+            <!-- Card 42: General Cable Fire Alarm -->
+            <div class="card-preview" onclick="openCard('general-cable-fire-alarm')">
+                <div class="card-preview-image">
+                    <div style="background: linear-gradient(135deg, #DC143C 0%, #B01030 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 24px;">FPLP</div>
+                </div>
+                <div class="card-preview-info">
+                    <h3>Fire Alarm Cable FPLP</h3>
+                    <p>General Cable • Un-Shielded Plenum</p>
+                    <p>12-18 AWG • 2C/4C • 300V Rated</p>
+                    <p><strong>7 Configurations</strong></p>
+                    <div class="card-id">GC-FIRE-ALARM</div>
+                </div>
+            </div>
+
+            <!-- Card 43: General Cable Fire Alarm Shielded -->
+            <div class="card-preview" onclick="openCard('general-cable-fire-alarm-shielded')">
+                <div class="card-preview-image">
+                    <div style="background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">🛡️ FPLP</div>
+                </div>
+                <div class="card-preview-info">
+                    <h3>Fire Alarm Cable FPLP Shielded</h3>
+                    <p>General Cable • Shielded Plenum</p>
+                    <p>14-18 AWG • 2C/4C • Al Foil Shield</p>
+                    <p><strong>6 Configurations</strong></p>
+                    <div class="card-id">GC-FIRE-ALARM-SH</div>
+                </div>
+            </div>
+
+            <!-- Card 44: General Cable Fire Alarm Riser -->
+            <div class="card-preview" onclick="openCard('general-cable-fire-alarm-riser')">
+                <div class="card-preview-image">
+                    <div style="background: linear-gradient(135deg, #FF6F00 0%, #E65100 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 24px;">FPLR</div>
+                </div>
+                <div class="card-preview-info">
+                    <h3>Fire Alarm Cable FPLR</h3>
+                    <p>General Cable • Un-Shielded Riser</p>
+                    <p>12-18 AWG • 2C/4C • UL 1666</p>
+                    <p><strong>7 Configurations</strong></p>
+                    <div class="card-id">GC-FIRE-ALARM-RSR</div>
+                </div>
+            </div>
+
+            <!-- Card 45: General Cable Fire Alarm Shielded Riser -->
+            <div class="card-preview" onclick="openCard('general-cable-fire-alarm-shielded-riser')">
+                <div class="card-preview-image">
+                    <div style="background: linear-gradient(135deg, #7B1FA2 0%, #4A148C 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">🛡️ FPLR</div>
+                </div>
+                <div class="card-preview-info">
+                    <h3>Fire Alarm Cable FPLR Shielded</h3>
+                    <p>General Cable • Shielded Riser</p>
+                    <p>14-18 AWG • 2C/4C • Al Foil Shield</p>
+                    <p><strong>6 Configurations</strong></p>
+                    <div class="card-id">GC-FIRE-ALARM-SH-RSR</div>
+                </div>
+            </div>
+
+            <!-- Card 46: Erico Caddy J-Hook -->
+            <div class="card-preview" onclick="openCard('erico-caddy-jhook')">
+                <div class="card-preview-image">
+                    <img src="cards/cat32hp.png" alt="Erico Caddy J-Hook">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Cat HP J-Hook</h3>
+                    <p>Erico Caddy • nVent</p>
+                    <p>Versa-Mount Technology • UL 2043</p>
+                    <p><strong>5 Sizes • 8 Colors • Multi-Function Clip Available</strong></p>
+                    <div class="card-id">ERICAT-HP-JHOOK</div>
+                </div>
+            </div>
+
+            <!-- Card 47: Erico Caddy J-Hook with Multi-function Clip -->
+            <div class="card-preview" onclick="openCard('erico-caddy-jhook-clip')">
+                <div class="card-preview-image">
+                    <img src="cards/ERICAT32HP4Z34.png" alt="Erico Caddy J-Hook with Clip">
+                </div>
+                <div class="card-preview-info">
+                    <h3>J-Hook with Multi-Function Clip</h3>
+                    <p>Erico Caddy • nVent • 4Z34 Series</p>
+                    <p>Quick-Attach to Rod or Wire • UL 2043</p>
+                    <p><strong>4 Sizes • ¼" Rod or #12-#8 Wire</strong></p>
+                    <div class="card-id">ERICAT-HP-4Z34</div>
+                </div>
+            </div>
+
+            <!-- Card 48: Corning Rack Mount Fiber Enclosure -->
+            <div class="card-preview" onclick="openCard('corning-fiber-enclosure')">
+                <div class="card-preview-image">
+                    <img src="cards/FBRCCH02U.png" alt="Corning Fiber Enclosure">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Rack Mount Fiber Enclosure</h3>
+                    <p>Corning • LANscape Solutions</p>
+                    <p>CCH Series • 19" Rack Mount</p>
+                    <p><strong>1RU to 4RU • Up to 12 Panels</strong></p>
+                    <div class="card-id">CORNING-CCH</div>
+                </div>
+            </div>
+
+            <!-- Card 49: Corning Wall Mount Fiber Enclosure -->
+            <div class="card-preview" onclick="openCard('corning-wall-mount-enclosure')">
+                <div class="card-preview-image">
+                    <img src="cards/WCH02P.png" alt="Corning Wall Mount Fiber Enclosure">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Wall Mount Fiber Enclosure</h3>
+                    <p>Corning • LANscape Solutions</p>
+                    <p>SPH & WCH Series • Transparent Door</p>
+                    <p><strong>1-4 Panels • DIN Rail Option • Stackable</strong></p>
+                    <div class="card-id">CORNING-SPH-WCH</div>
+                </div>
+            </div>
+
+            <!-- Card 50: DMSI Fiber Adapter Panel -->
+            <div class="card-preview" onclick="openCard('dmsi-fiber-adapter-panel')">
+                <div class="card-preview-image">
+                    <img src="cards/FBRCCHCP12E4DMSI.png" alt="DMSI Fiber Adapter Panel">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Fiber Adapter Panel</h3>
+                    <p>DMSI Manufacturing</p>
+                    <p>Fits Corning CCH Enclosures • ST/SC/LC</p>
+                    <p><strong>OM1/OM3/OM4/SM • 6 or 12 Fiber</strong></p>
+                    <div class="card-id">DMSI-CCH-PANEL</div>
+                </div>
+            </div>
+
+            <!-- Card 51: Chief In-Wall Storage Box -->
+            <div class="card-preview" onclick="openCard('chief-inwall-storage-box')">
+                <div class="card-preview-image">
+                    <img src="cards/CHIPAC526F.webp" alt="Chief In-Wall Storage Box">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Proximity In-Wall Storage Box</h3>
+                    <p>Chief | Legrand AV</p>
+                    <p>Flat Panel TV Installation • UL Listed</p>
+                    <p><strong>5 Models • Optional Flanges • Power Kits</strong></p>
+                    <div class="card-id">CHIEF-PAC-SERIES</div>
+                </div>
+            </div>
+
+            <!-- Card 52: STI Firestop Ready Sleeve -->
+            <div class="card-preview" onclick="openCard('sti-firestop-sleeve')">
+                <div class="card-preview-image">
+                    <img src="cards/STIFSR200.png" alt="STI Firestop Ready Sleeve">
+                </div>
+                <div class="card-preview-info">
+                    <h3>SpecSeal Ready Sleeve</h3>
+                    <p>STI | Specified Technologies</p>
+                    <p>Firestop Pathway System • UL Certified</p>
+                    <p><strong>Standard & Split Sleeve • 1", 2", 4"</strong></p>
+                    <div class="card-id">STI-FS-SERIES</div>
+                </div>
+            </div>
+
+            <!-- Card 53: Panduit Corrugated Loom Tubing -->
+            <div class="card-preview" onclick="openCard('panduit-loom-tubing')">
+                <div class="card-preview-image">
+                    <img src="cards/PANCLT50FC20.png" alt="Panduit Corrugated Loom Tubing">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Corrugated Loom Tubing</h3>
+                    <p>Panduit</p>
+                    <p>UV Resistant • Outdoor Rated</p>
+                    <p><strong>Slit Wall • 0.51" & 0.77" ID</strong></p>
+                    <div class="card-id">PAN-CLT-SERIES</div>
+                </div>
+            </div>
+
+            <!-- Card 54: Panduit Spiral Wrap -->
+            <div class="card-preview" onclick="openCard('panduit-spiral-wrap')">
+                <div class="card-preview-image">
+                    <img src="cards/PANT50FC0.png" alt="Panduit Spiral Wrap">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Spiral Wrap</h3>
+                    <p>Panduit</p>
+                    <p>Abrasion Protection • 600V Rated</p>
+                    <p><strong>Multiple Materials • Tool Included</strong></p>
+                    <div class="card-id">PAN-T-SERIES</div>
+                </div>
+            </div>
+
+            <!-- Card 55: Arlington TV Box -->
+            <div class="card-preview" onclick="openCard('arlington-tv-box')">
+                <div class="card-preview-image">
+                    <img src="cards/ARLTVBS505.png" alt="Arlington TV Box">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Recessed Steel TV Box</h3>
+                    <p>Arlington Industries</p>
+                    <p>Combination Power & Low Voltage • UL Listed</p>
+                    <p><strong>2, 3, 4-Gang • Flush-to-Wall</strong></p>
+                    <div class="card-id">ARL-TVBS-SERIES</div>
+                </div>
+            </div>
+
+            <!-- Card 56: Erico Caddy Mounting Bracket -->
+            <div class="card-preview" onclick="openCard('erico-mounting-bracket')">
+                <div class="card-preview-image">
+                    <img src="cards/ERIMPLS.png" alt="Erico Caddy Mounting Bracket">
+                </div>
+                <div class="card-preview-info">
+                    <h3>Low Voltage Mounting Bracket</h3>
+                    <p>Erico Caddy</p>
+                    <p>Class 2 Wiring • No Box Required</p>
+                    <p><strong>Steel & Plastic • 1-Gang & 2-Gang</strong></p>
+                    <div class="card-id">ERI-MP-SERIES</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for full card view -->
+    <div id="cardModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCard()">×</button>
+            <div id="cardFullView" class="card-full">
+                <!-- Card front and back will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Card data
+        const cards = {
+            'panduit-minicom-cat6': {
+                title: 'Panduit Mini-Com Cat 6 Jack',
+                frontUrl: 'cards/panduit-minicom-cat6-front.html',
+                backUrl: 'cards/panduit-minicom-cat6-back.html'
+            },
+            'panduit-minicom-cat5e': {
+                title: 'Panduit Mini-Com Cat 5e Jack',
+                frontUrl: 'cards/panduit-minicom-cat5e-front.html',
+                backUrl: 'cards/panduit-minicom-cat5e-back.html'
+            },
+            'panduit-minicom-cat6a': {
+                title: 'Panduit Mini-Com Cat 6A Jack',
+                frontUrl: 'cards/panduit-minicom-cat6a-front.html',
+                backUrl: 'cards/panduit-minicom-cat6a-back.html'
+            },
+            'panduit-minicom-ftype': {
+                title: 'Panduit Mini-Com F-Type Module',
+                frontUrl: 'cards/panduit-minicom-ftype-front.html',
+                backUrl: 'cards/panduit-minicom-ftype-back.html'
+            },
+            'panduit-minicom-classic-faceplate': {
+                title: 'Panduit Mini-Com Classic Faceplate',
+                frontUrl: 'cards/panduit-minicom-classic-faceplate-front.html',
+                backUrl: 'cards/panduit-minicom-classic-faceplate-back.html'
+            },
+            'panduit-minicom-classic-faceplate-nolabel': {
+                title: 'Panduit Mini-Com Classic Faceplate - No Label',
+                frontUrl: 'cards/panduit-minicom-classic-faceplate-nolabel-front.html',
+                backUrl: 'cards/panduit-minicom-classic-faceplate-nolabel-back.html'
+            },
+            'panduit-minicom-classic-faceplate-offwhite-nolabel': {
+                title: 'Panduit Mini-Com Classic Faceplate - Off White No Label',
+                frontUrl: 'cards/panduit-minicom-classic-faceplate-offwhite-nolabel-front.html',
+                backUrl: 'cards/panduit-minicom-classic-faceplate-offwhite-nolabel-back.html'
+            },
+            'panduit-minicom-classic-faceplate-ivory-nolabel': {
+                title: 'Panduit Mini-Com Classic Faceplate - Electric Ivory No Label',
+                frontUrl: 'cards/panduit-minicom-classic-faceplate-ivory-nolabel-front.html',
+                backUrl: 'cards/panduit-minicom-classic-faceplate-ivory-nolabel-back.html'
+            },
+            'panduit-minicom-classic-faceplate-ivory': {
+                title: 'Panduit Mini-Com Classic Faceplate - Electric Ivory',
+                frontUrl: 'cards/panduit-minicom-classic-faceplate-ivory-front.html',
+                backUrl: 'cards/panduit-minicom-classic-faceplate-ivory-back.html'
+            },
+            'panduit-minicom-classic-faceplate-intwhite': {
+                title: 'Panduit Mini-Com Classic Faceplate - Int. White',
+                frontUrl: 'cards/panduit-minicom-classic-faceplate-intwhite-front.html',
+                backUrl: 'cards/panduit-minicom-classic-faceplate-intwhite-back.html'
+            },
+            'panduit-minicom-executive-faceplate-white': {
+                title: 'Panduit Mini-Com Executive Faceplate - White',
+                frontUrl: 'cards/panduit-minicom-executive-faceplate-white-front.html',
+                backUrl: 'cards/panduit-minicom-executive-faceplate-white-back.html'
+            },
+            'panduit-minicom-executive-faceplate-intwhite': {
+                title: 'Panduit Mini-Com Executive Faceplate - Int. White',
+                frontUrl: 'cards/panduit-minicom-executive-faceplate-intwhite-front.html',
+                backUrl: 'cards/panduit-minicom-executive-faceplate-intwhite-back.html'
+            },
+            'panduit-minicom-executive-faceplate-ivory': {
+                title: 'Panduit Mini-Com Executive Faceplate - Electric Ivory',
+                frontUrl: 'cards/panduit-minicom-executive-faceplate-ivory-front.html',
+                backUrl: 'cards/panduit-minicom-executive-faceplate-ivory-back.html'
+            },
+            'panduit-minicom-faceplate-intwhite-nolabel': {
+                title: 'Panduit Mini-Com Faceplate - Int. White No Label',
+                frontUrl: 'cards/panduit-minicom-faceplate-intwhite-nolabel-front.html',
+                backUrl: 'cards/panduit-minicom-faceplate-intwhite-nolabel-back.html'
+            },
+            'panduit-minicom-faceplate-ivory-nolabel': {
+                title: 'Panduit Mini-Com Faceplate - Electric Ivory No Label',
+                frontUrl: 'cards/panduit-minicom-faceplate-ivory-nolabel-front.html',
+                backUrl: 'cards/panduit-minicom-faceplate-ivory-nolabel-back.html'
+            },
+            'panduit-minicom-faceplate-stainless': {
+                title: 'Panduit Mini-Com Stainless Steel Faceplate',
+                frontUrl: 'cards/panduit-minicom-faceplate-stainless-front.html',
+                backUrl: 'cards/panduit-minicom-faceplate-stainless-back.html'
+            },
+            'panduit-minicom-faceplate-stainless-label': {
+                title: 'Panduit Mini-Com Stainless Steel Faceplate with Label',
+                frontUrl: 'cards/panduit-minicom-faceplate-stainless-label-front.html',
+                backUrl: 'cards/panduit-minicom-faceplate-stainless-label-back.html'
+            },
+            'panduit-surface-mount-box-white': {
+                title: 'Panduit Mini-Com Surface Mount Box White',
+                frontUrl: 'cards/panduit-surface-mount-box-white-front.html',
+                backUrl: 'cards/panduit-surface-mount-box-white-back.html'
+            },
+            'panduit-minicom-cat6-alt': {
+                title: 'Panduit Mini-Com Cat 6 Jack - Alternative Design',
+                frontUrl: 'cards/panduit-minicom-cat6-alt-front.html',
+                backUrl: 'cards/panduit-minicom-cat6-alt-back.html'
+            },
+            'panduit-netkey-cat6': {
+                title: 'Panduit NetKey Cat 6 Jack',
+                frontUrl: 'cards/panduit-netkey-cat6-front.html',
+                backUrl: 'cards/panduit-netkey-cat6-back.html'
+            },
+            'panduit-netkey-blank': {
+                title: 'Panduit NetKey Blank Module',
+                frontUrl: 'cards/panduit-netkey-blank-front.html',
+                backUrl: 'cards/panduit-netkey-blank-back.html'
+            },
+            'panduit-netkey-1port': {
+                title: 'Panduit NetKey 1-Port Faceplate',
+                frontUrl: 'cards/panduit-netkey-1port-front.html',
+                backUrl: 'cards/panduit-netkey-1port-back.html'
+            },
+            'panduit-netkey-2port': {
+                title: 'Panduit NetKey 2-Port Faceplate',
+                frontUrl: 'cards/panduit-netkey-2port-front.html',
+                backUrl: 'cards/panduit-netkey-2port-back.html'
+            },
+            'panduit-minicom-blank': {
+                title: 'Panduit Mini-Com Blank Module',
+                frontUrl: 'cards/panduit-minicom-blank-front.html',
+                backUrl: 'cards/panduit-minicom-blank-back.html'
+            },
+            'panduit-patch-panel-unloaded-labels': {
+                title: 'Panduit Patch Panel Unloaded with Labels',
+                frontUrl: 'cards/panduit-patch-panel-unloaded-labels-front.html',
+                backUrl: 'cards/panduit-patch-panel-unloaded-labels-back.html'
+            },
+            'panduit-patch-panel-cat6': {
+                title: 'Panduit Cat 6 Patch Panel',
+                frontUrl: 'cards/panduit-patch-panel-cat6-front.html',
+                backUrl: 'cards/panduit-patch-panel-cat6-back.html'
+            },
+            'panduit-patch-panel-unloaded-flush': {
+                title: 'Panduit Patch Panel Unloaded Flush Mount',
+                frontUrl: 'cards/panduit-patch-panel-unloaded-flush-front.html',
+                backUrl: 'cards/panduit-patch-panel-unloaded-flush-back.html'
+            },
+            'panduit-wire-manager-vertical': {
+                title: 'Panduit Vertical Wire Manager',
+                frontUrl: 'cards/panduit-wire-manager-vertical-front.html',
+                backUrl: 'cards/panduit-wire-manager-vertical-back.html'
+            },
+            'panduit-wire-manager-horizontal': {
+                title: 'Panduit Horizontal Wire Manager',
+                frontUrl: 'cards/panduit-wire-manager-horizontal-front.html',
+                backUrl: 'cards/panduit-wire-manager-horizontal-back.html'
+            },
+            'panduit-velcro': {
+                title: 'Panduit Velcro Cable Tie',
+                frontUrl: 'cards/panduit-velcro-front.html',
+                backUrl: 'cards/panduit-velcro-back.html'
+            },
+            'panduit-netkey-cat5e': {
+                title: 'Panduit NetKey Cat 5e Jack',
+                frontUrl: 'cards/panduit-netkey-cat5e-front.html',
+                backUrl: 'cards/panduit-netkey-cat5e-back.html'
+            },
+            'panduit-netkey-cat6a': {
+                title: 'Panduit NetKey Cat 6A Jack',
+                frontUrl: 'cards/panduit-netkey-cat6a-front.html',
+                backUrl: 'cards/panduit-netkey-cat6a-back.html'
+            },
+            'panduit-netkey-faceplate-ivory-nolabel': {
+                title: 'Panduit NetKey Faceplate - Electric Ivory No Label',
+                frontUrl: 'cards/panduit-netkey-faceplate-ivory-nolabel-front.html',
+                backUrl: 'cards/panduit-netkey-faceplate-ivory-nolabel-back.html'
+            },
+            'panduit-netkey-faceplate-white-nolabel': {
+                title: 'Panduit NetKey Faceplate - White No Label',
+                frontUrl: 'cards/panduit-netkey-faceplate-white-nolabel-front.html',
+                backUrl: 'cards/panduit-netkey-faceplate-white-nolabel-back.html'
+            },
+            'panduit-netkey-faceplate-intwhite-nolabel': {
+                title: 'Panduit NetKey Faceplate - Int. White No Label',
+                frontUrl: 'cards/panduit-netkey-faceplate-intwhite-nolabel-front.html',
+                backUrl: 'cards/panduit-netkey-faceplate-intwhite-nolabel-back.html'
+            },
+            'panduit-netkey-faceplate-ivory-label': {
+                title: 'Panduit NetKey Faceplate - Electric Ivory with Label',
+                frontUrl: 'cards/panduit-netkey-faceplate-ivory-label-front.html',
+                backUrl: 'cards/panduit-netkey-faceplate-ivory-label-back.html'
+            },
+            'panduit-netkey-faceplate-white-label': {
+                title: 'Panduit NetKey Faceplate - White with Label',
+                frontUrl: 'cards/panduit-netkey-faceplate-white-label-front.html',
+                backUrl: 'cards/panduit-netkey-faceplate-white-label-back.html'
+            },
+            'panduit-netkey-faceplate-stainless-label': {
+                title: 'Panduit NetKey Faceplate - Stainless Steel with Label',
+                frontUrl: 'cards/panduit-netkey-faceplate-stainless-label-front.html',
+                backUrl: 'cards/panduit-netkey-faceplate-stainless-label-back.html'
+            },
+            'panduit-netkey-adapter-decora': {
+                title: 'Panduit NetKey Adapter - Decora',
+                frontUrl: 'cards/panduit-netkey-adapter-decora-front.html',
+                backUrl: 'cards/panduit-netkey-adapter-decora-back.html'
+            },
+            'panduit-netkey-adapter-nema': {
+                title: 'Panduit NetKey Adapter - 106 NEMA',
+                frontUrl: 'cards/panduit-netkey-adapter-nema-front.html',
+                backUrl: 'cards/panduit-netkey-adapter-nema-back.html'
+            },
+            'panduit-netkey-ftype': {
+                title: 'Panduit NetKey F-Type Module',
+                frontUrl: 'cards/panduit-netkey-ftype-front.html',
+                backUrl: 'cards/panduit-netkey-ftype-back.html'
+            },
+            'panduit-netkey-blank-keystone': {
+                title: 'Panduit NetKey Blank Keystone',
+                frontUrl: 'cards/panduit-netkey-blank-keystone-front.html',
+                backUrl: 'cards/panduit-netkey-blank-keystone-back.html'
+            },
+            'panduit-netkey-surface-mount': {
+                title: 'Panduit NetKey Surface Mount Box',
+                frontUrl: 'cards/panduit-netkey-surface-mount-front.html',
+                backUrl: 'cards/panduit-netkey-surface-mount-back.html'
+            },
+            'panduit-netkey-patch-panel-cat5e': {
+                title: 'Panduit NetKey Cat 5e Patch Panel',
+                frontUrl: 'cards/panduit-netkey-patch-panel-cat5e-front.html',
+                backUrl: 'cards/panduit-netkey-patch-panel-cat5e-back.html'
+            },
+            'panduit-netkey-patch-panel-cat6-loaded': {
+                title: 'Panduit NetKey Cat 6 Patch Panel',
+                frontUrl: 'cards/panduit-netkey-patch-panel-cat6-loaded-front.html',
+                backUrl: 'cards/panduit-netkey-patch-panel-cat6-loaded-back.html'
+            },
+            'panduit-netkey-patch-panel-unloaded': {
+                title: 'Panduit NetKey Patch Panel Unloaded',
+                frontUrl: 'cards/panduit-netkey-patch-panel-unloaded-front.html',
+                backUrl: 'cards/panduit-netkey-patch-panel-unloaded-back.html'
+            },
+            'panduit-netkey-patch-panel-unloaded-labels': {
+                title: 'Panduit NetKey Patch Panel Unloaded with Labels',
+                frontUrl: 'cards/panduit-netkey-patch-panel-unloaded-labels-front.html',
+                backUrl: 'cards/panduit-netkey-patch-panel-unloaded-labels-back.html'
+            },
+            'chatsworth-wall-cabinet-24': {
+                title: 'Chatsworth Wall Cabinet 24" Deep',
+                frontUrl: 'cards/chatsworth-wall-cabinet-24-front.html',
+                backUrl: 'cards/chatsworth-wall-cabinet-24-back.html'
+            },
+            'chatsworth-wall-cabinet-30': {
+                title: 'Chatsworth Wall Cabinet 30" Deep',
+                frontUrl: 'cards/chatsworth-wall-cabinet-30-front.html',
+                backUrl: 'cards/chatsworth-wall-cabinet-30-back.html'
+            },
+            'chatsworth-wall-rack-12': {
+                title: 'Chatsworth Wall Rack 12" Deep',
+                frontUrl: 'cards/chatsworth-wall-rack-12-front.html',
+                backUrl: 'cards/chatsworth-wall-rack-12-back.html'
+            },
+            'chatsworth-wall-rack-18': {
+                title: 'Chatsworth Wall Rack 18" Deep',
+                frontUrl: 'cards/chatsworth-wall-rack-18-front.html',
+                backUrl: 'cards/chatsworth-wall-rack-18-back.html'
+            },
+            'chatsworth-wall-rack-25': {
+                title: 'Chatsworth Wall Rack 25" Deep',
+                frontUrl: 'cards/chatsworth-wall-rack-25-front.html',
+                backUrl: 'cards/chatsworth-wall-rack-25-back.html'
+            },
+            'corning-fiber-connector-st': {
+                title: 'Corning ST® Fiber Connector',
+                frontUrl: 'cards/corning-fiber-connector-st-front.html',
+                backUrl: 'cards/corning-fiber-connector-st-back.html'
+            },
+            'corning-fiber-connector-sc': {
+                title: 'Corning SC Fiber Connector',
+                frontUrl: 'cards/corning-fiber-connector-sc-front.html',
+                backUrl: 'cards/corning-fiber-connector-sc-back.html'
+            },
+            'corning-fiber-connector-lc': {
+                title: 'Corning LC Fiber Connector',
+                frontUrl: 'cards/corning-fiber-connector-lc-front.html',
+                backUrl: 'cards/corning-fiber-connector-lc-back.html'
+            },
+            'genspeed-cat6-plenum': {
+                title: 'GenSPEED Category 6 Plenum Cable',
+                frontUrl: 'cards/genspeed-cat6-plenum-front.html',
+                backUrl: 'cards/genspeed-cat6-plenum-back.html'
+            },
+            'genspeed-cat6-riser': {
+                title: 'GenSPEED Category 6 Riser Cable',
+                frontUrl: 'cards/genspeed-cat6-riser-front.html',
+                backUrl: 'cards/genspeed-cat6-riser-back.html'
+            },
+            'genspeed-cat6-outdoor': {
+                title: 'GenSPEED Category 6 Outdoor Cable',
+                frontUrl: 'cards/genspeed-cat6-outdoor-front.html',
+                backUrl: 'cards/genspeed-cat6-outdoor-back.html'
+            },
+            'chatsworth-ladder-rack': {
+                title: 'Chatsworth Universal Cable Runway',
+                frontUrl: 'cards/chatsworth-ladder-rack-front.html',
+                backUrl: 'cards/chatsworth-ladder-rack-back.html'
+            },
+            'chatsworth-runway-elevation-kit': {
+                title: 'Chatsworth Runway Elevation Kit',
+                frontUrl: 'cards/chatsworth-runway-elevation-kit-front.html',
+                backUrl: 'cards/chatsworth-runway-elevation-kit-back.html'
+            },
+            'chatsworth-rack-to-runway-plate': {
+                title: 'Chatsworth Rack to Runway Mounting Plate',
+                frontUrl: 'cards/chatsworth-rack-to-runway-plate-front.html',
+                backUrl: 'cards/chatsworth-rack-to-runway-plate-back.html'
+            },
+            'chatsworth-butt-splice-kit': {
+                title: 'Chatsworth Butt-Splice Kit',
+                frontUrl: 'cards/chatsworth-butt-splice-kit-front.html',
+                backUrl: 'cards/chatsworth-butt-splice-kit-back.html'
+            },
+            'chatsworth-junction-splice-kit': {
+                title: 'Chatsworth Junction-Splice Kit',
+                frontUrl: 'cards/chatsworth-junction-splice-kit-front.html',
+                backUrl: 'cards/chatsworth-junction-splice-kit-back.html'
+            },
+            'chatsworth-triangular-support-bracket': {
+                title: 'Chatsworth Triangular Support Bracket',
+                frontUrl: 'cards/chatsworth-triangular-support-bracket-front.html',
+                backUrl: 'cards/chatsworth-triangular-support-bracket-back.html'
+            },
+            'chatsworth-wall-angle-support-kit': {
+                title: 'Chatsworth Wall Angle Support Kit',
+                frontUrl: 'cards/chatsworth-wall-angle-support-kit-front.html',
+                backUrl: 'cards/chatsworth-wall-angle-support-kit-back.html'
+            },
+            'chatsworth-wall-to-rack-kit': {
+                title: 'Chatsworth Wall to Rack Kit',
+                frontUrl: 'cards/chatsworth-wall-to-rack-kit-front.html',
+                backUrl: 'cards/chatsworth-wall-to-rack-kit-back.html'
+            },
+            'chatsworth-cable-radius-drop': {
+                title: 'Chatsworth Cable Radius Drop',
+                frontUrl: 'cards/chatsworth-cable-radius-drop-front.html',
+                backUrl: 'cards/chatsworth-cable-radius-drop-back.html'
+            },
+            'chatsworth-rack-power-strip': {
+                title: 'Chatsworth Rack-Mount Power Strip',
+                frontUrl: 'cards/chatsworth-rack-power-strip-front.html',
+                backUrl: 'cards/chatsworth-rack-power-strip-back.html'
+            },
+            'chatsworth-ground-bar': {
+                title: 'Chatsworth Ground Bar',
+                frontUrl: 'cards/chatsworth-ground-bar-front.html',
+                backUrl: 'cards/chatsworth-ground-bar-back.html'
+            },
+            'chatsworth-standard-rack': {
+                title: 'Chatsworth Standard Rack',
+                frontUrl: 'cards/chatsworth-standard-rack-front.html',
+                backUrl: 'cards/chatsworth-standard-rack-back.html'
+            },
+            'quiktron-patch-cord-blue': {
+                title: 'Quiktron Q-Series Cat 6 Patch Cord Blue',
+                frontUrl: 'cards/quiktron-patch-cord-blue-front.html',
+                backUrl: 'cards/quiktron-patch-cord-blue-back.html'
+            },
+            'quiktron-patch-cord-white': {
+                title: 'Quiktron Q-Series Cat 6 Patch Cord White',
+                frontUrl: 'cards/quiktron-patch-cord-white-front.html',
+                backUrl: 'cards/quiktron-patch-cord-white-back.html'
+            },
+            'simply45-proseries': {
+                title: 'Simply45 ProSeries Pass-Through RJ45',
+                frontUrl: 'cards/simply45-proseries-front.html',
+                backUrl: 'cards/simply45-proseries-back.html'
+            },
+            'general-cable-fire-alarm': {
+                title: 'General Cable Fire Alarm FPLP',
+                frontUrl: 'cards/general-cable-fire-alarm-front.html',
+                backUrl: 'cards/general-cable-fire-alarm-back.html'
+            },
+            'general-cable-fire-alarm-shielded': {
+                title: 'General Cable Fire Alarm FPLP Shielded',
+                frontUrl: 'cards/general-cable-fire-alarm-shielded-front.html',
+                backUrl: 'cards/general-cable-fire-alarm-shielded-back.html'
+            },
+            'general-cable-fire-alarm-riser': {
+                title: 'General Cable Fire Alarm FPLR Riser',
+                frontUrl: 'cards/general-cable-fire-alarm-riser-front.html',
+                backUrl: 'cards/general-cable-fire-alarm-riser-back.html'
+            },
+            'general-cable-fire-alarm-shielded-riser': {
+                title: 'General Cable Fire Alarm FPLR Shielded Riser',
+                frontUrl: 'cards/general-cable-fire-alarm-shielded-riser-front.html',
+                backUrl: 'cards/general-cable-fire-alarm-shielded-riser-back.html'
+            },
+            'erico-caddy-jhook': {
+                title: 'Erico Caddy Cat HP J-Hook',
+                frontUrl: 'cards/erico-caddy-jhook-front.html',
+                backUrl: 'cards/erico-caddy-jhook-back.html'
+            },
+            'erico-caddy-jhook-clip': {
+                title: 'Erico Caddy J-Hook with Multi-Function Clip',
+                frontUrl: 'cards/erico-caddy-jhook-clip-front.html',
+                backUrl: 'cards/erico-caddy-jhook-clip-back.html'
+            },
+            'corning-fiber-enclosure': {
+                title: 'Corning Rack Mount Fiber Enclosure',
+                frontUrl: 'cards/corning-fiber-enclosure-front.html',
+                backUrl: 'cards/corning-fiber-enclosure-back.html'
+            },
+            'corning-wall-mount-enclosure': {
+                title: 'Corning Wall Mount Fiber Enclosure',
+                frontUrl: 'cards/corning-wall-mount-enclosure-front.html',
+                backUrl: 'cards/corning-wall-mount-enclosure-back.html'
+            },
+            'dmsi-fiber-adapter-panel': {
+                title: 'DMSI Fiber Adapter Panel',
+                frontUrl: 'cards/dmsi-fiber-adapter-panel-front.html',
+                backUrl: 'cards/dmsi-fiber-adapter-panel-back.html'
+            },
+            'chief-inwall-storage-box': {
+                title: 'Chief Proximity In-Wall Storage Box',
+                frontUrl: 'cards/chief-inwall-storage-box-front.html',
+                backUrl: 'cards/chief-inwall-storage-box-back.html'
+            },
+            'sti-firestop-sleeve': {
+                title: 'STI SpecSeal Ready Sleeve',
+                frontUrl: 'cards/sti-firestop-sleeve-front.html',
+                backUrl: 'cards/sti-firestop-sleeve-back.html'
+            },
+            'panduit-loom-tubing': {
+                title: 'Panduit Corrugated Loom Tubing',
+                frontUrl: 'cards/panduit-loom-tubing-front.html',
+                backUrl: 'cards/panduit-loom-tubing-back.html'
+            },
+            'panduit-spiral-wrap': {
+                title: 'Panduit Spiral Wrap',
+                frontUrl: 'cards/panduit-spiral-wrap-front.html',
+                backUrl: 'cards/panduit-spiral-wrap-back.html'
+            },
+            'arlington-tv-box': {
+                title: 'Arlington Recessed Steel TV Box',
+                frontUrl: 'cards/arlington-tv-box-front.html',
+                backUrl: 'cards/arlington-tv-box-back.html'
+            },
+            'erico-mounting-bracket': {
+                title: 'Erico Caddy Low Voltage Mounting Bracket',
+                frontUrl: 'cards/erico-mounting-bracket-front.html',
+                backUrl: 'cards/erico-mounting-bracket-back.html'
+            }
+        };
+
+        function openCard(cardId) {
+            const modal = document.getElementById('cardModal');
+            const cardView = document.getElementById('cardFullView');
+            const card = cards[cardId];
+
+            if (!card) return;
+
+            cardView.innerHTML = `
+                <div class="card-side">
+                    <div class="card-side-label">▸ FRONT</div>
+                    <iframe src="${card.frontUrl}"></iframe>
+                </div>
+                <div class="card-side">
+                    <div class="card-side-label">▸ BACK</div>
+                    <iframe src="${card.backUrl}"></iframe>
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCard() {
+            const modal = document.getElementById('cardModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCard();
+            }
+        });
+
+        // Close modal on background click
+        document.getElementById('cardModal').addEventListener('click', (e) => {
+            if (e.target.id === 'cardModal') {
+                closeCard();
+            }
+        });
+    </script>
+</body>
+</html>

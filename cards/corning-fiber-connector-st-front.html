@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Corning Fiber Connector ST - Front</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #f0f0f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+  .card { width: 5in; height: 9.5in; background: #fff; border-radius: 6px; box-shadow: 0 8px 40px rgba(0,0,0,0.12); display: flex; flex-direction: column; }
+  .top-band { background: linear-gradient(135deg, #002B5C 0%, #003D7A 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E87722 0%, #F5A623 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 4px; }
+  .sku-count { font-size: 10px; font-weight: 600; color: #002B5C; margin-bottom: 10px; }
+  .product-image { padding: 0 20px 12px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 180px; object-fit: contain; border-radius: 4px; filter: brightness(0.95); }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; }
+  .sku-table { width: 100%; border-collapse: collapse; }
+  .sku-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #fff; background: #002B5C; text-align: left; padding: 10px; }
+  .sku-table tbody td { padding: 8px 10px; border-bottom: 1px solid #E9ECF0; font-size: 9.5px; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top-band">
+    <div class="logo-text">Corning</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Fiber Connector — ST® Compatible</div>
+  </div>
+  <div class="hero">
+    <h1>ST® Fiber Connector</h1>
+    <div class="subtitle">Corning UniCam®</div>
+    <div class="description">Field-Installable • No-Epoxy/No-Polish</div>
+    <div class="sku-count">3 SKUs</div>
+  </div>
+  <div class="product-image">
+    <img src="FBR9500050.png" alt="Corning ST Fiber Connector">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference</div>
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>Fiber Type</th>
+          <th>Mayer Part #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>OM1 62.5/125 Multi-Mode</td>
+          <td class="part-num">FBR9500050</td>
+        </tr>
+        <tr>
+          <td>OM3/OM4 50/125 Multi-Mode</td>
+          <td class="part-num">FBR9505051X</td>
+        </tr>
+        <tr>
+          <td>OS2 Single-Mode</td>
+          <td class="part-num">FBR9520051</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us fiber type & quantity</span></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit NetKey Faceplate No Label - Front</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 5in 9.5in;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card {
+    width: 5in;
+    height: 9.5in;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Top band */
+  .front .top-band {
+    background: linear-gradient(135deg, #002B5C 0%, #003D7A 100%);
+    padding: 14px 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #E87722 0%, #F5A623 100%);
+  }
+
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-mark .logo-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .brand-mark .system-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    color: #E87722;
+    background: rgba(232, 119, 34, 0.15);
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .top-band .card-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* Category stripe */
+  .front .category-stripe {
+    background: #F7F8FA;
+    padding: 10px 20px;
+    border-bottom: 1px solid #E9ECF0;
+  }
+
+  .category-stripe .cat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #002B5C;
+  }
+
+  /* Hero section */
+  .front .hero {
+    flex: 0 0 auto;
+    padding: 14px 20px 10px;
+  }
+
+  .hero .product-info h1 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .hero .product-info .subtitle {
+    font-size: 11.5px;
+    color: #6B7280;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .hero .product-info .spec-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .spec-pills .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #F0F4FF;
+    color: #002B5C;
+    letter-spacing: 0.3px;
+  }
+
+  .spec-pills .pill.highlight {
+    background: #002B5C;
+    color: #fff;
+  }
+
+  /* SKU Reference table */
+  .front .sku-section {
+    padding: 0 20px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sku-section .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #002B5C;
+    margin-bottom: 10px;
+  }
+
+  .sku-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+  }
+
+  .sku-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #002B5C;
+    text-align: left;
+    padding: 8px 6px;
+    border-bottom: 2px solid #E87722;
+  }
+
+  .sku-table thead th:first-child {
+    width: 100px;
+  }
+
+  .sku-table tbody td {
+    padding: 7px 6px;
+    border-bottom: 1px solid #E9ECF0;
+    vertical-align: middle;
+  }
+
+  .sku-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .sku-table .color-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .color-cell .swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(0,0,0,0.15);
+    flex-shrink: 0;
+  }
+
+  .color-cell .color-name {
+    font-size: 10px;
+    font-weight: 600;
+    color: #1A1A2E;
+  }
+
+  .sku-table .part-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #002B5C;
+    letter-spacing: 0.3px;
+  }
+
+  /* Bottom CTA */
+  .front .bottom-cta {
+    background: #002B5C;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .bottom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #E87722 0%, #F5A623 100%);
+  }
+
+  .bottom-cta .cta-text {
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .bottom-cta .cta-text .highlight {
+    color: #E87722;
+  }
+
+  .bottom-cta .return-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    font-weight: 600;
+    color: #E87722;
+    background: rgba(232, 119, 34, 0.15);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="card front">
+  <!-- Top brand band -->
+  <div class="top-band">
+    <div class="brand-mark">
+      <div class="logo-text">Panduit</div>
+      <div class="system-badge">NetKey®</div>
+    </div>
+    <div class="card-id">DC-NK-FP-NL</div>
+  </div>
+
+  <!-- Category stripe -->
+  <div class="category-stripe">
+    <div class="cat-label">Faceplate — Adhesive Label (No Label Pocket)</div>
+  </div>
+
+  <!-- Hero section -->
+  <div class="hero">
+    <div class="product-info">
+      <h1>NetKey® Faceplate</h1>
+      <div class="subtitle">3 Colors Available • Adhesive Label ID • No Label Pocket</div>
+      <div class="spec-pills">
+        <span class="pill highlight">3 COLORS</span>
+        <span class="pill">ADHESIVE</span>
+        <span class="pill">1-4 PORT</span>
+        <span class="pill">KEYSTONE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKU quick-reference -->
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference — All Colors</div>
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>1-Port</th>
+          <th>2-Port</th>
+          <th>3-Port</th>
+          <th>4-Port</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="color-cell">
+              <div class="swatch" style="background:#F5F0DC"></div>
+              <span class="color-name">Elec. Ivory</span>
+            </div>
+          </td>
+          <td class="part-num">PANNK1FNEI</td>
+          <td class="part-num">PANNK2FNEI</td>
+          <td class="part-num">PANNK3FNEI</td>
+          <td class="part-num">PANNK4NFEI</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-cell">
+              <div class="swatch" style="background:#fff; border-color:rgba(0,0,0,0.2)"></div>
+              <span class="color-name">White</span>
+            </div>
+          </td>
+          <td class="part-num">PANNK1FNWH</td>
+          <td class="part-num">PANNK2FNWH</td>
+          <td class="part-num">PANNK3FNWH</td>
+          <td class="part-num">PANNK4FNWH</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-cell">
+              <div class="swatch" style="background:#F0EDE6; border-color:rgba(0,0,0,0.15)"></div>
+              <span class="color-name">Int. White</span>
+            </div>
+          </td>
+          <td class="part-num">PANNK1FNIW</td>
+          <td class="part-num">PANNK2FNIW</td>
+          <td class="part-num">PANNK3FNIW</td>
+          <td class="part-num">PANNK4FNIW</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="bottom-cta">
+    <div class="cta-text">
+      Pull this card → Take to counter →<br>
+      <span class="highlight">Tell us the color, port count & quantity</span>
+    </div>
+    <div class="return-tag">↩ Return Card</div>
+  </div>
+</div>
+
+</body>
+</html>
