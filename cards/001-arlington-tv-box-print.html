@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arlington TV Box - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .header { background: linear-gradient(135deg, #E67E22 0%, #C36B1C 100%); color: #fff; padding: 20px; border-radius: 6px 6px 0 0; }
+  .brand { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.9; margin-bottom: 4px; }
+  .product-name { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+  .tagline { font-size: 10px; opacity: 0.8; font-style: italic; }
+
+  .image-section { background: linear-gradient(to bottom, #f8f8f8 0%, #ffffff 100%); padding: 25px 20px; display: flex; align-items: center; justify-content: center; min-height: 220px; border-bottom: 1px solid #e0e0e0; }
+  .product-image { max-width: 90%; max-height: 200px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
+
+  .content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+  .intro { font-size: 9px; color: #333; line-height: 1.5; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+
+  .section-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; margin-top: 12px; border-bottom: 2px solid #2d2d2d; padding-bottom: 4px; display: inline-block; width: 100%; }
+  .section-title:first-of-type { margin-top: 0; }
+
+  .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 7.5px; }
+  .specs-table th { background: #2d2d2d; color: #fff; padding: 5px 3px; text-align: left; font-weight: 600; font-size: 7px; }
+  .specs-table td { padding: 5px 3px; border-bottom: 1px solid #e0e0e0; }
+  .specs-table tr:hover { background: #f8f8f8; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 7px; }
+
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { font-size: 8px; line-height: 1.4; margin-bottom: 3px; padding-left: 10px; position: relative; color: #333; }
+  .features-list li:before { content: "▸"; position: absolute; left: 0; color: #2d2d2d; font-weight: bold; font-size: 7px; }
+
+  .note-box { background: #f8f8f8; border-left: 3px solid #2d2d2d; padding: 8px; border-radius: 4px; margin-top: auto; }
+  .note-title { font-size: 8px; font-weight: 700; color: #1a1a1a; margin-bottom: 3px; }
+  .note-text { font-size: 7.5px; color: #333; line-height: 1.4; }
+
+  .footer { background: #1a1a1a; color: #fff; padding: 12px 20px; border-radius: 0 0 6px 6px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-size: 10px; font-weight: 600; opacity: 0.9; }
+  .footer-code { font-family: 'JetBrains Mono', monospace; font-size: 9px; opacity: 0.7; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .title { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid #2d2d2d; }
+
+  .section { margin-bottom: 12px; }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; background: #f8f8f8; padding: 4px 8px; border-radius: 3px; }
+
+  .info-box { background: #f8f8f8; border-left: 3px solid #2d2d2d; padding: 10px; border-radius: 4px; margin-bottom: 12px; }
+  .info-title { font-size: 9px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .info-text { font-size: 8px; color: #333; line-height: 1.4; }
+
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { font-size: 8px; line-height: 1.4; margin-bottom: 4px; padding-left: 12px; position: relative; color: #333; }
+  .features-list li:before { content: "▸"; position: absolute; left: 0; color: #2d2d2d; font-weight: bold; }
+
+  .footer { margin-top: auto; padding-top: 12px; border-top: 2px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; }
+  .footer-text { font-size: 8px; color: #666; }
+  .footer-brand { font-weight: 700; color: #1a1a1a; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="header">
+    <div class="brand">Arlington Industries</div>
+    <div class="product-name">Recessed Steel TV Box</div>
+    <div class="tagline">Combination Power &amp; Low Voltage</div>
+  </div>
+
+  <div class="image-section">
+    <img src="../cards/ARLTVBS505.png" alt="Arlington TV Box" class="product-image">
+  </div>
+
+  <div class="content">
+    <div class="intro">
+      Recessed steel combination power and low voltage box for flush-to-wall placement of flat screen TVs, furniture, and appliances. Plugs and connectors stay inside the box without extending past the wall.
+    </div>
+
+    <div class="section-title">Available Models</div>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Mayer Part Number</th>
+          <th>Configuration</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">ARLTVBS505</td>
+          <td>2-Gang</td>
+          <td>Steel w/ divider</td>
+        </tr>
+        <tr>
+          <td class="mono">ARLTVBS507</td>
+          <td>3-Gang</td>
+          <td>Steel box</td>
+        </tr>
+        <tr>
+          <td class="mono">ARLTVBU505</td>
+          <td>2-Gang</td>
+          <td>Non-metallic w/ divider</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">Key Features</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>UL Listed</li>
+        <li>Steel construction</li>
+        <li>Paintable trim plate</li>
+        <li>Mounting wings included</li>
+        <li>Voltage separator</li>
+        <li>New &amp; old work</li>
+      </ul>
+      <ul class="features-list">
+        <li>Flush-to-wall design</li>
+        <li>White or black options</li>
+        <li>Easy installation</li>
+        <li>Steel raceway compatible</li>
+        <li>Optional blank covers</li>
+        <li>Patent pending</li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <div class="note-title">Applications</div>
+      <div class="note-text">
+        Ideal for mounting flat screen TVs flush against walls in residential, commercial, and hospitality settings. Also perfect for hotel rooms and other applications where furniture and appliances need to be pushed close to the wall.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Arlington Industries</div>
+    <div class="footer-code">TV Box Series</div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="title">Arlington TV Box Specifications</div>
+
+  <div class="info-box">
+    <div class="info-title">Product Overview</div>
+    <div class="info-text">
+      Arlington's recessed steel TV Box is the best way to mount flat screen TVs flush against a wall. Designed for use in commercial construction where metal raceway is used, Steel TV Box provides power and/or low voltage in one or more of the openings. Plugs and connectors stay inside the box, without extending past the wall, allowing furniture and TVs to sit flush against the wall surface.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Construction &amp; Design</div>
+    <div class="info-box">
+      <div class="info-title">Steel Box Construction</div>
+      <div class="info-text">
+        Durable steel box with non-metallic paintable trim plate available in white or black. Built-in voltage separator keeps power and low voltage connections properly isolated for code compliance. Optional blank covers available for unused boxes.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Installation Methods</div>
+    <div class="features-grid">
+      <div class="info-box" style="margin: 0;">
+        <div class="info-title">New Construction</div>
+        <div class="info-text">
+          Box screw-mounts directly to wood or steel studs using #6 screws. Install box, pull wires, install voltage separator, then add drywall. After drywall installation, add trim plate and install devices.
+        </div>
+      </div>
+      <div class="info-box" style="margin: 0;">
+        <div class="info-title">Retrofit/Old Work</div>
+        <div class="info-text">
+          Cut hole using enclosure as template. Mounting wings on 2-gang and 3-gang styles hold box securely against wall. Insert box in hole, tighten wing screws, then install trim plate and devices.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Features &amp; Benefits</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>UL Listed construction</li>
+        <li>Recessed design</li>
+        <li>Voltage separator included</li>
+        <li>Mounting wings (2 &amp; 3-gang)</li>
+        <li>Paintable trim plates</li>
+        <li>Steel raceway compatible</li>
+      </ul>
+      <ul class="features-list">
+        <li>New and old work rated</li>
+        <li>White or black finish</li>
+        <li>Multiple gang options</li>
+        <li>Optional blank covers</li>
+        <li>Easy device installation</li>
+        <li>Secure wall mounting</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <div class="info-title">Model Selection Guide</div>
+    <div class="info-text">
+      <strong>ARLTVBS505:</strong> 2-gang steel with divider, mounting wings.<br>
+      <strong>ARLTVBS507:</strong> 3-gang steel with divider, mounting wings.<br>
+      <strong>ARLTVBS613:</strong> 4-gang steel for maximum capacity.<br>
+      <strong>ARLTVBS810:</strong> 8" × 10" with 1½" knockout and duplex.<br>
+      <strong>ARLTVBU505:</strong> 2-gang non-metallic version.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Common Applications</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>Flat screen TV mounting</li>
+        <li>Hotel room installations</li>
+        <li>Office furniture placement</li>
+        <li>Commercial displays</li>
+        <li>Hospitality settings</li>
+        <li>Residential TV walls</li>
+      </ul>
+      <ul class="features-list">
+        <li>Conference rooms</li>
+        <li>Retail displays</li>
+        <li>Healthcare facilities</li>
+        <li>Educational spaces</li>
+        <li>Appliance installations</li>
+        <li>Entertainment centers</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/arlington-tv-box-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-text">
+      <span class="footer-brand">Arlington Industries</span> • UL Listed
+    </div>
+    <div class="footer-text">Patent Pending</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

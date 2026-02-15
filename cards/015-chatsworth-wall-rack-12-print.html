@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatsworth Wall Rack 12" Deep - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+   .top-band { background: linear-gradient(135deg, #0D6EFD 0%, #0B5DD7 100%); padding: 14px 20px; position: relative; } .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0D6EFD 0%, #0E7EFF 100%); } .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; } .category-stripe { background: #F7F8FA; padding: 10px 20px; } .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; } .hero { padding: 16px 20px; } h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; } .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 10px; } .product-image { padding: 0 20px 12px; text-align: center; } .product-image img { max-width: 100%; height: auto; max-height: 180px; object-fit: contain; border-radius: 4px; filter: brightness(0.95); } .sku-section { padding: 0 20px 16px; flex: 1; } .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; } .sku-table { width: 100%; border-collapse: collapse; } .sku-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #fff; background: #002B5C; text-align: left; padding: 10px; } .sku-table tbody td { padding: 8px 10px; border-bottom: 1px solid #E9ECF0; font-size: 9px; } .part-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; } .bottom-cta { background: #002B5C; padding: 10px 20px; } .cta-text { font-size: 10px; color: #fff; } .highlight { color: #E87722; }
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+   .top-band { background: linear-gradient(135deg, #0D6EFD 0%, #0B5DD7 100%); padding: 12px 20px; position: relative; } .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0D6EFD 0%, #0E7EFF 100%); } .title { font-size: 12px; font-weight: 700; color: #fff; } .install-box { background: linear-gradient(135deg, #0D6EFD 0%, #0B5DD7 100%); border: 1px solid #C8D9F0; border-radius: 8px; padding: 12px; margin: 20px; } .install-box h3 { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; } .install-box p { font-size: 9px; color: #4B5563; line-height: 1.4; } .bottom-section { margin-top: auto; padding: 10px 20px; text-align: right; } .company { font-size: 11px; font-weight: 700; color: #002B5C; } .bottom-bar { background: #002B5C; padding: 8px 20px; text-align: center; position: relative; } .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #0D6EFD 0%, #0E7EFF 100%); } .return-text { font-size: 9px; font-weight: 700; color: #fff; } .highlight { color: #E87722; }
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+<div class="top-band"><div class="logo-text">Chatsworth</div></div><div class="category-stripe"><div class="cat-label">Wall Rack — 12" Deep</div></div><div class="hero"><h1>Wall Rack<br>12" Deep</h1><div class="subtitle">Standard Swing Gate Wall Rack</div></div><div class="product-image"><img src="../cards/chatsworth-wall-rack-12.webp" alt="Chatsworth Standard Swing Gate Wall Rack"></div><div class="sku-section"><div class="section-label">Part Number Reference</div><table class="sku-table"><thead><tr><th>Size</th><th>Mayer Part #</th></tr></thead><tbody><tr><td>29.1"H x 19"W x 12.2"D - 12U Black</td><td class="part-num">CHT11790712</td></tr></tbody></table></div><div class="bottom-cta"><div class="cta-text">Pull card → Counter → <span class="highlight">Tell us quantity</span></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+<div class="top-band"><div class="title">Wall Rack 12" Deep</div></div><div class="install-box"><h3>Standard Swing Gate Wall Rack - 12U</h3><p><strong>Supports 100 lb (45.4 kg) Equipment</strong> - In open and closed position when securely mounted. <strong>Dual hinges</strong> - Open to right or left, stopping in 90° position. <strong>EIA-310-E compliant</strong> - Universal 5/8"-5/8"-1/2" alternating hole pattern. <strong>Includes (50) #12-24 mounting screws</strong> - Black screws included. <strong>Load capacity upgradeable to 150 lb</strong> - Optional Heavy Duty Swing Gate Kit available. <strong>Supports single-sided and double-sided shelves</strong> - Ships partially assembled with installation hardware. <strong>Rack-mount spaces marked and numbered</strong>.</p></div><div class="bottom-section"><div class="company">Mayer Electric Supply</div></div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.15in; text-align: left;"><img src="../qr-codes/chatsworth-wall-rack-12-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div><div class="bottom-bar"><div class="return-text">Please <span class="highlight">return this card</span> to the display</div></div>    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

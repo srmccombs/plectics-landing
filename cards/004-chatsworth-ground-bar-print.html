@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatsworth Ground Bar - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #0D6EFD 0%, #0B5DD7 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0D6EFD 0%, #0E7EFF 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 4px; }
+  .product-image { padding: 0 20px 12px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 130px; object-fit: contain; }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; }
+  .type-grid { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+  .type-item { display: flex; flex-direction: column; gap: 4px; padding: 10px; background: #F7F8FA; border-radius: 4px; border-left: 4px solid #1F2937; }
+  .type-header { display: flex; align-items: center; justify-content: space-between; }
+  .type-name { font-size: 10px; font-weight: 700; color: #002B5C; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; }
+  .type-details { font-size: 8px; color: #6B7280; line-height: 1.4; }
+  .features-grid { display: grid; gap: 6px; }
+  .feature-badge { display: flex; align-items: center; gap: 8px; padding: 6px 8px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #E87722; }
+  .feature-icon { width: 24px; height: 24px; background: #002B5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; flex-shrink: 0; }
+  .feature-text { flex: 1; }
+  .feature-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 1px; }
+  .feature-desc { font-size: 7px; color: #6B7280; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 18px; color: #002B5C; margin-bottom: 6px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .comparison-section { margin-bottom: 18px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+  .comparison-grid { display: flex; flex-direction: column; gap: 8px; }
+  .comparison-item { padding: 10px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #002B5C; }
+  .comparison-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 4px; }
+  .comparison-text { font-size: 8px; color: #4B5563; line-height: 1.4; }
+  .features-section { margin-bottom: 18px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 4px 0; padding-left: 16px; position: relative; font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #E87722; font-weight: bold; font-size: 8px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 18px; }
+  .spec-box { padding: 8px; background: #F7F8FA; border-radius: 4px; text-align: center; }
+  .spec-label { font-size: 8px; color: #6B7280; margin-bottom: 3px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #002B5C; font-weight: 700; }
+  .applications { margin-bottom: 16px; }
+  .app-list { display: flex; flex-wrap: wrap; gap: 5px; }
+  .app-badge { font-size: 8px; padding: 5px 8px; background: #002B5C; color: #fff; border-radius: 3px; white-space: nowrap; }
+  .note-box { background: #FFF3E0; border-left: 3px solid #E87722; padding: 10px; border-radius: 4px; margin-bottom: 16px; }
+  .note-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .note-text { font-size: 8px; color: #4B5563; line-height: 1.4; }
+  .footer { margin-top: auto; text-align: center; padding-top: 15px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 13px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .footer-text { font-size: 9px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">Chatsworth</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Bonding &amp; Grounding — Busbars</div>
+  </div>
+  <div class="hero">
+    <h1>Ground Bar<br>Bonding Busbars</h1>
+    <div class="subtitle">UL Listed • ANSI/TIA-607 Compliant</div>
+    <div class="description">Rack-Mount &amp; Wall-Mount Options</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/CHT13622012.png" alt="Chatsworth Ground Bar">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Available Types &amp; Part Numbers</div>
+    <div class="type-grid">
+      <div class="type-item">
+        <div class="type-header">
+          <div class="type-name">Rack Bonding Busbar</div>
+          <div class="part-num">CHT10610019</div>
+        </div>
+        <div class="type-details">19" rack-mount • 3/16" x 3/4" copper bar • 8 lug holes</div>
+      </div>
+      <div class="type-item">
+        <div class="type-header">
+          <div class="type-name">Secondary Bonding (12")</div>
+          <div class="part-num">CHT13622012</div>
+        </div>
+        <div class="type-details">2"H x 12"W wall mount • Stainless steel • BICSI compliant</div>
+      </div>
+      <div class="type-item">
+        <div class="type-header">
+          <div class="type-name">Primary Bonding (12")</div>
+          <div class="part-num">CHT40153012</div>
+        </div>
+        <div class="type-details">4"H x 12"W wall mount • Backbone attachment • TIA-607-E</div>
+      </div>
+    </div>
+
+    <div class="section-label">Key Features</div>
+    <div class="features-grid">
+      <div class="feature-badge">
+        <div class="feature-icon">✓</div>
+        <div class="feature-text">
+          <div class="feature-title">UL Listed</div>
+          <div class="feature-desc">Certified safety &amp; compliance</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-text">
+          <div class="feature-title">ANSI/TIA-607 Compliant</div>
+          <div class="feature-desc">Industry standard grounding</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">🔧</div>
+        <div class="feature-text">
+          <div class="feature-title">Pre-Assembled</div>
+          <div class="feature-desc">Quick installation, includes hardware</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us type &amp; quantity</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>Ground Bar Bonding Busbars</h2>
+    <div class="category">Chatsworth • UL Listed</div>
+  </div>
+
+  <div class="comparison-section">
+    <div class="section-title">Product Comparison</div>
+    <div class="comparison-grid">
+      <div class="comparison-item">
+        <div class="comparison-title">Rack Bonding Busbar (CHT10610019)</div>
+        <div class="comparison-text">19" rack-mount copper bar for equipment bonding. 3/16" x 3/4" hard-drawn 110 alloy copper. Eight #6-32 tapped holes. Includes hardware kit with splice plate, screws, washers, ring terminals.</div>
+      </div>
+      <div class="comparison-item">
+        <div class="comparison-title">Secondary Bonding 12" (CHT13622012)</div>
+        <div class="comparison-text">2"H x 12"W wall-mount busbar. 300 series stainless steel. ANSI/TIA-607 &amp; BICSI compliant. 3/8" holes spaced 5.75" apart. Wall/floor/ceiling mount. UL File E236184.</div>
+      </div>
+      <div class="comparison-item">
+        <div class="comparison-title">Primary Bonding 12" (CHT40153012)</div>
+        <div class="comparison-text">4"H x 12"W wall-mount busbar for bonding backbones. Stainless steel construction. Central attachment point for ICT systems. TIA-607-E compliant. Includes insulators.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>UL Listed for safety certification</li>
+      <li>ANSI/TIA-607 &amp; BICSI compliant</li>
+      <li>Pre-assembled for quick installation</li>
+      <li>Corrosion-resistant materials</li>
+      <li>Multiple mounting options available</li>
+      <li>Consolidates equipment bonding</li>
+    </ul>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-box">
+      <div class="spec-label">Rack Busbar</div>
+      <div class="spec-value">19" Copper</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Secondary 12"</div>
+      <div class="spec-value">2"H Steel</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Primary 12"</div>
+      <div class="spec-value">4"H Steel</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Standards</div>
+      <div class="spec-value">TIA-607</div>
+    </div>
+  </div>
+
+  <div class="applications">
+    <div class="section-title">Applications</div>
+    <div class="app-list">
+      <div class="app-badge">Data Centers</div>
+      <div class="app-badge">Server Racks</div>
+      <div class="app-badge">Telecom Rooms</div>
+      <div class="app-badge">ICT Equipment</div>
+      <div class="app-badge">Network Infrastructure</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.35in; text-align: left;"><img src="../qr-codes/chatsworth-ground-bar-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 6px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Standards-compliant grounding &amp; bonding solutions</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

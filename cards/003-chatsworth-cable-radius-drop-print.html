@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatsworth Cable Radius Drop - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #0D6EFD 0%, #0B5DD7 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0D6EFD 0%, #0E7EFF 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 10px; }
+  .product-image { padding: 0 20px 16px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 180px; object-fit: contain; }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; }
+  .size-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .size-item { display: flex; flex-direction: column; gap: 6px; padding: 12px; background: #F7F8FA; border-radius: 4px; border-left: 4px solid #1F2937; }
+  .size-header { display: flex; align-items: center; justify-content: space-between; }
+  .size-name { font-size: 11px; font-weight: 700; color: #002B5C; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; }
+  .size-details { font-size: 9px; color: #6B7280; line-height: 1.4; }
+  .features-grid { display: grid; gap: 8px; }
+  .feature-badge { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #E87722; }
+  .feature-icon { width: 28px; height: 28px; background: #002B5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; flex-shrink: 0; }
+  .feature-text { flex: 1; }
+  .feature-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 2px; }
+  .feature-desc { font-size: 8px; color: #6B7280; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 18px; color: #002B5C; margin-bottom: 8px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .features-section { margin-bottom: 25px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 6px 0; padding-left: 20px; position: relative; font-size: 10px; color: #4B5563; line-height: 1.5; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #E87722; font-weight: bold; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+  .spec-box { padding: 10px; background: #F7F8FA; border-radius: 4px; text-align: center; }
+  .spec-label { font-size: 9px; color: #6B7280; margin-bottom: 4px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #002B5C; font-weight: 700; }
+  .sizing-section { margin-bottom: 20px; }
+  .sizing-grid { display: flex; flex-direction: column; gap: 6px; }
+  .sizing-item { padding: 8px 10px; background: #F7F8FA; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+  .sizing-label { font-size: 9px; font-weight: 600; color: #002B5C; }
+  .sizing-value { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6B7280; }
+  .applications { margin-bottom: 20px; }
+  .app-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .app-badge { font-size: 9px; padding: 6px 10px; background: #002B5C; color: #fff; border-radius: 3px; white-space: nowrap; }
+  .note-box { background: #FFF3E0; border-left: 3px solid #E87722; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
+  .note-title { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 6px; }
+  .note-text { font-size: 9px; color: #4B5563; line-height: 1.5; }
+  .footer { margin-top: auto; text-align: center; padding-top: 20px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 13px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .footer-text { font-size: 9px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">Chatsworth</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Cable Management — Waterfall Drop</div>
+  </div>
+  <div class="hero">
+    <h1>Cable Runway<br>Radius Drop</h1>
+    <div class="subtitle">Waterfall Accessory • Black</div>
+    <div class="description">Maintains Proper Bend Radius • 3" Radius</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/CHT12100712.png" alt="Chatsworth Cable Radius Drop">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Available Sizes &amp; Part Numbers</div>
+    <div class="size-grid">
+      <div class="size-item">
+        <div class="size-header">
+          <div class="size-name">12" Waterfall</div>
+          <div class="part-num">CHT12100712</div>
+        </div>
+        <div class="size-details">For 12" runway • 11" product width • Includes 3 cable spools</div>
+      </div>
+      <div class="size-item">
+        <div class="size-header">
+          <div class="size-name">18" Waterfall</div>
+          <div class="part-num">CHT12100718</div>
+        </div>
+        <div class="size-details">For 18" runway • 17" product width • Includes 3 cable spools</div>
+      </div>
+    </div>
+
+    <div class="section-label">Key Features</div>
+    <div class="features-grid">
+      <div class="feature-badge">
+        <div class="feature-icon">⤵</div>
+        <div class="feature-text">
+          <div class="feature-title">Proper Bend Radius</div>
+          <div class="feature-desc">Maintains Cat 5e/6/6a &amp; fiber specifications</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">⊙</div>
+        <div class="feature-text">
+          <div class="feature-title">Cable Spools Included</div>
+          <div class="feature-desc">1-1/2" spools separate and guide cables</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">🔧</div>
+        <div class="feature-text">
+          <div class="feature-title">Quick Installation</div>
+          <div class="feature-desc">Mounts to runway cross members</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us runway size &amp; quantity</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>Cable Runway Radius Drop</h2>
+    <div class="category">Chatsworth • Waterfall Accessory</div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>Mounts to cross members of CPI Cable Runway</li>
+      <li>Maintains proper Category 5e/6/6a bend radius</li>
+      <li>Maintains proper fiber optic bend radius</li>
+      <li>Provides 3" (80 mm) bend radius</li>
+      <li>Quick and easy installation</li>
+      <li>Includes 1-1/2" cable spools to separate and guide cables</li>
+      <li>Fits CPI Universal Runway (Series 10250)</li>
+      <li>Sold individually</li>
+    </ul>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-box">
+      <div class="spec-label">Bend Radius</div>
+      <div class="spec-value">3"</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Cable Spool Size</div>
+      <div class="spec-value">1-1/2"</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Installation</div>
+      <div class="spec-value">Cross Member</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Finish</div>
+      <div class="spec-value">Black</div>
+    </div>
+  </div>
+
+  <div class="sizing-section">
+    <div class="section-title">Size Selection Guide</div>
+    <div class="sizing-grid">
+      <div class="sizing-item">
+        <div class="sizing-label">12" Runway (CHT12100712)</div>
+        <div class="sizing-value">11" product • 3 spools</div>
+      </div>
+      <div class="sizing-item">
+        <div class="sizing-label">18" Runway (CHT12100718)</div>
+        <div class="sizing-value">17" product • 3 spools</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="applications">
+    <div class="section-title">Applications</div>
+    <div class="app-list">
+      <div class="app-badge">Vertical Drops</div>
+      <div class="app-badge">Cat 5e/6/6a Cabling</div>
+      <div class="app-badge">Fiber Optic Cables</div>
+      <div class="app-badge">Data Centers</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/chatsworth-cable-radius-drop-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Maintains proper cable bend radius for vertical drops</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

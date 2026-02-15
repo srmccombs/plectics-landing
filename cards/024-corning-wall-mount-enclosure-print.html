@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corning Wall Mount Fiber Enclosure - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .header { background: linear-gradient(135deg, #E74C3C 0%, #C44033 100%); color: #fff; padding: 20px; border-radius: 6px 6px 0 0; }
+  .brand { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.9; margin-bottom: 4px; }
+  .product-name { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+  .tagline { font-size: 10px; opacity: 0.8; font-style: italic; }
+
+  .image-section { background: linear-gradient(to bottom, #f8f8f8 0%, #ffffff 100%); padding: 18px 20px; display: flex; align-items: center; justify-content: center; min-height: 180px; border-bottom: 1px solid #e0e0e0; }
+  .product-image { max-width: 90%; max-height: 160px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
+
+  .content { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; }
+
+  .intro { margin-bottom: 10px; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+  .intro-text { font-size: 8.5px; color: #333; line-height: 1.4; }
+
+  .section-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 6px; margin-top: 10px; border-bottom: 2px solid #2d2d2d; padding-bottom: 3px; display: inline-block; }
+  .section-title:first-of-type { margin-top: 0; }
+
+  .wch-grid { display: grid; gap: 6px; margin-bottom: 8px; }
+  .wch-box { background: #f8f8f8; padding: 8px; border-radius: 4px; border-left: 3px solid #2d2d2d; display: grid; grid-template-columns: 45px 1fr; gap: 8px; align-items: center; }
+  .wch-capacity { font-size: 16px; font-weight: 700; color: #1a1a1a; text-align: center; }
+  .wch-label { font-size: 6.5px; color: #666; text-transform: uppercase; }
+  .wch-details { }
+  .wch-panels { font-size: 9px; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+  .wch-specs { font-size: 7.5px; color: #666; margin-bottom: 2px; }
+  .wch-part { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #666; }
+
+  .features { margin-bottom: 10px; }
+  .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .feature-list li { font-size: 7.5px; line-height: 1.35; margin-bottom: 2px; padding-left: 12px; position: relative; color: #333; }
+  .feature-list li:before { content: "▸"; position: absolute; left: 0; color: #2d2d2d; font-weight: bold; }
+
+  .footer { background: #1a1a1a; color: #fff; padding: 12px 20px; border-radius: 0 0 6px 6px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-size: 10px; font-weight: 600; opacity: 0.9; }
+  .footer-code { font-family: 'JetBrains Mono', monospace; font-size: 9px; opacity: 0.7; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .title { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid #2d2d2d; }
+
+  .section { margin-bottom: 14px; }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; background: #f8f8f8; padding: 4px 8px; border-radius: 3px; }
+
+  .model-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 7.5px; }
+  .model-table th { background: #2d2d2d; color: #fff; padding: 5px 3px; text-align: left; font-weight: 600; font-size: 7px; }
+  .model-table td { padding: 5px 3px; border-bottom: 1px solid #e0e0e0; }
+  .model-table tr:hover { background: #f8f8f8; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 7px; }
+
+  .sph-detail { background: #e8e8e8; padding: 10px; border-radius: 4px; border-left: 3px solid #2d2d2d; margin-bottom: 12px; }
+  .sph-detail-title { font-size: 10px; font-weight: 700; margin-bottom: 6px; color: #1a1a1a; }
+  .sph-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 7px; line-height: 1.4; color: #333; }
+
+  .wch-features { background: #f8f8f8; padding: 10px; border-radius: 4px; border-left: 3px solid #2d2d2d; margin-bottom: 12px; }
+  .wch-features-title { font-size: 9px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+  .wch-features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .wch-features-list { list-style: none; }
+  .wch-features-list li { font-size: 7.5px; line-height: 1.4; margin-bottom: 3px; padding-left: 10px; position: relative; color: #333; }
+  .wch-features-list li:before { content: "▸"; position: absolute; left: 0; color: #2d2d2d; font-weight: bold; font-size: 7px; }
+
+  .includes-box { background: #f8f8f8; border-left: 3px solid #2d2d2d; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .includes-title { font-size: 8px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .includes-text { font-size: 7px; color: #333; line-height: 1.4; }
+
+  .accessory-table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 7px; }
+  .accessory-table th { background: #2d2d2d; color: #fff; padding: 4px; text-align: left; font-weight: 600; font-size: 6.5px; }
+  .accessory-table td { padding: 4px; border-bottom: 1px solid #e0e0e0; }
+
+  .note-box { background: #e8e8e8; border-left: 3px solid #2d2d2d; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .note-title { font-size: 8px; font-weight: 700; color: #1a1a1a; margin-bottom: 3px; }
+  .note-text { font-size: 7px; color: #333; line-height: 1.4; }
+
+  .footer { margin-top: auto; padding-top: 10px; border-top: 2px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; }
+  .footer-text { font-size: 7.5px; color: #666; }
+  .footer-brand { font-weight: 700; color: #1a1a1a; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="header">
+    <div class="brand">Corning | LANscape Solutions</div>
+    <div class="product-name">Wall Mount Fiber Enclosure</div>
+    <div class="tagline">SPH &amp; WCH Series</div>
+  </div>
+
+  <div class="image-section">
+    <img src="../cards/WCH02P.png" alt="Corning Wall Mount Fiber Enclosure" class="product-image">
+  </div>
+
+  <div class="content">
+    <div class="intro">
+      <div class="intro-text">Wall-mountable fiber enclosures for interconnect and cross-connect applications. Accept standard CCH panels, cassettes, and modules. Ideal for telecommunications rooms, wiring closets, and areas where space is premium.</div>
+    </div>
+
+    <div class="section-title">Available Models</div>
+    <div class="wch-grid">
+      <div class="wch-box">
+        <div>
+          <div class="wch-capacity">1</div>
+          <div class="wch-label">Panel</div>
+        </div>
+        <div class="wch-details">
+          <div class="wch-panels">Up to 24 Fibers</div>
+          <div class="wch-specs">16cm H × 14cm W × 5cm D</div>
+          <div class="wch-part">SPH-01P / FBRSPH01P</div>
+        </div>
+      </div>
+      <div class="wch-box" style="background: #e8e8e8;">
+        <div style="grid-column: 1 / -1;">
+          <div class="wch-panels">SPH-DIN-KIT Accessory</div>
+          <div class="wch-specs">DIN rail bracket for SPH-01P</div>
+        </div>
+      </div>
+      <div class="wch-box">
+        <div>
+          <div class="wch-capacity">2</div>
+          <div class="wch-label">Panels</div>
+        </div>
+        <div class="wch-details">
+          <div class="wch-panels">Up to 48 Fibers</div>
+          <div class="wch-specs">18.8cm H × 42.2cm W × 10.7cm D</div>
+          <div class="wch-part">WCH-02P / FBRWCH02P</div>
+        </div>
+      </div>
+      <div class="wch-box">
+        <div>
+          <div class="wch-capacity">4</div>
+          <div class="wch-label">Panels</div>
+        </div>
+        <div class="wch-details">
+          <div class="wch-panels">Up to 96 Fibers</div>
+          <div class="wch-specs">35.8cm H × 42.2cm W × 10.7cm D</div>
+          <div class="wch-part">WCH-04P / FBRWCH04P</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Key Features</div>
+    <div class="features">
+      <ul class="feature-list">
+        <li>Transparent jumper door for visibility</li>
+        <li>Lockable doors (cable &amp; jumper side)</li>
+        <li>Removable strain-relief brackets</li>
+        <li>Built-in bubble level</li>
+        <li>Black powder coat finish</li>
+        <li>Preinstalled routing guides</li>
+        <li>Field-installable lock kits available</li>
+        <li>Segregated cable &amp; fiber routing</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Corning LANscape</div>
+    <div class="footer-code">SPH / WCH Series</div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="title">Corning Wall Mount Fiber Enclosure Specifications</div>
+
+  <div class="section">
+    <div class="section-title">Complete Model Comparison</div>
+    <table class="model-table">
+      <thead>
+        <tr>
+          <th>Part Number</th>
+          <th>Type</th>
+          <th>Panels</th>
+          <th>Max Fibers</th>
+          <th>Dimensions (H×W×D)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">SPH-01P / FBRSPH01P</td>
+          <td>SPH</td>
+          <td>1</td>
+          <td>24</td>
+          <td>16cm × 14cm × 5cm</td>
+        </tr>
+        <tr>
+          <td class="mono">WCH-02P / FBRWCH02P</td>
+          <td>WCH</td>
+          <td>2</td>
+          <td>48</td>
+          <td>18.8cm × 42.2cm × 10.7cm</td>
+        </tr>
+        <tr>
+          <td class="mono">WCH-04P / FBRWCH04P</td>
+          <td>WCH</td>
+          <td>4</td>
+          <td>96</td>
+          <td>35.8cm × 42.2cm × 10.7cm</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sph-detail">
+    <div class="sph-detail-title">SPH-01P Single-Panel Housing Details</div>
+    <div class="sph-detail-grid">
+      <div>
+        <strong>Splice Capacity:</strong><br>
+        • Up to 12 heat-shrink splices<br>
+        • 6 ribbon heat-shrink splices<br>
+        • 6-slot 0.4" splice holder
+      </div>
+      <div>
+        <strong>Special Features:</strong><br>
+        • Stackable (up to 3 units)<br>
+        • DIN rail mountable<br>
+        • 1.5" frontal projection<br>
+        • Box-in-a-Box applications
+      </div>
+    </div>
+  </div>
+
+  <div class="wch-features">
+    <div class="wch-features-title">WCH Wall Connector Housing Features</div>
+    <div class="wch-features-grid">
+      <ul class="wch-features-list">
+        <li>Transparent jumper side door</li>
+        <li>Lockable cable entry door</li>
+        <li>Lockable jumper side door</li>
+        <li>Recessed mounting holes</li>
+        <li>Preinstalled bubble level</li>
+        <li>Removable strain-relief brackets</li>
+      </ul>
+      <ul class="wch-features-list">
+        <li>Internal strain-relief option</li>
+        <li>Intermediate strain-relief</li>
+        <li>Routing clips and guides</li>
+        <li>Documentation labels included</li>
+        <li>Improved latches</li>
+        <li>Field-installable lock kits</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What's Included</div>
+
+    <div class="includes-box">
+      <div class="includes-title">SPH-01P Package Contents</div>
+      <div class="includes-text">
+        Housing • Installation guide • 6 tie wraps (1/8" × 4") • 4 screws (#6-32 × 0.25") • 4 screws (#8-18 × 0.625") • Alcohol wipe for label cleaning • Built-in 6-slot splice holder
+      </div>
+    </div>
+
+    <div class="includes-box">
+      <div class="includes-title">WCH-02P / WCH-04P Package Contents</div>
+      <div class="includes-text">
+        Housing • Installation guide • Blank panels (2 or 4) • Panel ID labels • Hardware kit • Internal strain-relief bracket • Intermediate strain-relief bracket • 4" tie wraps • 8" tie wraps • Dust brushes • 4 mounting screws • Preinstalled bubble level
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Accessories</div>
+    <table class="accessory-table">
+      <thead>
+        <tr>
+          <th>Part Number</th>
+          <th>Description</th>
+          <th>Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">SPH-DIN-KIT</td>
+          <td>DIN rail bracket</td>
+          <td>For SPH-01P DIN rail mounting</td>
+        </tr>
+        <tr>
+          <td class="mono">Lock Kits</td>
+          <td>Field-installable locks</td>
+          <td>For WCH cable/jumper doors</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">💡 Application Notes</div>
+    <div class="note-text">
+      <strong>SPH Series:</strong> Ideal for Box-in-a-Box applications, building entrances, control cabinets, and tight spaces where minimal wall projection is critical.<br><br>
+      <strong>WCH Series:</strong> Best for main cross-connects, telecom rooms, and areas requiring higher fiber counts with easy access for testing and troubleshooting.
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/corning-wall-mount-enclosure-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-text">
+      <span class="footer-brand">Corning LANscape Solutions</span> • RoHS Compliant
+    </div>
+    <div class="footer-text">SPH / WCH</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

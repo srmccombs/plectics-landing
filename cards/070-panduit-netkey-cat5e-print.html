@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit NetKey Cat 5e Leadframe Jack - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  .front .top-band { background: linear-gradient(135deg, #017698 0%, #006481 100%); padding: 14px 20px 12px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .front .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #017698 0%, #0187AE 100%); }
+  .brand-mark { display: flex; align-items: center; gap: 8px; }
+  .brand-mark .logo-text { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; }
+  .brand-mark .system-badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; color: #E87722; background: rgba(232, 119, 34, 0.15); padding: 3px 8px; border-radius: 3px; }
+  .top-band .card-id { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+  .front .category-stripe { background: #F7F8FA; padding: 10px 20px; border-bottom: 1px solid #E9ECF0; }
+  .category-stripe .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #002B5C; }
+  .front .hero { padding: 16px 20px 12px; display: flex; gap: 16px; }
+  .hero .product-image { flex: 0 0 130px; height: 130px; background: #F7F8FA; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .hero .product-info h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 4px; }
+  .hero .product-info .subtitle { font-size: 11.5px; color: #6B7280; margin-bottom: 10px; }
+  .spec-pills .pill { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; padding: 3px 8px; border-radius: 4px; background: #F0F4FF; color: #002B5C; display: inline-block; margin: 2px; }
+  .spec-pills .pill.highlight { background: #002B5C; color: #fff; }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .sku-section .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; text-transform: uppercase; color: #002B5C; margin-bottom: 12px; }
+  .sku-table { width: 100%; border-collapse: collapse; }
+  .sku-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #fff; background: #002B5C; text-align: left; padding: 10px; border-bottom: 2px solid #E87722; }
+  .sku-table tbody td { padding: 8px 10px; border-bottom: 1px solid #E9ECF0; }
+  .sku-table .swatch-cell { display: flex; align-items: center; gap: 6px; }
+  .swatch-cell .mini-swatch { width: 16px; height: 16px; border-radius: 3px; border: 1.5px solid rgba(0,0,0,0.15); flex-shrink: 0; }
+  .swatch-cell .color-label { font-size: 10px; font-weight: 600; }
+  .sku-table .part-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; position: relative; }
+  .bottom-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #017698 0%, #0187AE 100%); }
+  .bottom-cta .cta-text { font-size: 10px; font-weight: 600; color: #fff; }
+  .bottom-cta .cta-text .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  .back .top-band { background: linear-gradient(135deg, #017698 0%, #006481 100%); padding: 12px 20px; position: relative; }
+  .back .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #017698 0%, #0187AE 100%); }
+  .back .top-band .title { font-size: 12px; font-weight: 700; color: #fff; }
+  .specs-section { padding: 14px 20px; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 5px 8px; background: #FAFBFC; border-radius: 4px; }
+  .spec-row .spec-label { font-size: 8.5px; color: #6B7280; }
+  .spec-row .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; color: #1A1A2E; }
+  .install-section { padding: 10px 20px; }
+  .install-box { background: linear-gradient(135deg, #017698 0%, #006481 100%); border: 1px solid #C8D9F0; border-radius: 8px; padding: 12px; }
+  .install-box h3 { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .install-box p { font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .bottom-section { margin-top: auto; padding: 10px 20px; }
+  .contact-info { text-align: right; }
+  .contact-info .company { font-size: 11px; font-weight: 700; color: #002B5C; }
+  .contact-info .details { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #9CA3AF; }
+  .bottom-bar { background: #002B5C; padding: 8px 20px; text-align: center; position: relative; }
+  .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #017698 0%, #0187AE 100%); }
+  .bottom-bar .return-text { font-size: 9px; font-weight: 700; color: #fff; }
+  .bottom-bar .return-text .highlight { color: #E87722; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="brand-mark">
+      <div class="logo-text">Panduit</div>
+      <div class="system-badge">NetKey®</div>
+    </div>
+    <div class="card-id">DC-NK-5E</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Category 5e UTP Jack Module</div>
+  </div>
+  <div class="hero">
+    <div class="product-image">
+      <img src="../cards/PANNK5E88MAWY.jpeg" alt="Panduit NetKey Cat 5e Jack" style="width:100%;height:100%;object-fit:contain">
+    </div>
+    <div class="product-info">
+      <h1>NetKey® Cat 5e<br>Leadframe Jack</h1>
+      <div class="subtitle">100 MHz • Keystone Module<br>10 colors available</div>
+      <div class="spec-pills">
+        <span class="pill highlight">CAT 5E</span>
+        <span class="pill">UTP</span>
+        <span class="pill">LEADFRAME</span>
+        <span class="pill">10 COLORS</span>
+      </div>
+    </div>
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference — All Colors</div>
+    <table class="sku-table">
+      <thead><tr><th>Color</th><th>Mayer Part #</th></tr></thead>
+      <tbody>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#F0F8FF"></div><span class="color-label">Arctic White</span></div></td><td class="part-num">PANNK5E88MAWY</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#1A1A2E"></div><span class="color-label">Black</span></div></td><td class="part-num">PANNK5E88MABL</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#2563EB"></div><span class="color-label">Blue</span></div></td><td class="part-num">PANNK5E88MABU</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#F5F0DC"></div><span class="color-label">Electric Ivory</span></div></td><td class="part-num">PANNK5E88MAEI</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#10B981"></div><span class="color-label">Green</span></div></td><td class="part-num">PANNK5E88MAGR</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#D1D5DB"></div><span class="color-label">Int'l Gray</span></div></td><td class="part-num">PANNK5E88MAIG</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#F0EDE6"></div><span class="color-label">Off White</span></div></td><td class="part-num">PANNK5E88MAOW</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#F97316"></div><span class="color-label">Orange</span></div></td><td class="part-num">PANNK5E88MAOR</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#DC2626"></div><span class="color-label">Red</span></div></td><td class="part-num">PANNK5E88MARD</td></tr>
+        <tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#8B5CF6"></div><span class="color-label">Violet</span></div></td><td class="part-num">PANNK5E88MAVI</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull this card → Take to counter → <span class="highlight">Tell us the color & quantity</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="title">NetKey® Category 5e Leadframe Jack Module</div>
+  </div>
+  <div class="specs-section">
+    <div class="section-label">Technical Specifications</div>
+    <div class="specs-grid">
+      <div class="spec-row"><span class="spec-label">Category</span><span class="spec-value">Cat 5e</span></div>
+      <div class="spec-row"><span class="spec-label">Performance</span><span class="spec-value">100 MHz</span></div>
+      <div class="spec-row"><span class="spec-label">Type</span><span class="spec-value">Jack Module</span></div>
+      <div class="spec-row"><span class="spec-label">Shield</span><span class="spec-value">UTP</span></div>
+      <div class="spec-row"><span class="spec-label">Termination</span><span class="spec-value">Leadframe</span></div>
+      <div class="spec-row"><span class="spec-label">Material</span><span class="spec-value">ABS/PC</span></div>
+      <div class="spec-row"><span class="spec-label">Wiring</span><span class="spec-value">T568A/B</span></div>
+      <div class="spec-row"><span class="spec-label">Interface</span><span class="spec-value">Keystone</span></div>
+      <div class="spec-row"><span class="spec-label">Colors</span><span class="spec-value">10 Options</span></div>
+      <div class="spec-row"><span class="spec-label">Standards</span><span class="spec-value">TIA/ISO</span></div>
+      <div class="spec-row"><span class="spec-label">PoE</span><span class="spec-value">802.3bt</span></div>
+      <div class="spec-row"><span class="spec-label">Cycles</span><span class="spec-value">2500</span></div>
+    </div>
+  </div>
+  <div class="install-section">
+    <div class="install-box">
+      <h3>NetKey® Cat 5e Leadframe Technology</h3>
+      <p><strong>100 MHz bandwidth</strong> - Full Category 5e performance. <strong>Leadframe termination</strong> - Tool-free snap-in design for fast installation. <strong>T568A/T568B wiring</strong> - Supports both wiring schemes. <strong>PoE ready</strong> - Supports IEEE 802.3af/at/bt (Type 3 & 4). <strong>2500 connection cycles</strong> - Durable gold-plated contacts. <strong>10 color options</strong> - Easy network organization and identification. <strong>Keystone compatible</strong> - Works with all NetKey faceplates and patch panels. <strong>Exceeds standards</strong> - Meets ANSI/TIA-568.2-D and ISO 11801. <strong>RoHS compliant</strong> - Environmentally responsible.</p>
+    </div>
+  </div>
+  <div class="bottom-section">
+    <div class="contact-info">
+      <div class="company">Mayer Electric Supply</div>
+      <div class="details">panduit.com/netkey<br>Questions? Ask your counter rep</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/panduit-netkey-cat5e-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>  <div class="bottom-bar">
+    <div class="return-text">Please <span class="highlight">return this card</span> to the display after ordering</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erico Caddy Mounting Bracket - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .header { background: linear-gradient(135deg, #7F8C8D 0%, #6B7777 100%); color: #fff; padding: 20px; border-radius: 6px 6px 0 0; }
+  .brand { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.9; margin-bottom: 4px; }
+  .product-name { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+  .tagline { font-size: 10px; opacity: 0.8; font-style: italic; }
+
+  .image-section { background: linear-gradient(to bottom, #f8f8f8 0%, #ffffff 100%); padding: 25px 20px; display: flex; align-items: center; justify-content: center; min-height: 220px; border-bottom: 1px solid #e0e0e0; }
+  .product-image { max-width: 90%; max-height: 200px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
+
+  .content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+  .intro { font-size: 9px; color: #333; line-height: 1.5; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+
+  .section-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #002B5C; margin-bottom: 8px; margin-top: 12px; border-bottom: 2px solid #1976D2; padding-bottom: 4px; display: inline-block; width: 100%; }
+  .section-title:first-of-type { margin-top: 0; }
+
+  .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 7.5px; }
+  .specs-table th { background: #1976D2; color: #fff; padding: 5px 3px; text-align: left; font-weight: 600; font-size: 7px; }
+  .specs-table td { padding: 5px 3px; border-bottom: 1px solid #e0e0e0; }
+  .specs-table tr:hover { background: #f8f8f8; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 7px; }
+
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { font-size: 8px; line-height: 1.4; margin-bottom: 3px; padding-left: 10px; position: relative; color: #333; }
+  .features-list li:before { content: "▸"; position: absolute; left: 0; color: #1976D2; font-weight: bold; font-size: 7px; }
+
+  .note-box { background: #E3F2FD; border-left: 3px solid #1976D2; padding: 8px; border-radius: 4px; margin-top: auto; }
+  .note-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .note-text { font-size: 7.5px; color: #333; line-height: 1.4; }
+
+  .footer { background: #1976D2; color: #fff; padding: 12px 20px; border-radius: 0 0 6px 6px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-size: 10px; font-weight: 600; opacity: 0.9; }
+  .footer-code { font-family: 'JetBrains Mono', monospace; font-size: 9px; opacity: 0.7; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .title { font-size: 18px; font-weight: 700; color: #002B5C; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid #E87722; }
+
+  .section { margin-bottom: 12px; }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #002B5C; margin-bottom: 8px; background: #E3F2FD; padding: 4px 8px; border-radius: 3px; }
+
+  .info-box { background: #FFF3E0; border-left: 3px solid #E87722; padding: 10px; border-radius: 4px; margin-bottom: 12px; }
+  .info-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 4px; }
+  .info-text { font-size: 8px; color: #333; line-height: 1.4; }
+
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { font-size: 8px; line-height: 1.4; margin-bottom: 4px; padding-left: 12px; position: relative; color: #333; }
+  .features-list li:before { content: "▸"; position: absolute; left: 0; color: #1976D2; font-weight: bold; }
+
+  .footer { margin-top: auto; padding-top: 12px; border-top: 2px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; }
+  .footer-text { font-size: 8px; color: #666; }
+  .footer-brand { font-weight: 700; color: #1a1a1a; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="header">
+    <div class="brand">Erico Caddy</div>
+    <div class="product-name">Low Voltage Mounting Bracket</div>
+    <div class="tagline">Class 2 Wiring • No Electrical Box Required</div>
+  </div>
+
+  <div class="image-section">
+    <img src="../cards/ERIMPLS.png" alt="Erico Caddy Mounting Bracket" class="product-image">
+  </div>
+
+  <div class="content">
+    <div class="intro">
+      Low voltage mounting plates and brackets for Class 2 wiring installations. Eliminates the need for electrical boxes while providing positive support with locking screws. Easy installation with drywall saw and screwdriver.
+    </div>
+
+    <div class="section-title">Available Models</div>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Mayer Part Number</th>
+          <th>Configuration</th>
+          <th>Material</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">ERIMPLS</td>
+          <td>1-Gang</td>
+          <td>Steel</td>
+          <td>w/ screws</td>
+        </tr>
+        <tr>
+          <td class="mono">ERIMPLS2</td>
+          <td>2-Gang</td>
+          <td>Steel</td>
+          <td>w/ screws</td>
+        </tr>
+        <tr>
+          <td class="mono">ERIMP1P</td>
+          <td>1-Gang</td>
+          <td>Plastic (ABS)</td>
+          <td>Mounting plate</td>
+        </tr>
+        <tr>
+          <td class="mono">ERIMP1S</td>
+          <td>1-Gang</td>
+          <td>Steel</td>
+          <td>Stud mount</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">Key Features</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>Locking screw support</li>
+        <li>Easy wire fishing</li>
+        <li>Drywall saw installation</li>
+        <li>No electrical box needed</li>
+        <li>Class 2 wiring approved</li>
+        <li>Steel or plastic options</li>
+      </ul>
+      <ul class="features-list">
+        <li>Pregalvanized finish</li>
+        <li>Recessed design</li>
+        <li>Flush device mounting</li>
+        <li>Template points (plastic)</li>
+        <li>No sharp edges (plastic)</li>
+        <li>100 pc packages</li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <div class="note-title">Applications</div>
+      <div class="note-text">
+        Ideal for low voltage Class 2 applications including data, telecom, security, audio/video, and control wiring. Perfect for retrofit installations where running new electrical boxes is impractical. Metal versions for new construction, plastic versions for no-tools installation.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Erico Caddy</div>
+    <div class="footer-code">MP Series</div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="title">Erico Caddy Mounting Bracket Specifications</div>
+
+  <div class="info-box">
+    <div class="info-title">Product Overview</div>
+    <div class="info-text">
+      Low voltage mounting brackets for Class 2 wiring applications. Eliminates need for electrical boxes while providing positive support with locking screws. Available in steel and plastic options for various installation requirements.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Model Specifications</div>
+    <div class="info-box">
+      <div class="info-title">Steel Models (ERIMPLS/ERIMPLS2/ERIMP1S)</div>
+      <div class="info-text">
+        Pregalvanized steel construction with locking screws. 1-Gang and 2-Gang configurations. ERIMP1S designed for new construction stud mounting. Durable metal for commercial installations. 100 pieces per package.
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="info-title">Plastic Model (ERIMP1P)</div>
+      <div class="info-text">
+        ABS construction with serrated interlocking system. No sharp edges, no installation tools required. Template points for easy marking. Recessed design for flush device mounting. 100 pieces per package.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Installation &amp; Benefits</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>Eliminates electrical box</li>
+        <li>Faster installation</li>
+        <li>Easier wire fishing</li>
+        <li>Drywall saw only</li>
+        <li>Positive device support</li>
+        <li>Flush device mounting</li>
+      </ul>
+      <ul class="features-list">
+        <li>Professional appearance</li>
+        <li>Code compliant Class 2</li>
+        <li>Retrofit friendly</li>
+        <li>Template guides (plastic)</li>
+        <li>Secure locking design</li>
+        <li>Lower material costs</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <div class="info-title">Installation Steps</div>
+    <div class="info-text">
+      <strong>Steel:</strong> Cut opening, fish wire, insert bracket, tighten screws, install device.<br>
+      <strong>Plastic:</strong> Mark with template, cut opening, fish wire, push bracket (auto-locks), install device.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Common Applications</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>Data/network outlets</li>
+        <li>Telephone jacks</li>
+        <li>Coaxial cable outlets</li>
+        <li>Security keypads</li>
+        <li>Audio/video connections</li>
+        <li>Thermostat mounting</li>
+      </ul>
+      <ul class="features-list">
+        <li>Doorbell chimes</li>
+        <li>Intercom stations</li>
+        <li>Control panels</li>
+        <li>CCTV leads</li>
+        <li>Fire alarm devices</li>
+        <li>Building automation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <div class="info-title">Material Selection</div>
+    <div class="info-text">
+      <strong>Steel:</strong> Maximum strength, commercial installations, metal studs, heavier devices.<br>
+      <strong>Plastic:</strong> Quick retrofit, no tools needed, safer handling, occupied spaces.
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/erico-mounting-bracket-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-text">
+      <span class="footer-brand">Erico Caddy</span> • Class 2 Wiring
+    </div>
+    <div class="footer-text">100 pc Packages</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

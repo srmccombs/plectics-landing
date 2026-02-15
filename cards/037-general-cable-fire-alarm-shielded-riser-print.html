@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Cable Fire Alarm Shielded Riser - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #F39C12 0%, #CE840F 100%); padding: 16px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #F39C12 0%, #FFB314 100%); }
+  .logo-text { font-size: 16px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+  .tagline { font-size: 8px; color: rgba(255,255,255,0.9); margin-top: 3px; letter-spacing: 1px; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.2; }
+  .rating-badge { display: inline-block; padding: 4px 10px; background: #DC143C; color: #fff; border-radius: 3px; font-size: 8px; font-weight: 700; margin-bottom: 8px; margin-right: 4px; }
+  .shield-badge { display: inline-block; padding: 4px 10px; background: #FFB74D; color: #1F2937; border-radius: 3px; font-size: 8px; font-weight: 700; margin-bottom: 8px; border: 1px solid #FF9800; }
+  .subtitle { font-size: 10px; color: #6B7280; margin-bottom: 6px; font-weight: 600; }
+  .description { font-size: 9px; color: #4B5563; margin-bottom: 4px; line-height: 1.4; }
+  .highlights-section { padding: 0 20px 14px; }
+  .highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .highlight-box { display: flex; align-items: center; gap: 6px; padding: 6px; background: #FFF3E0; border-radius: 3px; border-left: 3px solid #DC143C; }
+  .highlight-icon { width: 18px; height: 18px; background: #DC143C; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 9px; flex-shrink: 0; }
+  .highlight-text { font-size: 7px; font-weight: 600; color: #002B5C; line-height: 1.3; }
+  .sku-section { padding: 0 20px 14px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; }
+  .sku-grid { display: grid; gap: 5px; margin-bottom: 10px; }
+  .sku-row { display: grid; grid-template-columns: 1fr 120px; gap: 8px; padding: 8px 10px; background: #F7F8FA; border-radius: 3px; border-left: 3px solid #DC143C; }
+  .sku-desc { font-size: 10px; font-weight: 600; color: #002B5C; }
+  .sku-part { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: #6B7280; text-align: right; }
+  .note-box { background: #FFF3E0; border-left: 3px solid #FFB74D; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .note-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .note-text { font-size: 7px; color: #4B5563; line-height: 1.4; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; }
+  .spec-box { padding: 6px; background: #F7F8FA; border-radius: 3px; text-align: center; }
+  .spec-label { font-size: 7px; color: #6B7280; margin-bottom: 2px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #002B5C; font-weight: 700; }
+  .bottom-cta { background: #DC143C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #FFD700; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 14px; color: #002B5C; margin-bottom: 4px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; margin-top: 10px; }
+  .section-title:first-of-type { margin-top: 0; }
+  .code-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .code-section { background: #F7F8FA; padding: 8px; border-radius: 4px; border-left: 3px solid #DC143C; }
+  .code-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .code-list { font-size: 6.5px; color: #4B5563; line-height: 1.5; }
+  .code-list-compact { font-size: 6.5px; color: #4B5563; line-height: 1.4; }
+  .code-item { display: flex; justify-content: space-between; padding: 1px 0; }
+  .code-label { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; }
+  .features-section { margin-bottom: 10px; }
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 2px 0; padding-left: 12px; position: relative; font-size: 7px; color: #4B5563; line-height: 1.4; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #DC143C; font-weight: bold; font-size: 7px; }
+  .specs-table { margin-bottom: 10px; }
+  .specs-row { display: grid; grid-template-columns: 60px 50px 60px 50px 50px; gap: 3px; padding: 4px; background: #F7F8FA; border-radius: 3px; margin-bottom: 2px; font-size: 6.5px; }
+  .specs-row.header { background: #DC143C; color: #fff; font-weight: 700; }
+  .specs-row.header .spec-cell { color: #fff; }
+  .spec-cell { font-family: 'JetBrains Mono', monospace; color: #002B5C; font-weight: 600; text-align: center; }
+  .shield-box { background: #FFF3E0; border-left: 3px solid #DC143C; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .shield-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 4px; }
+  .shield-text { font-size: 7px; color: #4B5563; line-height: 1.4; }
+  .applications-section { background: #FFF3E0; border-left: 3px solid #FFB74D; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .app-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 4px; }
+  .app-list { font-size: 7px; color: #4B5563; line-height: 1.4; }
+  .note-box { background: #E3F2FD; border-left: 3px solid #1976D2; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .note-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .note-text { font-size: 6.5px; color: #4B5563; line-height: 1.4; }
+  .footer { margin-top: auto; text-align: center; padding-top: 10px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .footer-text { font-size: 7px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">General Cable</div>
+    <div class="tagline">Fire Alarm Cable Solutions</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Multi-Conductor • Shielded • Riser Rated</div>
+  </div>
+  <div class="hero">
+    <h1>Fire Alarm Cable<br>Shielded FPLR</h1>
+    <div class="rating-badge">NEC FPLR</div>
+    <div class="rating-badge">CL3R</div>
+    <div class="rating-badge">CMR</div>
+    <div class="shield-badge">🛡️ SHIELDED</div>
+    <div class="subtitle">Solid Copper • Al Foil Shield • Drain Wire • Riser</div>
+    <div class="description">Shielded riser-rated fire alarm cable combining EMI/RFI protection with cost-effective riser rating for non-plenum vertical runs and high-interference environments</div>
+  </div>
+  <div class="highlights-section">
+    <div class="highlight-grid">
+      <div class="highlight-box">
+        <div class="highlight-icon">🛡️</div>
+        <div class="highlight-text">Al Foil Shield<br>+ Drain Wire</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-icon">✓</div>
+        <div class="highlight-text">Riser Rated<br>UL 1666</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-icon">🔥</div>
+        <div class="highlight-text">300V Rated<br>75°C UL</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-icon">⚡</div>
+        <div class="highlight-text">EMI/RFI<br>Protection</div>
+      </div>
+    </div>
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Available Configurations (Base Part #)</div>
+    <div class="sku-grid">
+      <div class="sku-row">
+        <div class="sku-desc">18 AWG 2-Conductor Shielded</div>
+        <div class="sku-part">GCCE2502S*</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">18 AWG 4-Conductor Shielded</div>
+        <div class="sku-part">GCCE2504S*</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">16 AWG 2-Conductor Shielded</div>
+        <div class="sku-part">GCCE2522S*</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">16 AWG 4-Conductor Shielded</div>
+        <div class="sku-part">GCCE2524S*</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">14 AWG 2-Conductor Shielded</div>
+        <div class="sku-part">GCCE2532S*</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">14 AWG 4-Conductor Shielded</div>
+        <div class="sku-part">GCCE2534S*</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <div class="note-title">📋 Part Number Format</div>
+      <div class="note-text">Complete part #: GCCE2502S.XX.YY where XX = Put-up code (.30=1000' box, .41=1000' reel) and YY = Color code (.03=Red). Example: GCCE2502S.41.03 = 18/2C Shielded, 1000' reel, red jacket. See back for all options.</div>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-box">
+        <div class="spec-label">Voltage</div>
+        <div class="spec-value">300V</div>
+      </div>
+      <div class="spec-box">
+        <div class="spec-label">Temp Range</div>
+        <div class="spec-value">-20 to 75°C</div>
+      </div>
+      <div class="spec-box">
+        <div class="spec-label">Shield Type</div>
+        <div class="spec-value">Al Foil</div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Specify AWG, conductors &amp; put-up</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>Fire Alarm Cable Shielded FPLR</h2>
+    <div class="category">General Cable • Shielded Riser</div>
+  </div>
+
+  <div class="section-title">Part Number Format: GCCE2502S.XX.YY</div>
+  <div class="code-grid">
+    <div class="code-section">
+      <div class="code-title">Put-Up Codes (XX)</div>
+      <div class="code-list-compact">
+        <div class="code-item"><span class="code-label">.12</span> <span>100' Pull-Pac</span></div>
+        <div class="code-item"><span class="code-label">.15</span> <span>250' Pull-Pac</span></div>
+        <div class="code-item"><span class="code-label">.18</span> <span>500' Reel</span></div>
+        <div class="code-item"><span class="code-label">.30</span> <span>1000' Pull-Pac</span></div>
+        <div class="code-item"><span class="code-label">.41</span> <span>1000' Reel</span></div>
+        <div class="code-item"><span class="code-label">.46</span> <span>5000' Reel</span></div>
+      </div>
+    </div>
+    <div class="code-section">
+      <div class="code-title">Color Codes (YY)</div>
+      <div class="code-list-compact">
+        <div class="code-item"><span class="code-label">.01</span> <span>Black</span></div>
+        <div class="code-item"><span class="code-label">.02</span> <span>White</span></div>
+        <div class="code-item"><span class="code-label">.03</span> <span>Red (Standard)</span></div>
+        <div class="code-item"><span class="code-label">.04</span> <span>Orange</span></div>
+        <div class="code-item"><span class="code-label">.05</span> <span>Yellow</span></div>
+        <div class="code-item"><span class="code-label">.07</span> <span>Blue</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="shield-box">
+    <div class="shield-title">🛡️ Shielding Construction</div>
+    <div class="shield-text">Overall Flexfoil® polyester-supported aluminum foil shield provides 100% coverage for superior EMI/RFI protection. Includes stranded tinned copper drain wire for easy shield termination and enhanced grounding. Ideal for riser applications in electrically noisy environments.</div>
+  </div>
+
+  <div class="section-title">Cable Specifications</div>
+  <div class="specs-table">
+    <div class="specs-row header">
+      <div class="spec-cell">Part #</div>
+      <div class="spec-cell">AWG</div>
+      <div class="spec-cell">Cond.</div>
+      <div class="spec-cell">Ins. Thick</div>
+      <div class="spec-cell">Nom. OD</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E2502S</div>
+      <div class="spec-cell">18</div>
+      <div class="spec-cell">2C</div>
+      <div class="spec-cell">0.010"</div>
+      <div class="spec-cell">0.158"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E2504S</div>
+      <div class="spec-cell">18</div>
+      <div class="spec-cell">4C</div>
+      <div class="spec-cell">0.010"</div>
+      <div class="spec-cell">0.183"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E2522S</div>
+      <div class="spec-cell">16</div>
+      <div class="spec-cell">2C</div>
+      <div class="spec-cell">0.010"</div>
+      <div class="spec-cell">0.180"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E2524S</div>
+      <div class="spec-cell">16</div>
+      <div class="spec-cell">4C</div>
+      <div class="spec-cell">0.010"</div>
+      <div class="spec-cell">0.210"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E2532S</div>
+      <div class="spec-cell">14</div>
+      <div class="spec-cell">2C</div>
+      <div class="spec-cell">0.013"</div>
+      <div class="spec-cell">0.218"</div>
+    </div>
+    <div class="specs-row">
+      <div class="spec-cell">E2534S</div>
+      <div class="spec-cell">14</div>
+      <div class="spec-cell">4C</div>
+      <div class="spec-cell">0.013"</div>
+      <div class="spec-cell">0.253"</div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>Fully annealed solid bare copper ASTM B3</li>
+        <li>Flexfoil® aluminum foil shield 100% coverage</li>
+        <li>Stranded tinned copper drain wire</li>
+        <li>Premium S-R PVC insulation</li>
+        <li>Premium PVC red jacket</li>
+        <li>Extended temp: -20°C to +75°C</li>
+      </ul>
+      <ul class="features-list">
+        <li>NEC Article 760 Type FPLR rated</li>
+        <li>NEC Article 725 Type CL3R rated</li>
+        <li>NEC Article 800 Type CMR rated</li>
+        <li>Designed to meet UL 1666 flame test</li>
+        <li>Sequential footage markings &amp; ripcord</li>
+        <li>RoHS Compliant 2011/65/EU</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="applications-section">
+    <div class="app-title">🔥 Applications &amp; Benefits</div>
+    <div class="app-list">Riser fire alarm systems requiring EMI/RFI protection • Vertical runs in electrically noisy environments • Smoke detectors in high-interference areas • Voice communications with shielding • Cost-effective alternative to shielded plenum in non-plenum spaces</div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">💡 Best Value: Shielded Riser</div>
+    <div class="note-text">This cable combines the EMI/RFI protection of shielding with the cost-effectiveness of riser rating. Use when you need shielding but installation is in non-plenum vertical runs. More economical than shielded plenum (E36xx series) when plenum rating isn't required by code.</div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">📋 Ordering Example</div>
+    <div class="note-text">GCCE2502S.41.03 = 18 AWG, 2-Conductor Shielded, 1000' Reel (.41), Red Jacket (.03). Contact Mayer for availability of specific put-up and color combinations.</div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/general-cable-fire-alarm-shielded-riser-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Shielded riser fire alarm cable • Cost-effective EMI/RFI protection</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

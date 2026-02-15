@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynacom Cat 6A Jack - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+
+  
+
+  
+
+  /* ─── CARD CONTAINER ─── */
+  
+
+
+  /* Top band */
+  .front .top-band {
+    background: linear-gradient(135deg, #27AE60 0%, #219351 100%);
+    padding: 14px 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #27AE60 0%, #2CC86E 100%);
+  }
+
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-mark .logo-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .brand-mark .system-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    font-weight: 600;
+    color: #1A1A1A;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .top-band .card-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* Category stripe */
+  .front .category-stripe {
+    background: #F7F8FA;
+    padding: 10px 20px;
+    border-bottom: 1px solid #E9ECF0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .category-stripe .cat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0891B2;
+  }
+
+  .category-stripe .perf-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .perf-badge .dot {
+    width: 7px;
+    height: 7px;
+    background: #22C55E;
+    border-radius: 50%;
+  }
+
+  .perf-badge span {
+    font-size: 9px;
+    font-weight: 600;
+    color: #22C55E;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* Hero section */
+  .front .hero {
+    flex: 0 0 auto;
+    padding: 16px 20px 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hero .product-image {
+    flex: 0 0 130px;
+    height: 130px;
+    background: #F7F8FA;
+    border-radius: 8px;
+    border: 1px solid #E9ECF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+  }
+
+  .hero .product-info {
+    flex: 1;
+    padding-top: 4px;
+  }
+
+  .product-info h1 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .product-info .subtitle {
+    font-size: 11.5px;
+    color: #6B7280;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .product-info .spec-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .spec-pills .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #FFF0F0;
+    color: #0891B2;
+    letter-spacing: 0.3px;
+  }
+
+  .spec-pills .pill.highlight {
+    background: #0891B2;
+    color: #fff;
+  }
+
+  /* Key features */
+  .front .features {
+    padding: 0 20px 14px;
+  }
+
+  .features .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9CA3AF;
+    margin-bottom: 7px;
+  }
+
+  .features .feat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+
+  .feat-grid .feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 6px 8px;
+    background: #FAFBFC;
+    border-radius: 5px;
+    border: 1px solid #F0F1F3;
+  }
+
+  .feat .feat-icon {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    background: #0891B2;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .feat .feat-icon svg {
+    width: 10px;
+    height: 10px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .feat .feat-text {
+    font-size: 9.5px;
+    color: #374151;
+    line-height: 1.35;
+    font-weight: 500;
+  }
+
+  /* SKU Reference table - EXPANDED */
+  .front .sku-section {
+    padding: 0 20px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sku-section .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0891B2;
+    margin-bottom: 12px;
+  }
+
+  .sku-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    flex: 1;
+  }
+
+  .sku-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #0891B2;
+    text-align: left;
+    padding: 10px 10px;
+    border-bottom: 2px solid #1A1A1A;
+  }
+
+
+  .sku-table tbody td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #E9ECF0;
+    vertical-align: middle;
+  }
+
+  .sku-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .sku-table .swatch-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .swatch-cell .mini-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(0,0,0,0.15);
+    flex-shrink: 0;
+  }
+
+  .swatch-cell .color-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1A1A2E;
+  }
+
+  .sku-table .part-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #0891B2;
+    letter-spacing: 0.5px;
+  }
+
+  /* Bottom CTA */
+  .front .bottom-cta {
+    background: #0891B2;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .bottom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #27AE60 0%, #2CC86E 100%);
+  }
+
+  .bottom-cta .cta-text {
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .bottom-cta .cta-text .highlight {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .bottom-cta .return-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    font-weight: 600;
+    color: #1A1A1A;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back .top-band { background: linear-gradient(135deg, #27AE60 0%, #219351 100%); padding: 12px 20px 10px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .back .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #27AE60 0%, #2CC86E 100%); }
+  .back .top-band .title { font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .back .top-band .card-id { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+  .back .specs-section { padding: 14px 20px 10px; }
+  .back .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 5px 8px; background: #FAFBFC; border-radius: 4px; border: 1px solid #F0F1F3; }
+  .spec-row .spec-label { font-size: 8.5px; color: #6B7280; font-weight: 500; }
+  .spec-row .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; color: #1A1A2E; }
+  .back .tool-section { padding: 10px 20px; }
+  .tool-box { background: linear-gradient(135deg, #27AE60 0%, #219351 100%); border: 1px solid #F5DFC4; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; }
+  .tool-box .tool-image-container { flex: 0 0 80px; width: 80px; height: 80px; background: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 8px; }
+  .tool-box .tool-image-container img { width: 100%; height: 100%; object-fit: contain; }
+  .tool-box .tool-content { flex: 1; }
+  .tool-box .tool-content h3 { font-size: 11px; font-weight: 700; color: #0891B2; margin-bottom: 3px; }
+  .tool-box .tool-content .tool-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #1A1A2E; margin-bottom: 4px; }
+  .tool-box .tool-content p { font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .back .features-section { padding: 10px 20px; }
+  .features-list { display: grid; grid-template-columns: 1fr; gap: 4px; }
+  .feature-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; background: #F7F8FA; border-radius: 5px; border: 1px solid #E9ECF0; }
+  .feature-item .feat-marker { flex: 0 0 6px; width: 6px; height: 6px; background: #0891B2; border-radius: 50%; }
+  .feature-item .feat-text { font-size: 9px; font-weight: 500; color: #374151; line-height: 1.3; }
+  .back .install-section { padding: 10px 20px; }
+  .install-box { background: linear-gradient(135deg, #27AE60 0%, #219351 100%); border: 1px solid #FFD0D0; border-radius: 8px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 12px; }
+  .install-box .install-icon { flex: 0 0 36px; width: 36px; height: 36px; background: #0891B2; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .install-box .install-icon svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .install-box .install-content h3 { font-size: 11px; font-weight: 700; color: #0891B2; margin-bottom: 3px; }
+  .install-box .install-content p { font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .install-box .install-content p strong { color: #0891B2; }
+  .back .standards-section { padding: 10px 20px; }
+  .standards-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .standard-badge { font-family: 'JetBrains Mono', monospace; font-size: 7.5px; font-weight: 600; padding: 4px 8px; border-radius: 3px; border: 1px solid #E0E3E8; color: #374151; background: #fff; letter-spacing: 0.3px; }
+  .standard-badge.primary { background: #0891B2; color: #fff; border-color: #0891B2; }
+  .back .bottom-section { margin-top: auto; padding: 10px 20px 14px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+  .bottom-section .qr-placeholder { width: 64px; height: 64px; background: #F7F8FA; border: 2px dashed #D1D5DB; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+  .qr-placeholder svg { width: 24px; height: 24px; stroke: #9CA3AF; fill: none; stroke-width: 1.5; margin-bottom: 2px; }
+  .qr-placeholder span { font-family: 'JetBrains Mono', monospace; font-size: 6px; color: #9CA3AF; letter-spacing: 0.5px; text-transform: uppercase; }
+  .bottom-section .contact-info { flex: 1; text-align: right; }
+  .contact-info .company { font-size: 11px; font-weight: 700; color: #0891B2; margin-bottom: 2px; }
+  .contact-info .tagline { font-size: 8px; color: #6B7280; margin-bottom: 6px; font-style: italic; }
+  .contact-info .details { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #9CA3AF; line-height: 1.6; letter-spacing: 0.3px; }
+  .back .bottom-bar { background: #0891B2; padding: 8px 20px; display: flex; align-items: center; justify-content: center; gap: 8px; position: relative; }
+  .back .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #27AE60 0%, #2CC86E 100%); }
+  .bottom-bar .return-icon { width: 14px; height: 14px; }
+  .bottom-bar .return-icon svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .bottom-bar .return-text { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; }
+  .bottom-bar .return-text .highlight { color: #fff; font-weight: 700; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <!-- Top brand band -->
+  <div class="top-band">
+    <div class="brand-mark">
+      <div class="logo-text">Dynacom</div>
+      <div class="system-badge">10606AK</div>
+    </div>
+    <div class="card-id">DC-DYC-10606AK</div>
+  </div>
+
+  <!-- Category stripe -->
+  <div class="category-stripe">
+    <div class="cat-label">Category 6A UTP Jack Module</div>
+    <div class="perf-badge">
+      <div class="dot"></div>
+      <span>10-GIG RATED</span>
+    </div>
+  </div>
+
+  <!-- Hero section -->
+  <div class="hero">
+    <div class="product-image">
+      <img src="../cards/DYC10606AK.jpg" alt="Dynacom Cat 6A Jack">
+    </div>
+    <div class="product-info">
+      <h1>Category 6A<br>UTP RJ45 Jack Module</h1>
+      <div class="subtitle">10-Gig Performance<br>KwikJack™ Technology</div>
+      <div class="spec-pills">
+        <span class="pill highlight">CAT 6A</span>
+        <span class="pill">10-GIG</span>
+        <span class="pill">22-26 AWG</span>
+        <span class="pill">RJ45</span>
+        <span class="pill">4PPoE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key features -->
+  <div class="features">
+    <div class="section-label">Key Features</div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <div class="feat-text">50 micro inch gold plating — lasting connections</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
+        <div class="feat-text">10-Gig performance on unshielded cable</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div class="feat-text">Paired wiring — maintains signal integrity</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </div>
+        <div class="feat-text">KwikTool compatible for easy termination</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKU quick-reference -->
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference</div>
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Mayer Part #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#1A1A1A"></div><span class="color-label">Black</span></div></td>
+          <td class="part-num">DYC10606AKBK</td>
+        </tr>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#fff; border-color:rgba(0,0,0,0.2)"></div><span class="color-label">White</span></div></td>
+          <td class="part-num">DYC10606AKWH</td>
+        </tr>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#C0C0C0; border-color:rgba(0,0,0,0.2)"></div><span class="color-label">Almond</span></div></td>
+          <td class="part-num">DYC10606AKAL</td>
+        </tr>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#2563EB"></div><span class="color-label">Blue</span></div></td>
+          <td class="part-num">DYC10606AKBL</td>
+        </tr>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#22C55E"></div><span class="color-label">Green</span></div></td>
+          <td class="part-num">DYC10606AKGN</td>
+        </tr>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#F97316"></div><span class="color-label">Orange</span></div></td>
+          <td class="part-num">DYC10606AKOR</td>
+        </tr>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#EF4444"></div><span class="color-label">Red</span></div></td>
+          <td class="part-num">DYC10606AKRD</td>
+        </tr>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#EAB308"></div><span class="color-label">Yellow</span></div></td>
+          <td class="part-num">DYC10606AKYL</td>
+        </tr>
+        <tr>
+          <td><div class="swatch-cell"><div class="mini-swatch" style="background:#F5F0DC; border-color:rgba(0,0,0,0.15)"></div><span class="color-label">Ivory</span></div></td>
+          <td class="part-num">DYC10606AKIV</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="bottom-cta">
+    <div class="cta-text">
+      Pull this card → Take to counter →<br>
+      <span class="highlight">Tell us the color &amp; quantity you need</span>
+    </div>
+    <div class="return-tag">↩ Return Card</div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="title">Dynacom Cat 6A Jack — Details &amp; Specifications</div>
+    <div class="card-id">DC-DYC-10606AK</div>
+  </div>
+
+  <div class="specs-section">
+    <div class="section-label">Technical Specifications</div>
+    <div class="specs-grid">
+      <div class="spec-row"><span class="spec-label">Category</span><span class="spec-value">Cat 6A / 10-Gig</span></div>
+      <div class="spec-row"><span class="spec-label">Type</span><span class="spec-value">UTP (Unshielded)</span></div>
+      <div class="spec-row"><span class="spec-label">Positions</span><span class="spec-value">8P8C (RJ45)</span></div>
+      <div class="spec-row"><span class="spec-label">Wire Gauge</span><span class="spec-value">22–26 AWG</span></div>
+      <div class="spec-row"><span class="spec-label">Termination</span><span class="spec-value">IDC</span></div>
+      <div class="spec-row"><span class="spec-label">Wiring</span><span class="spec-value">T568A / T568B</span></div>
+      <div class="spec-row"><span class="spec-label">Gold Plating</span><span class="spec-value">50 Micro Inch</span></div>
+      <div class="spec-row"><span class="spec-label">Power Rating</span><span class="spec-value">4PPoE IEEE802.3bt</span></div>
+      <div class="spec-row"><span class="spec-label">Bandwidth</span><span class="spec-value">500 MHz</span></div>
+      <div class="spec-row"><span class="spec-label">Listing</span><span class="spec-value">UL Listed</span></div>
+    </div>
+  </div>
+
+  <div class="tool-section">
+    <div class="section-label">Compatible Tool</div>
+    <div class="tool-box">
+      <div class="tool-image-container">
+        <img src="../cards/DYC3190KT.jpg" alt="Dynacom 3190KT Termination Tool">
+      </div>
+      <div class="tool-content">
+        <h3>Compatible Tool</h3>
+        <div class="tool-name">DYC3190KT</div>
+        <p>KwikTool termination tool designed for fast, reliable terminations on Dynacom jacks. Professional-grade construction with ergonomic handle.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-label">Key Features &amp; Benefits</div>
+    <div class="features-list">
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>CAT 6A, 10-Gig Performance</strong> — Full 10GBASE-T support on unshielded cable</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>4PPoE (IEEE802.3bt) Rated</strong> — Supports high-power PoE applications up to 100W</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>50 Micro Inch Gold Plating</strong> — Ensures lasting, reliable data connections</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>Compatible with KwikTool</strong> — Fast termination with DYC3190KT tool</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>Paired Wiring Design</strong> — Maintains pair geometry for optimal signal integrity</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>Labeled for T568A or B</strong> — Clear wiring identification reduces termination errors</div>
+      </div>
+      <div class="feature-item">
+        <div class="feat-marker"></div>
+        <div class="feat-text"><strong>500 MHz Bandwidth</strong> — Exceeds Category 6A channel requirements</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="install-section">
+    <div class="install-box">
+      <div class="install-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+      <div class="install-content">
+        <h3>Installation &amp; Termination</h3>
+        <p>Supports both <strong>T568A</strong> and <strong>T568B</strong> wiring standards. Paired wiring design maintains conductor geometry for 10-Gig performance. Use <strong>DYC3190KT</strong> tool for professional installations. Suitable for solid or stranded copper conductors.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="standards-section">
+    <div class="section-label">Certifications &amp; Standards</div>
+    <div class="standards-row">
+      <span class="standard-badge primary">ANSI/TIA-568-C.2</span>
+      <span class="standard-badge primary">ISO 11801 Class EA</span>
+      <span class="standard-badge">UL Listed</span>
+      <span class="standard-badge">RoHS Compliant</span>
+      <span class="standard-badge">10GBASE-T</span>
+      <span class="standard-badge">4PPoE Rated</span>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="contact-info">
+      <div class="company">Mayer Electric Supply</div>
+      <div class="tagline">Your Connected Solutions Partner</div>
+      <div class="details">dynacomcorp.com<br>Questions? Ask your counter rep</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/dynacom-cat6a-jack-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="bottom-bar">
+    <div class="return-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></div>
+    <div class="return-text">Please <span class="highlight">return this card</span> to the display after ordering</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

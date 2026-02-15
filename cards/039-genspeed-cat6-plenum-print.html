@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenSPEED Category 6 Plenum Cable - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #F39C12 0%, #CE840F 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #F39C12 0%, #FFB314 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 4px; }
+  .sku-count { font-size: 10px; font-weight: 600; color: #002B5C; margin-bottom: 10px; }
+  .product-image { padding: 0 20px 12px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 140px; object-fit: contain; }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; }
+  .color-grid { display: flex; flex-direction: column; gap: 6px; }
+  .color-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #F7F8FA; border-radius: 4px; border-left: 4px solid transparent; }
+  .color-item.blue { border-left-color: #0066CC; }
+  .color-item.white { border-left-color: #E5E7EB; background: #FAFAFA; }
+  .color-item.yellow { border-left-color: #FFD700; }
+  .color-item.gray { border-left-color: #6B7280; }
+  .color-item.red { border-left-color: #DC2626; }
+  .color-item.orange { border-left-color: #EA580C; }
+  .color-item.green { border-left-color: #16A34A; }
+  .color-item.black { border-left-color: #1F2937; }
+  .color-box { width: 24px; height: 24px; border-radius: 4px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.15); }
+  .color-box.blue { background: #0066CC; }
+  .color-box.white { background: #FFFFFF; border: 2px solid #9CA3AF; }
+  .color-box.yellow { background: #FFD700; }
+  .color-box.gray { background: #6B7280; }
+  .color-box.red { background: #DC2626; }
+  .color-box.orange { background: #EA580C; }
+  .color-box.green { background: #16A34A; }
+  .color-box.black { background: #1F2937; }
+  .color-info { display: flex; align-items: center; justify-content: space-between; flex: 1; min-width: 0; }
+  .color-name { font-size: 10px; font-weight: 600; color: #1A1A2E; min-width: 50px; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 18px; color: #002B5C; margin-bottom: 8px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .features-section { margin-bottom: 25px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 6px 0; padding-left: 20px; position: relative; font-size: 10px; color: #4B5563; line-height: 1.5; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #E87722; font-weight: bold; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+  .spec-box { padding: 10px; background: #F7F8FA; border-radius: 4px; text-align: center; }
+  .spec-label { font-size: 9px; color: #6B7280; margin-bottom: 4px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #002B5C; font-weight: 700; }
+  .standards { margin-bottom: 20px; }
+  .standards-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .standard-badge { font-family: 'JetBrains Mono', monospace; font-size: 8px; padding: 4px 8px; background: #002B5C; color: #fff; border-radius: 3px; white-space: nowrap; }
+  .note-box { background: #FFF3E0; border-left: 3px solid #E87722; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
+  .note-box .note-title { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 6px; }
+  .note-box .note-text { font-size: 9px; color: #4B5563; line-height: 1.5; }
+  .footer { margin-top: auto; text-align: center; padding-top: 20px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 13px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .footer-text { font-size: 9px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">GenSPEED 6</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Category 6 Cable — Plenum CMP</div>
+  </div>
+  <div class="hero">
+    <h1>Category 6<br>Plenum Cable</h1>
+    <div class="subtitle">GenSPEED® 6 • 1000ft Pull-Pac® II Box</div>
+    <div class="description">24 AWG • UTP • TIA 568.2-D Compliant</div>
+    <div class="sku-count">8 Colors Available</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/GCC7131100.png" alt="GenSPEED 6 Category 6 Cable">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Available Colors &amp; Part Numbers</div>
+    <div class="color-grid">
+      <div class="color-item blue">
+        <div class="color-box blue"></div>
+        <div class="color-info">
+          <div class="color-name">Blue</div>
+          <div class="part-num">GCC7131100</div>
+        </div>
+      </div>
+      <div class="color-item white">
+        <div class="color-box white"></div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="part-num">GCC7131101</div>
+        </div>
+      </div>
+      <div class="color-item yellow">
+        <div class="color-box yellow"></div>
+        <div class="color-info">
+          <div class="color-name">Yellow</div>
+          <div class="part-num">GCC7131102</div>
+        </div>
+      </div>
+      <div class="color-item gray">
+        <div class="color-box gray"></div>
+        <div class="color-info">
+          <div class="color-name">Gray</div>
+          <div class="part-num">GCC7131103</div>
+        </div>
+      </div>
+      <div class="color-item red">
+        <div class="color-box red"></div>
+        <div class="color-info">
+          <div class="color-name">Red</div>
+          <div class="part-num">GCC7131104</div>
+        </div>
+      </div>
+      <div class="color-item orange">
+        <div class="color-box orange"></div>
+        <div class="color-info">
+          <div class="color-name">Orange</div>
+          <div class="part-num">GCC7131105</div>
+        </div>
+      </div>
+      <div class="color-item green">
+        <div class="color-box green"></div>
+        <div class="color-info">
+          <div class="color-name">Green</div>
+          <div class="part-num">GCC7131106</div>
+        </div>
+      </div>
+      <div class="color-item black">
+        <div class="color-box black"></div>
+        <div class="color-info">
+          <div class="color-name">Black</div>
+          <div class="part-num">GCC7131107</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us color &amp; quantity</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>GenSPEED® 6 Category 6 Cable</h2>
+    <div class="category">CMP Plenum Rated • 1000ft Box</div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>CMP Plenum rated (NFPA 262)</li>
+      <li>Low-Smoke, Flame-Retardant PVC jacket</li>
+      <li>Unique separator design for consistent performance</li>
+      <li>TRU-Mark® footage markings (1000' to 0')</li>
+      <li>Third-party verified performance</li>
+      <li>Made in U.S.A.</li>
+      <li>RoHS Compliant</li>
+    </ul>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-box">
+      <div class="spec-label">Conductor</div>
+      <div class="spec-value">24 AWG</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Cable Diameter</div>
+      <div class="spec-value">0.205"</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Weight</div>
+      <div class="spec-value">25 lbs/1000ft</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Temperature</div>
+      <div class="spec-value">-20°C to +75°C</div>
+    </div>
+  </div>
+
+  <div class="standards">
+    <div class="section-title">Standards &amp; Applications</div>
+    <div class="standards-list">
+      <div class="standard-badge">ANSI/TIA 568.2-D</div>
+      <div class="standard-badge">1000BASE-T</div>
+      <div class="standard-badge">PoE++</div>
+      <div class="standard-badge">UL 444</div>
+      <div class="standard-badge">ISO/IEC 11801</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/genspeed-cat6-plenum-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Available in 8 colors • Perfect for commercial installations</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

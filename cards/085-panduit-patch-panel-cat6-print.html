@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit Cat 6 Patch Panel - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+   .top-band { background: linear-gradient(135deg, #16A085 0%, #128871 100%); padding: 14px 20px; position: relative; } .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #16A085 0%, #19B898 100%); } .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; } .category-stripe { background: #F7F8FA; padding: 10px 20px; } .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; } .hero { padding: 16px 20px; } h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; } .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; } .description { font-size: 10px; color: #4B5563; margin-bottom: 4px; } .sku-count { font-size: 10px; font-weight: 600; color: #002B5C; margin-bottom: 10px; } .product-image { padding: 0 20px 12px; text-align: center; } .product-image img { max-width: 100%; height: auto; max-height: 180px; object-fit: contain; border-radius: 4px; filter: brightness(0.95); } .sku-section { padding: 0 20px 16px; flex: 1; } .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; } .sku-table { width: 100%; border-collapse: collapse; } .sku-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #fff; background: #002B5C; text-align: left; padding: 10px; } .sku-table tbody td { padding: 8px 10px; border-bottom: 1px solid #E9ECF0; font-size: 9px; } .part-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; } .bottom-cta { background: #002B5C; padding: 10px 20px; } .cta-text { font-size: 10px; color: #fff; } .highlight { color: #E87722; }
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+   .top-band { background: linear-gradient(135deg, #16A085 0%, #128871 100%); padding: 12px 20px; position: relative; } .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #16A085 0%, #19B898 100%); } .title { font-size: 12px; font-weight: 700; color: #fff; } .specs-section { padding: 14px 20px; } .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; } .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; } .spec-row { display: flex; justify-content: space-between; padding: 5px 8px; background: #FAFBFC; border-radius: 4px; } .spec-row .spec-label { font-size: 8.5px; color: #6B7280; } .spec-row .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; color: #1A1A2E; } .install-box { background: linear-gradient(135deg, #16A085 0%, #128871 100%); border: 1px solid #C8D9F0; border-radius: 8px; padding: 12px; margin: 10px 20px; } .install-box h3 { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; } .install-box p { font-size: 9px; color: #4B5563; line-height: 1.4; } .bottom-section { margin-top: auto; padding: 10px 20px; text-align: right; } .company { font-size: 11px; font-weight: 700; color: #002B5C; } .bottom-bar { background: #002B5C; padding: 8px 20px; text-align: center; position: relative; } .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #16A085 0%, #19B898 100%); } .return-text { font-size: 9px; font-weight: 700; color: #fff; } .highlight { color: #E87722; }
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+<div class="top-band"><div class="logo-text">Panduit</div></div><div class="category-stripe"><div class="cat-label">Patch Panel — Category 6 Loaded</div></div><div class="hero"><h1>Patch Panel<br>Category 6</h1><div class="subtitle">Panduit Loaded</div><div class="description">Data-Patch™ DP6™ PLUS</div><div class="sku-count">2 SKUs</div></div><div class="product-image"><img src="../cards/PANDP24688TGY.png" alt="Panduit Cat 6 Punchdown Patch Panel"></div><div class="sku-section"><div class="section-label">Part Number Reference</div><table class="sku-table"><thead><tr><th>Description</th><th>Mayer Part #</th></tr></thead><tbody><tr><td>24 Port RM 1RU Cat 6 Black</td><td class="part-num">PANDP24688TGY</td></tr><tr><td>48 Port RM 2RU Cat 6 Black</td><td class="part-num">PANDP48688TGY</td></tr></tbody></table></div><div class="bottom-cta"><div class="cta-text">Pull card → Counter → <span class="highlight">Tell us quantity</span></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+<div class="top-band"><div class="title">Patch Panel Category 6 — Data-Patch™ DP6™ PLUS</div></div><div class="specs-section"><div class="section-label">Technical Specifications</div><div class="specs-grid"><div class="spec-row"><span class="spec-label">Type</span><span class="spec-value">Punchdown</span></div><div class="spec-row"><span class="spec-label">Material</span><span class="spec-value">CRS</span></div><div class="spec-row"><span class="spec-label">Style</span><span class="spec-value">Flat</span></div><div class="spec-row"><span class="spec-label">Performance</span><span class="spec-value">Cat 6</span></div><div class="spec-row"><span class="spec-label">Wiring</span><span class="spec-value">T568A/B</span></div><div class="spec-row"><span class="spec-label">RU</span><span class="spec-value">1RU/2RU</span></div><div class="spec-row"><span class="spec-label">ID</span><span class="spec-value">Adhesive</span></div><div class="spec-row"><span class="spec-label">Brand</span><span class="spec-value">Pan-Net®</span></div></div></div><div class="install-box"><h3>Data-Patch™ DP6™ PLUS Flat Punchdown Patch Panel</h3><p><strong>Exceptional Cat 6 performance</strong> - Exceeds ANSI/TIA-568-C.2 Category 6 and ISO 11801 Class E standards at 1-250 MHz. <strong>Universal compatibility</strong> - Ideal for network installations and upgrades. <strong>Clear port labeling</strong> - Pre-numbered ports with adhesive label identification for easy organization. <strong>PoE support</strong> - Supports IEEE 802.3af, 802.3at, and 802.3bt type 3 and 4 for PoE applications up to 100 W. <strong>T568A/T568B wiring</strong> - Flexible wiring scheme options. <strong>Compact design</strong> - 1.17 in. (29.7mm) depth fits standard racks. <strong>Temperature rated</strong> - Operates from -10°C to 65°C (-14°F to 149°F). <strong>UL 1863 approved</strong> - RoHS Compliant. <strong>Best Seller</strong> - Proven solution for professional installations.</p></div><div class="bottom-section"><div class="company">Mayer Electric Supply</div></div><div class="bottom-bar"><div class="return-text">Please <span class="highlight">return this card</span> to the display</div></div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/panduit-patch-panel-cat6-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

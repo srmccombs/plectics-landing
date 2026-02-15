@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenSPEED Category 6 Outdoor Cable - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #F39C12 0%, #CE840F 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #F39C12 0%, #FFB314 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 10px; }
+  .product-image { padding: 0 20px 16px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 200px; object-fit: contain; }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; }
+  .part-box { background: #F7F8FA; padding: 16px; border-radius: 6px; border-left: 4px solid #1F2937; text-align: center; margin-bottom: 16px; }
+  .part-label { font-size: 11px; color: #6B7280; margin-bottom: 8px; font-weight: 600; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: #002B5C; }
+  .features-grid { display: grid; gap: 10px; }
+  .feature-badge { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #E87722; }
+  .feature-icon { width: 32px; height: 32px; background: #002B5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; flex-shrink: 0; }
+  .feature-text { flex: 1; }
+  .feature-title { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 2px; }
+  .feature-desc { font-size: 8.5px; color: #6B7280; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 18px; color: #002B5C; margin-bottom: 8px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .features-section { margin-bottom: 25px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 6px 0; padding-left: 20px; position: relative; font-size: 10px; color: #4B5563; line-height: 1.5; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #E87722; font-weight: bold; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+  .spec-box { padding: 10px; background: #F7F8FA; border-radius: 4px; text-align: center; }
+  .spec-label { font-size: 9px; color: #6B7280; margin-bottom: 4px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #002B5C; font-weight: 700; }
+  .applications { margin-bottom: 20px; }
+  .app-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .app-badge { font-size: 9px; padding: 6px 10px; background: #002B5C; color: #fff; border-radius: 3px; white-space: nowrap; }
+  .note-box { background: #FFF3E0; border-left: 3px solid #E87722; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
+  .note-title { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 6px; }
+  .note-text { font-size: 9px; color: #4B5563; line-height: 1.5; }
+  .footer { margin-top: auto; text-align: center; padding-top: 20px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 13px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .footer-text { font-size: 9px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">GenSPEED 6</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Category 6 Cable — Outdoor Rated</div>
+  </div>
+  <div class="hero">
+    <h1>Category 6<br>Outdoor Cable</h1>
+    <div class="subtitle">GenSPEED® 6 Outside Plant • 1000ft Reel</div>
+    <div class="description">23 AWG • UTP • Waterproof Gel-Filled • Black Jacket</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/7136100.jpeg" alt="GenSPEED 6 Outdoor Cable">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Part Number</div>
+    <div class="part-box">
+      <div class="part-label">Black Jacket • 1000ft Reel</div>
+      <div class="part-num">GCC7136100</div>
+    </div>
+
+    <div class="section-label">Key Features</div>
+    <div class="features-grid">
+      <div class="feature-badge">
+        <div class="feature-icon">☂</div>
+        <div class="feature-text">
+          <div class="feature-title">Waterproof Protection</div>
+          <div class="feature-desc">Gel-filled for outdoor environments</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-text">
+          <div class="feature-title">Outside Plant Rated</div>
+          <div class="feature-desc">Designed for outdoor installations</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">☀</div>
+        <div class="feature-text">
+          <div class="feature-title">UV Resistant Jacket</div>
+          <div class="feature-desc">Black jacket for durability</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us quantity (1000ft reels)</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>GenSPEED® 6 Outdoor Cable</h2>
+    <div class="category">Outside Plant • 1000ft Reel</div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>Waterproof gel-filled design</li>
+      <li>UV resistant black PE jacket</li>
+      <li>Outside plant (OSP) rated</li>
+      <li>Direct burial capable</li>
+      <li>Solid bare copper conductors</li>
+      <li>Made in U.S.A.</li>
+      <li>RoHS Compliant</li>
+    </ul>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-box">
+      <div class="spec-label">Conductor</div>
+      <div class="spec-value">23 AWG</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Jacket Color</div>
+      <div class="spec-value">Black</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Packaging</div>
+      <div class="spec-value">1000ft Reel</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Temperature</div>
+      <div class="spec-value">-20°C to +60°C</div>
+    </div>
+  </div>
+
+  <div class="applications">
+    <div class="section-title">Applications</div>
+    <div class="app-list">
+      <div class="app-badge">Outdoor Installation</div>
+      <div class="app-badge">Direct Burial</div>
+      <div class="app-badge">Building-to-Building</div>
+      <div class="app-badge">Campus Networks</div>
+      <div class="app-badge">Aerial Installation</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">💡 Installation Note</div>
+    <div class="note-text">Sold in 1000ft reels only. Minimum order quantity: 1000ft. Waterproof gel requires proper termination techniques - consult installation guides.</div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/genspeed-cat6-outdoor-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Perfect for outdoor and direct burial installations</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

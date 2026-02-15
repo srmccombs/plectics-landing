@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit Mini-Com Executive Faceplate - Electric Ivory - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  
+  .front .top-band { background: linear-gradient(135deg, #0088CC 0%, #0073AD 100%); padding: 14px 20px 12px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .front .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0088CC 0%, #009CEA 100%); }
+  .brand-mark { display: flex; align-items: center; gap: 8px; }
+  .brand-mark .logo-text { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; }
+  .brand-mark .system-badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; color: #E87722; background: rgba(232, 119, 34, 0.15); padding: 3px 8px; border-radius: 3px; letter-spacing: 0.5px; }
+  .top-band .card-id { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+  .front .category-stripe { background: #F7F8FA; padding: 10px 20px; border-bottom: 1px solid #E9ECF0; display: flex; align-items: center; justify-content: space-between; }
+  .category-stripe .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #002B5C; }
+  .category-stripe .perf-badge { display: flex; align-items: center; gap: 5px; }
+  .perf-badge .dot { width: 7px; height: 7px; background: #8B5CF6; border-radius: 50%; }
+  .perf-badge span { font-size: 9px; font-weight: 600; color: #8B5CF6; letter-spacing: 0.5px; text-transform: uppercase; }
+  .front .hero { flex: 0 0 auto; padding: 16px 20px 12px; display: flex; align-items: flex-start; gap: 16px; }
+  .hero .product-image { flex: 0 0 130px; height: 130px; background: #F7F8FA; border-radius: 8px; border: 1px solid #E9ECF0; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .product-image img { width: 100%; height: 100%; object-fit: contain; }
+  .hero .product-info { flex: 1; padding-top: 4px; }
+  .product-info h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; line-height: 1.25; margin-bottom: 4px; }
+  .product-info .subtitle { font-size: 11.5px; color: #6B7280; line-height: 1.4; margin-bottom: 10px; }
+  .product-info .spec-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+  .spec-pills .pill { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 500; padding: 3px 8px; border-radius: 4px; background: #F5F3FF; color: #6B21A8; letter-spacing: 0.3px; }
+  .spec-pills .pill.highlight { background: #002B5C; color: #fff; }
+  .front .features { padding: 0 20px 14px; }
+  .features .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #9CA3AF; margin-bottom: 7px; }
+  .features .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .feat-grid .feat { display: flex; align-items: flex-start; gap: 6px; padding: 6px 8px; background: #FAFBFC; border-radius: 5px; border: 1px solid #F0F1F3; }
+  .feat .feat-icon { flex: 0 0 16px; width: 16px; height: 16px; background: #002B5C; border-radius: 3px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .feat .feat-icon svg { width: 10px; height: 10px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .feat .feat-text { font-size: 9.5px; color: #374151; line-height: 1.35; font-weight: 500; }
+  .front .sku-section { padding: 0 20px 16px; flex: 1; display: flex; flex-direction: column; }
+  .sku-section .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #002B5C; margin-bottom: 12px; }
+  .sku-table { width: 100%; border-collapse: collapse; font-size: 11px; flex: 1; }
+  .sku-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #002B5C; text-align: left; padding: 10px 10px; border-bottom: 2px solid #E87722; }
+  .sku-table tbody td { padding: 8px 10px; border-bottom: 1px solid #E9ECF0; vertical-align: middle; }
+  .sku-table tbody tr:last-child td { border-bottom: none; }
+  .sku-table .config-label { font-size: 11px; font-weight: 600; color: #1A1A2E; }
+  .sku-table .part-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; letter-spacing: 0.5px; }
+  .front .bottom-cta { background: #002B5C; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .front .bottom-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #0088CC 0%, #009CEA 100%); }
+  .bottom-cta .cta-text { font-size: 10px; font-weight: 600; color: #fff; line-height: 1.4; }
+  .bottom-cta .cta-text .highlight { color: #E87722; }
+  .bottom-cta .return-tag { font-family: 'JetBrains Mono', monospace; font-size: 7px; font-weight: 600; color: #E87722; background: rgba(232, 119, 34, 0.15); padding: 4px 10px; border-radius: 3px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back .top-band { background: linear-gradient(135deg, #0088CC 0%, #0073AD 100%); padding: 12px 20px 10px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .back .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0088CC 0%, #009CEA 100%); }
+  .back .top-band .title { font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .back .top-band .card-id { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+  .back .specs-section { padding: 14px 20px 10px; }
+  .back .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 5px 8px; background: #FAFBFC; border-radius: 4px; border: 1px solid #F0F1F3; }
+  .spec-row .spec-label { font-size: 8.5px; color: #6B7280; font-weight: 500; }
+  .spec-row .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; color: #1A1A2E; }
+  .back .compat-section { padding: 10px 20px; }
+  .compat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  .compat-card { text-align: center; padding: 10px 6px 8px; background: #F7F8FA; border-radius: 6px; border: 1px solid #E9ECF0; }
+  .compat-card .compat-icon { width: 36px; height: 36px; margin: 0 auto 6px; background: #fff; border-radius: 6px; border: 1px solid #E0E3E8; display: flex; align-items: center; justify-content: center; }
+  .compat-card .compat-icon svg { width: 20px; height: 20px; fill: none; stroke: #002B5C; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .compat-card .compat-title { font-size: 8.5px; font-weight: 700; color: #1A1A2E; margin-bottom: 2px; line-height: 1.2; }
+  .compat-card .compat-desc { font-size: 7.5px; color: #6B7280; line-height: 1.3; }
+  .back .install-section { padding: 10px 20px; }
+  .install-box { background: linear-gradient(135deg, #0088CC 0%, #0073AD 100%); border: 1px solid #DDD6FE; border-radius: 8px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 12px; }
+  .install-box .install-icon { flex: 0 0 36px; width: 36px; height: 36px; background: #002B5C; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .install-box .install-icon svg { width: 20px; height: 20px; fill: none; stroke: #E87722; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .install-box .install-content h3 { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .install-box .install-content p { font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .back .config-section { padding: 10px 20px; }
+  .config-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .config-option { background: #FAFBFC; border: 1px solid #E9ECF0; border-radius: 6px; padding: 10px 12px; }
+  .config-option .config-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .config-header .port-count { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; }
+  .config-header .port-badge { font-family: 'JetBrains Mono', monospace; font-size: 7px; font-weight: 600; background: #002B5C; color: #fff; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px; }
+  .config-option .config-desc { font-size: 8.5px; color: #6B7280; line-height: 1.4; }
+  .back .bottom-section { margin-top: auto; padding: 10px 20px 14px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+  .bottom-section .qr-placeholder { width: 64px; height: 64px; background: #F7F8FA; border: 2px dashed #D1D5DB; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+  .qr-placeholder svg { width: 24px; height: 24px; stroke: #9CA3AF; fill: none; stroke-width: 1.5; margin-bottom: 2px; }
+  .qr-placeholder span { font-family: 'JetBrains Mono', monospace; font-size: 6px; color: #9CA3AF; letter-spacing: 0.5px; text-transform: uppercase; }
+  .bottom-section .contact-info { flex: 1; text-align: right; }
+  .contact-info .company { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 2px; }
+  .contact-info .tagline { font-size: 8px; color: #6B7280; margin-bottom: 6px; font-style: italic; }
+  .contact-info .details { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #9CA3AF; line-height: 1.6; letter-spacing: 0.3px; }
+  .back .bottom-bar { background: #002B5C; padding: 8px 20px; display: flex; align-items: center; justify-content: center; gap: 8px; position: relative; }
+  .back .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #0088CC 0%, #009CEA 100%); }
+  .bottom-bar .return-icon { width: 14px; height: 14px; }
+  .bottom-bar .return-icon svg { width: 14px; height: 14px; fill: none; stroke: #E87722; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .bottom-bar .return-text { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; }
+  .bottom-bar .return-text .highlight { color: #E87722; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="brand-mark">
+      <div class="logo-text">Panduit</div>
+      <div class="system-badge">Mini-Com®</div>
+    </div>
+    <div class="card-id">DC-MC-CFPE-EI</div>
+  </div>
+
+  <div class="category-stripe">
+    <div class="cat-label">Executive Series Faceplate</div>
+    <div class="perf-badge">
+      <div class="dot"></div>
+      <span>Premium</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="product-image">
+      <img src="../cards/PANCFPE4EIY.png" alt="Panduit Mini-Com Executive Faceplate Electric Ivory with Label Pocket" onerror="this.outerHTML='<svg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'><rect x=\'18\' y=\'23\' width=\'64\' height=\'54\' rx=\'5\' fill=\'#F5F0DC\' stroke=\'#9CA3AF\' stroke-width=\'2.5\'/><rect x=\'30\' y=\'35\' width=\'18\' height=\'14\' rx=\'2\' fill=\'#E5E7EB\' stroke=\'#6B7280\' stroke-width=\'1.5\'/><rect x=\'52\' y=\'35\' width=\'18\' height=\'14\' rx=\'2\' fill=\'#E5E7EB\' stroke=\'#6B7280\' stroke-width=\'1.5\'/><rect x=\'30\' y=\'51\' width=\'18\' height=\'14\' rx=\'2\' fill=\'#E5E7EB\' stroke=\'#6B7280\' stroke-width=\'1.5\'/><rect x=\'52\' y=\'51\' width=\'18\' height=\'14\' rx=\'2\' fill=\'#E5E7EB\' stroke=\'#6B7280\' stroke-width=\'1.5\'/></svg>'">
+    </div>
+    <div class="product-info">
+      <h1>Mini-Com® Executive<br>Series Faceplate</h1>
+      <div class="subtitle">Single Gang with Raised Rails<br>&amp; Label Pocket • Electric Ivory</div>
+      <div class="spec-pills">
+        <span class="pill highlight">EXECUTIVE</span>
+        <span class="pill">RAISED RAILS</span>
+        <span class="pill">ELECTRIC IVORY</span>
+        <span class="pill">WITH LABEL</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="section-label">Key Features</div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <div class="feat-text">Premium raised rail design</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <div class="feat-text">Integrated label pocket</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+        </div>
+        <div class="feat-text">NEMA standard single gang</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        </div>
+        <div class="feat-text">Snap-in Mini-Com modules</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference — Electric Ivory</div>
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>Ports</th>
+          <th>Mayer Part #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="config-label">1-Port</td>
+          <td class="part-num">PANCFPE1EIY</td>
+        </tr>
+        <tr>
+          <td class="config-label">2-Port</td>
+          <td class="part-num">PANCFPE2EIY</td>
+        </tr>
+        <tr>
+          <td class="config-label">4-Port</td>
+          <td class="part-num">PANCFPE4EIY</td>
+        </tr>
+        <tr>
+          <td class="config-label">6-Port</td>
+          <td class="part-num">PANCFPE6EIY</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bottom-cta">
+    <div class="cta-text">
+      Pull this card → Take to counter →<br>
+      <span class="highlight">Tell us how many ports &amp; quantity you need</span>
+    </div>
+    <div class="return-tag">↩ Return Card</div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="title">Mini-Com® Executive Series Faceplate — Electric Ivory</div>
+    <div class="card-id">DC-MC-CFPE-EI</div>
+  </div>
+
+  <div class="specs-section">
+    <div class="section-label">Technical Specifications</div>
+    <div class="specs-grid">
+      <div class="spec-row"><span class="spec-label">Series</span><span class="spec-value">Executive</span></div>
+      <div class="spec-row"><span class="spec-label">Mounting</span><span class="spec-value">Single Gang</span></div>
+      <div class="spec-row"><span class="spec-label">Standard</span><span class="spec-value">NEMA</span></div>
+      <div class="spec-row"><span class="spec-label">Material</span><span class="spec-value">ABS</span></div>
+      <div class="spec-row"><span class="spec-label">Color</span><span class="spec-value">Electric Ivory</span></div>
+      <div class="spec-row"><span class="spec-label">Design</span><span class="spec-value">Raised Rails</span></div>
+    </div>
+  </div>
+
+  <div class="compat-section">
+    <div class="section-label">Compatible With — Mini-Com® Modules</div>
+    <div class="compat-grid">
+      <div class="compat-card">
+        <div class="compat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2"></rect><line x1="7" y1="12" x2="7" y2="12"></line><line x1="12" y1="12" x2="12" y2="12"></line><line x1="17" y1="12" x2="17" y2="12"></line></svg></div>
+        <div class="compat-title">UTP Jacks</div>
+        <div class="compat-desc">Cat 5e, Cat 6,<br>Cat 6A</div>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 6v6M1 12h6m6 0h6"></path></svg></div>
+        <div class="compat-title">Fiber Optic</div>
+        <div class="compat-desc">LC, SC,<br>ST adapters</div>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg></div>
+        <div class="compat-title">A/V Modules</div>
+        <div class="compat-desc">HDMI, USB,<br>Coax, Audio</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="install-section">
+    <div class="install-box">
+      <div class="install-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+      <div class="install-content">
+        <h3>Executive Electric Ivory Finish</h3>
+        <p><strong>Raised rail frame</strong> - Enhanced aesthetic for professional installations. <strong>Warm ivory tone</strong> - Traditional elegance for classic spaces. <strong>Integrated label pocket</strong> - Clear port identification. <strong>Professional applications</strong> - Offices, boardrooms, high-end installations.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="config-section">
+    <div class="section-label">Available Configurations</div>
+    <div class="config-cards">
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">1-Port</div>
+          <div class="port-badge">CFPE1</div>
+        </div>
+        <div class="config-desc">Single module applications</div>
+      </div>
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">2-Port</div>
+          <div class="port-badge">CFPE2</div>
+        </div>
+        <div class="config-desc">Dual module workstations</div>
+      </div>
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">4-Port</div>
+          <div class="port-badge">CFPE4</div>
+        </div>
+        <div class="config-desc">High-density applications</div>
+      </div>
+      <div class="config-option">
+        <div class="config-header">
+          <div class="port-count">6-Port</div>
+          <div class="port-badge">CFPE6</div>
+        </div>
+        <div class="config-desc">Maximum density setup</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="contact-info">
+      <div class="company">Mayer Electric Supply</div>
+      <div class="tagline">Your Connected Solutions Partner</div>
+      <div class="details">panduit.com/mini-com<br>Questions? Ask your counter rep</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/panduit-minicom-executive-faceplate-ivory-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="bottom-bar">
+    <div class="return-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></div>
+    <div class="return-text">Please <span class="highlight">return this card</span> to the display after ordering</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

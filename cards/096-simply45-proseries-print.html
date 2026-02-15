@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simply45 ProSeries Pass-Through - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #DA2129 0%, #B91C22 100%); padding: 16px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #DA2129 0%, #FA252F 100%); }
+  .logo-text { font-size: 16px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+  .tagline { font-size: 8px; color: rgba(255,255,255,0.9); margin-top: 3px; letter-spacing: 1px; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 18px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.2; }
+  .patent-badge { display: inline-block; padding: 4px 10px; background: #FFD700; color: #1F2937; border-radius: 3px; font-size: 8px; font-weight: 700; margin-bottom: 8px; border: 1px solid #FFC000; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; font-weight: 600; }
+  .description { font-size: 9px; color: #4B5563; margin-bottom: 4px; line-height: 1.4; }
+  .product-image { padding: 0 20px 12px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 150px; object-fit: contain; }
+  .highlights-section { padding: 0 20px 16px; }
+  .highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+  .highlight-box { display: flex; align-items: center; gap: 6px; padding: 7px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #0066CC; }
+  .highlight-icon { width: 20px; height: 20px; background: #0066CC; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; flex-shrink: 0; }
+  .highlight-text { font-size: 7.5px; font-weight: 600; color: #002B5C; line-height: 1.3; }
+  .categories-section { padding: 0 20px 16px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 8px; text-transform: uppercase; }
+  .category-grid { display: grid; gap: 6px; margin-bottom: 12px; }
+  .category-box { padding: 8px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #0066CC; }
+  .category-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .category-desc { font-size: 7.5px; color: #6B7280; margin-bottom: 4px; }
+  .category-skus { font-size: 7px; color: #4B5563; }
+  .sku-line { display: flex; justify-content: space-between; align-items: center; padding: 2px 0; }
+  .sku-label { font-size: 7px; color: #4B5563; }
+  .sku-number { font-family: 'JetBrains Mono', monospace; font-size: 7px; font-weight: 700; color: #002B5C; }
+  .tool-box { padding: 10px; background: #FFF3E0; border: 2px solid #FFB74D; border-radius: 4px; margin-bottom: 12px; }
+  .tool-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .tool-desc { font-size: 7.5px; color: #4B5563; line-height: 1.4; }
+  .tool-part { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; color: #E65100; margin-top: 4px; }
+  .bottom-cta { background: #0066CC; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #FFD700; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 15px; color: #002B5C; margin-bottom: 4px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; margin-top: 12px; }
+  .section-title:first-of-type { margin-top: 0; }
+  .category-section { margin-bottom: 14px; }
+  .category-header { background: linear-gradient(135deg, #DA2129 0%, #B91C22 100%); padding: 6px 10px; border-radius: 4px; margin-bottom: 6px; }
+  .category-name { font-size: 10px; font-weight: 700; color: #fff; }
+  .sku-grid { display: grid; gap: 5px; }
+  .sku-row { display: grid; grid-template-columns: 1fr 100px; gap: 6px; padding: 6px 8px; background: #F7F8FA; border-radius: 3px; border-left: 3px solid #0066CC; }
+  .sku-desc { font-size: 8px; font-weight: 600; color: #002B5C; }
+  .sku-part { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; color: #6B7280; text-align: right; }
+  .features-section { margin-top: 14px; margin-bottom: 14px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 3px 0; padding-left: 14px; position: relative; font-size: 7.5px; color: #4B5563; line-height: 1.4; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #0066CC; font-weight: bold; font-size: 7.5px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; margin-bottom: 14px; }
+  .spec-box { padding: 6px; background: #F7F8FA; border-radius: 3px; text-align: center; }
+  .spec-label { font-size: 7px; color: #6B7280; margin-bottom: 2px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #002B5C; font-weight: 700; }
+  .tool-section { background: #FFF3E0; border-left: 3px solid #FFB74D; padding: 10px; border-radius: 4px; margin-bottom: 14px; }
+  .tool-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 4px; }
+  .tool-desc { font-size: 7.5px; color: #4B5563; line-height: 1.4; margin-bottom: 4px; }
+  .tool-part { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; color: #E65100; }
+  .note-box { background: #E3F2FD; border-left: 3px solid #0066CC; padding: 8px; border-radius: 4px; margin-bottom: 12px; }
+  .note-title { font-size: 8px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .note-text { font-size: 7px; color: #4B5563; line-height: 1.4; }
+  .footer { margin-top: auto; text-align: center; padding-top: 12px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .footer-text { font-size: 7.5px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">Simply45®</div>
+    <div class="tagline">Professional Grade Connectivity</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">ProSeries Pass-Through RJ45 Modular Plugs</div>
+  </div>
+  <div class="hero">
+    <h1>ProSeries Pass-Through<br>with Cap45®</h1>
+    <div class="patent-badge">PATENT 10,811,831 B1</div>
+    <div class="subtitle">Hybrid Pass-Through + Standard Security</div>
+    <div class="description">The only pass-through RJ45 with Cap45® isolation cap that eliminates electrical shorting risks from exposed wire ends</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/S45-1500P.jpg" alt="Simply45 ProSeries Pass-Through RJ45">
+  </div>
+  <div class="highlights-section">
+    <div class="highlight-grid">
+      <div class="highlight-box">
+        <div class="highlight-icon">✓</div>
+        <div class="highlight-text">cUL Listed<br>E520614</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-icon">⚡</div>
+        <div class="highlight-text">PoE/PoH<br>Rated</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-icon">🔧</div>
+        <div class="highlight-text">3-Prong Pin<br>Design</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-icon">⭐</div>
+        <div class="highlight-text">50µ 24ct<br>Gold Plated</div>
+      </div>
+    </div>
+  </div>
+  <div class="categories-section">
+    <div class="section-label">Part Numbers</div>
+    <div class="category-grid">
+      <div class="category-box">
+        <div class="category-title">Cat5e ProSeries</div>
+        <div class="sku-line">
+          <div class="sku-label">UTP 100 Jar</div>
+          <div class="sku-number">GSCS451500P</div>
+        </div>
+        <div class="sku-line">
+          <div class="sku-label">UTP 50 Clam</div>
+          <div class="sku-number">GSCS451501P</div>
+        </div>
+        <div class="sku-line">
+          <div class="sku-label">Shielded 50</div>
+          <div class="sku-number">GSCS451550P</div>
+        </div>
+      </div>
+      <div class="category-box">
+        <div class="category-title">Cat6 ProSeries</div>
+        <div class="sku-line">
+          <div class="sku-label">UTP 100 Jar</div>
+          <div class="sku-number">GSCS451600P</div>
+        </div>
+        <div class="sku-line">
+          <div class="sku-label">UTP 50 Clam</div>
+          <div class="sku-number">GSCS451601P</div>
+        </div>
+        <div class="sku-line">
+          <div class="sku-label">Shielded 50</div>
+          <div class="sku-number">GSCS451650P</div>
+        </div>
+      </div>
+      <div class="category-box">
+        <div class="category-title">Cat6/6A ProSeries</div>
+        <div class="sku-line">
+          <div class="sku-label">UTP 100 Jar</div>
+          <div class="sku-number">GSCS451700P</div>
+        </div>
+        <div class="sku-line">
+          <div class="sku-label">Shielded 50</div>
+          <div class="sku-number">GSCS451750P</div>
+        </div>
+      </div>
+    </div>
+    <div class="tool-box">
+      <div class="tool-title">🔧 ProSeries All-In-One Crimp Tool</div>
+      <div class="tool-desc">Dual ratcheting handles • Pre-calibrated blade • Works with all Simply45 RJ45 connectors (UTP &amp; STP)</div>
+      <div class="tool-part">GSCS45C101</div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">See back for all SKUs</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>ProSeries Pass-Through RJ45</h2>
+    <div class="category">Simply45® • Complete SKU List</div>
+  </div>
+
+  <div class="section-title">Cat5e ProSeries Modular Plugs</div>
+  <div class="category-section">
+    <div class="sku-grid">
+      <div class="sku-row">
+        <div class="sku-desc">UTP Unshielded • 100 pc/Jar</div>
+        <div class="sku-part">GSCS451500P</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">UTP Unshielded • 50 pc/Clamshell</div>
+        <div class="sku-part">GSCS451501P</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">Shielded • 50 pc/Clamshell</div>
+        <div class="sku-part">GSCS451550P</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Cat6 ProSeries Modular Plugs</div>
+  <div class="category-section">
+    <div class="sku-grid">
+      <div class="sku-row">
+        <div class="sku-desc">UTP Unshielded • 100 pc/Jar</div>
+        <div class="sku-part">GSCS451600P</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">UTP Unshielded • 50 pc/Clamshell</div>
+        <div class="sku-part">GSCS451601P</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">Shielded External Ground • 50 pc/Jar</div>
+        <div class="sku-part">GSCS451650P</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Cat6/6A ProSeries Modular Plugs</div>
+  <div class="category-section">
+    <div class="sku-grid">
+      <div class="sku-row">
+        <div class="sku-desc">UTP Unshielded • 100 pc/Jar</div>
+        <div class="sku-part">GSCS451700P</div>
+      </div>
+      <div class="sku-row">
+        <div class="sku-desc">Shielded External Ground • 50 pc/Jar</div>
+        <div class="sku-part">GSCS451750P</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-section">
+    <div class="tool-title">🔧 ProSeries All-In-One Crimp Tool</div>
+    <div class="tool-desc">Dual ratcheting handles for increased force • Pre-calibrated blade cartridge for flush trimming • Compatible with all Simply45 RJ45 connectors (UTP &amp; STP)</div>
+    <div class="tool-part">GSCS45C101</div>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-box">
+      <div class="spec-label">Contact Design</div>
+      <div class="spec-value">3-Prong</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Gold Plating</div>
+      <div class="spec-value">50µ 24ct</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Rating</div>
+      <div class="spec-value">UL94 V0</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Certification</div>
+      <div class="spec-value">cUL Listed</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">PoE/PoH</div>
+      <div class="spec-value">Rated</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Warranty</div>
+      <div class="spec-value">Lifetime</div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>Patented Cap45® eliminates electrical shorting from exposed wires</li>
+      <li>Hybrid design combines pass-through convenience with standard security</li>
+      <li>3-prong pin design provides 3 points of contact vs. 2-prong designs</li>
+      <li>True 50µ 24ct gold plated contacts for superior conductivity</li>
+      <li>Single-piece design, no load bar required</li>
+      <li>Straight-line wire insert for faster, easier terminations</li>
+      <li>Commercial rated UL94 V0 for CMP Plenum, CMR, CM, and LSZH cables</li>
+      <li>Ideal for PoE/PoH applications with lower resistance and heat buildup</li>
+      <li>cUL Listed (E520614) - highest quality and safety standards</li>
+      <li>Compliant: ANSI/TIA 568.2-D, ISO/IEC 11801, FCC, TAA, P65</li>
+      <li>Supports 10GBaseT performance over unshielded twisted pair</li>
+      <li>HDBaseT approved</li>
+    </ul>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">💡 Cap45® Patent 10,811,831 B1</div>
+    <div class="note-text">Cap45® is an isolation cap that snaps onto the front of the pass-through plug after termination, covering exposed wire ends and preventing electrical shorting in RJ45 sockets. Fast, easy to use, and fits all compliant sockets.</div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/simply45-proseries-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Professional connectivity solutions with patented Cap45® technology</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

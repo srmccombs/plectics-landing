@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit NetKey F-Type Module - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+
+  
+
+  
+
+  
+
+  .front .top-band {
+    background: linear-gradient(135deg, #017698 0%, #006481 100%);
+    padding: 14px 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #017698 0%, #0187AE 100%);
+  }
+
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-mark .logo-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .brand-mark .system-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    color: #E87722;
+    background: rgba(232, 119, 34, 0.15);
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .top-band .card-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  .front .category-stripe {
+    background: #F7F8FA;
+    padding: 10px 20px;
+    border-bottom: 1px solid #E9ECF0;
+  }
+
+  .category-stripe .cat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #002B5C;
+  }
+
+  .front .hero {
+    flex: 0 0 auto;
+    padding: 16px 20px 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hero .product-image {
+    flex: 0 0 130px;
+    height: 130px;
+    background: #F7F8FA;
+    border-radius: 8px;
+    border: 1px solid #E9ECF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .hero .product-info {
+    flex: 1;
+    padding-top: 4px;
+  }
+
+  .product-info h1 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .product-info .subtitle {
+    font-size: 11.5px;
+    color: #6B7280;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .product-info .spec-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .spec-pills .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #F0F4FF;
+    color: #002B5C;
+    letter-spacing: 0.3px;
+  }
+
+  .spec-pills .pill.highlight {
+    background: #002B5C;
+    color: #fff;
+  }
+
+  .front .sku-section {
+    padding: 0 20px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sku-section .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #002B5C;
+    margin-bottom: 12px;
+  }
+
+  .sku-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    flex: 1;
+  }
+
+  .sku-table thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #002B5C;
+    text-align: left;
+    padding: 10px 10px;
+    border-bottom: 2px solid #E87722;
+  }
+
+  .sku-table tbody td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #E9ECF0;
+    vertical-align: middle;
+  }
+
+  .sku-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .sku-table .config-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1A1A2E;
+  }
+
+  .sku-table .part-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #002B5C;
+    letter-spacing: 0.5px;
+  }
+
+  .front .bottom-cta {
+    background: #002B5C;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .front .bottom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #017698 0%, #0187AE 100%);
+  }
+
+  .bottom-cta .cta-text {
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .bottom-cta .cta-text .highlight {
+    color: #E87722;
+  }
+
+  .bottom-cta .return-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    font-weight: 600;
+    color: #E87722;
+    background: rgba(232, 119, 34, 0.15);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back .top-band { background: linear-gradient(135deg, #017698 0%, #006481 100%); padding: 12px 20px; position: relative; }
+  .back .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #017698 0%, #0187AE 100%); }
+  .back .top-band .title { font-size: 12px; font-weight: 700; color: #fff; }
+  .specs-section { padding: 14px 20px; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; letter-spacing: 2px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 5px 8px; background: #FAFBFC; border-radius: 4px; }
+  .spec-row .spec-label { font-size: 8.5px; color: #6B7280; }
+  .spec-row .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; color: #1A1A2E; }
+  .install-section { padding: 10px 20px; }
+  .install-box { background: linear-gradient(135deg, #017698 0%, #006481 100%); border: 1px solid #C8D9F0; border-radius: 8px; padding: 12px; }
+  .install-box h3 { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .install-box p { font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .bottom-section { margin-top: auto; padding: 10px 20px; }
+  .contact-info { text-align: right; }
+  .contact-info .company { font-size: 11px; font-weight: 700; color: #002B5C; }
+  .contact-info .details { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #9CA3AF; }
+  .bottom-bar { background: #002B5C; padding: 8px 20px; text-align: center; position: relative; }
+  .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #017698 0%, #0187AE 100%); }
+  .bottom-bar .return-text { font-size: 9px; font-weight: 700; color: #fff; }
+  .bottom-bar .return-text .highlight { color: #E87722; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="brand-mark">
+      <div class="logo-text">Panduit</div>
+      <div class="system-badge">NetKey®</div>
+    </div>
+    <div class="card-id">DC-NK-FTYPE</div>
+  </div>
+
+  <div class="category-stripe">
+    <div class="cat-label">Module — F-Type Coax Coupler</div>
+  </div>
+
+  <div class="hero">
+    <div class="product-image">
+      <img src="../cards/PANNKFEI.png" alt="Panduit NetKey F-Type Module">
+    </div>
+    <div class="product-info">
+      <h1>NetKey®<br>F-Type<br>Module</h1>
+      <div class="subtitle">Cable/Satellite Coax<br>RG-6 &amp; RG-59 • 3.0 GHz</div>
+      <div class="spec-pills">
+        <span class="pill highlight">F-TYPE</span>
+        <span class="pill">3.0 GHz</span>
+        <span class="pill">RG-6/59</span>
+        <span class="pill">KEYSTONE</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference</div>
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Mayer Part #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="config-label">Electric Ivory</td>
+          <td class="part-num">PANNKFEI</td>
+        </tr>
+        <tr>
+          <td class="config-label">International White</td>
+          <td class="part-num">PANNKFIW</td>
+        </tr>
+        <tr>
+          <td class="config-label">White</td>
+          <td class="part-num">PANNKFWH</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bottom-cta">
+    <div class="cta-text">
+      Pull this card → Take to counter →<br>
+      <span class="highlight">Tell us the color &amp; quantity you need</span>
+    </div>
+    <div class="return-tag">↩ Return Card</div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="title">NetKey® F-Type Module (3.0 GHz Coax Coupler)</div>
+  </div>
+  <div class="specs-section">
+    <div class="section-label">Technical Specifications</div>
+    <div class="specs-grid">
+      <div class="spec-row"><span class="spec-label">Type</span><span class="spec-value">F-Type Module</span></div>
+      <div class="spec-row"><span class="spec-label">Module</span><span class="spec-value">Keystone</span></div>
+      <div class="spec-row"><span class="spec-label">RG Type</span><span class="spec-value">RG-6/RG-59</span></div>
+      <div class="spec-row"><span class="spec-label">Bandwidth</span><span class="spec-value">3.0 GHz</span></div>
+      <div class="spec-row"><span class="spec-label">Depth</span><span class="spec-value">1.17 in.</span></div>
+      <div class="spec-row"><span class="spec-label">Width</span><span class="spec-value">0.64 in.</span></div>
+      <div class="spec-row"><span class="spec-label">Height</span><span class="spec-value">0.86 in.</span></div>
+      <div class="spec-row"><span class="spec-label">Termination</span><span class="spec-value">Pass-Through</span></div>
+      <div class="spec-row"><span class="spec-label">Ports</span><span class="spec-value">1 Module Space</span></div>
+      <div class="spec-row"><span class="spec-label">Colors</span><span class="spec-value">3 Options</span></div>
+      <div class="spec-row"><span class="spec-label">Standard</span><span class="spec-value">RoHS</span></div>
+      <div class="spec-row"><span class="spec-label">Brand</span><span class="spec-value">NetKey®</span></div>
+    </div>
+  </div>
+  <div class="install-section">
+    <div class="install-box">
+      <h3>NetKey® F-Type Module for Cable &amp; Satellite Connections</h3>
+      <p><strong>Reliable F-type connection for cable and satellite signals</strong> - Integrate a reliable F-type connection for cable and satellite signals directly into your wall plate with our keystone module. <strong>3.0 GHz bandwidth</strong> - High-frequency performance for cable TV and satellite applications. <strong>RG-6 and RG-59 compatible</strong> - Works with standard coaxial cable types. <strong>Pass-through termination</strong> - Simple F-connector to F-connector coupler design. <strong>Keystone compatible</strong> - Fits all NetKey keystone faceplates and panels. <strong>Multiple color options</strong> - Available in Electric Ivory, International White, and White to match your wall plates. <strong>Single module space</strong> - Compact design fits standard keystone openings. <strong>RoHS Compliant</strong> - Environmentally responsible.</p>
+    </div>
+  </div>
+  <div class="bottom-section">
+    <div class="contact-info">
+      <div class="company">Mayer Electric Supply</div>
+      <div class="details">panduit.com/netkey<br>Questions? Ask your counter rep</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/panduit-netkey-ftype-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>  <div class="bottom-bar">
+    <div class="return-text">Please <span class="highlight">return this card</span> to the display after ordering</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

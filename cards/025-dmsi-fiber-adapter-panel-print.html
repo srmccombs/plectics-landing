@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMSI Fiber Adapter Panel - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .header { background: linear-gradient(135deg, #E74C3C 0%, #C44033 100%); color: #fff; padding: 20px; border-radius: 6px 6px 0 0; }
+  .brand { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.9; margin-bottom: 4px; }
+  .product-name { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+  .tagline { font-size: 10px; opacity: 0.8; font-style: italic; }
+
+  .image-section { background: linear-gradient(to bottom, #f8f8f8 0%, #ffffff 100%); padding: 25px 20px; display: flex; align-items: center; justify-content: center; min-height: 200px; border-bottom: 1px solid #e0e0e0; }
+  .product-image { max-width: 90%; max-height: 180px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
+
+  .content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+  .intro { font-size: 9px; color: #333; line-height: 1.5; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+
+  .section-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; margin-top: 12px; border-bottom: 2px solid #2d2d2d; padding-bottom: 4px; display: inline-block; }
+  .section-title:first-of-type { margin-top: 0; }
+
+  .fiber-grid { display: grid; gap: 6px; margin-bottom: 12px; }
+  .fiber-box { background: #f8f8f8; padding: 8px 10px; border-radius: 4px; border-left: 3px solid #2d2d2d; }
+  .fiber-type { font-size: 9px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .fiber-specs { font-size: 7.5px; color: #666; margin-bottom: 3px; }
+  .fiber-models { font-size: 7px; color: #333; line-height: 1.3; }
+
+  .connector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px; }
+  .connector-box { background: #e8e8e8; padding: 8px; border-radius: 4px; text-align: center; }
+  .connector-type { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px; }
+  .connector-label { font-size: 7px; color: #666; }
+
+  .note-box { background: #f8f8f8; border-left: 3px solid #2d2d2d; padding: 8px; border-radius: 4px; margin-top: auto; }
+  .note-title { font-size: 8px; font-weight: 700; color: #1a1a1a; margin-bottom: 3px; }
+  .note-text { font-size: 7.5px; color: #333; line-height: 1.4; }
+
+  .footer { background: #1a1a1a; color: #fff; padding: 12px 20px; border-radius: 0 0 6px 6px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-size: 10px; font-weight: 600; opacity: 0.9; }
+  .footer-code { font-family: 'JetBrains Mono', monospace; font-size: 9px; opacity: 0.7; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .title { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid #2d2d2d; }
+
+  .section { margin-bottom: 12px; }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; background: #f8f8f8; padding: 4px 8px; border-radius: 3px; }
+
+  .part-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 6.5px; }
+  .part-table th { background: #2d2d2d; color: #fff; padding: 4px 2px; text-align: left; font-weight: 600; font-size: 6px; }
+  .part-table td { padding: 4px 2px; border-bottom: 1px solid #e0e0e0; }
+  .part-table tr:hover { background: #f8f8f8; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 6px; }
+
+  .info-box { background: #f8f8f8; border-left: 3px solid #2d2d2d; padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+  .info-title { font-size: 8px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .info-text { font-size: 7px; color: #333; line-height: 1.4; }
+
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+  .feature-list { list-style: none; }
+  .feature-list li { font-size: 7.5px; line-height: 1.4; margin-bottom: 3px; padding-left: 10px; position: relative; color: #333; }
+  .feature-list li:before { content: "▸"; position: absolute; left: 0; color: #2d2d2d; font-weight: bold; font-size: 7px; }
+
+  .footer { margin-top: auto; padding-top: 10px; border-top: 2px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; }
+  .footer-text { font-size: 7.5px; color: #666; }
+  .footer-brand { font-weight: 700; color: #1a1a1a; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="header">
+    <div class="brand">DMSI | Fiber Connectivity</div>
+    <div class="product-name">Fiber Adapter Panel</div>
+    <div class="tagline">CCH Compatible</div>
+  </div>
+
+  <div class="image-section">
+    <img src="../cards/FBRCCHCP12E4DMSI.png" alt="DMSI Fiber Adapter Panel" class="product-image">
+  </div>
+
+  <div class="content">
+    <div class="intro">
+      DMSI-manufactured fiber adapter panels compatible with Corning CCH enclosures (SPH, WCH, CCH series). Available in ST, SC, and LC connector types with 6 or 12 fiber configurations.
+    </div>
+
+    <div class="section-title">Fiber Types Available</div>
+    <div class="fiber-grid">
+      <div class="fiber-box">
+        <div class="fiber-type">OM1 Multimode 62.5/125</div>
+        <div class="fiber-specs">6-Fiber: ST, SC, LC • 12-Fiber: LC</div>
+        <div class="fiber-models">FBRCCHCP06xx • FBRCCHCP12A8DMSI</div>
+      </div>
+      <div class="fiber-box">
+        <div class="fiber-type">OM3/OM4 Multimode 50/125</div>
+        <div class="fiber-specs">6-Fiber: LC • 12-Fiber: LC</div>
+        <div class="fiber-models">FBRCCHCP06E4DMSI • FBRCCHCP12E4DMSI</div>
+      </div>
+      <div class="fiber-box">
+        <div class="fiber-type">Single Mode OS2 9/125</div>
+        <div class="fiber-specs">6-Fiber: ST, SC, LC • 12-Fiber: ST, LC</div>
+        <div class="fiber-models">FBRCCHCP06xx • FBRCCHCP12xx</div>
+      </div>
+    </div>
+
+    <div class="section-title">Connector Types</div>
+    <div class="connector-grid">
+      <div class="connector-box">
+        <div class="connector-type">ST</div>
+        <div class="connector-label">Bayonet</div>
+      </div>
+      <div class="connector-box">
+        <div class="connector-type">SC</div>
+        <div class="connector-label">Push-Pull</div>
+      </div>
+      <div class="connector-box">
+        <div class="connector-type">LC</div>
+        <div class="connector-label">Small Form</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <div class="note-title">CCH Compatible</div>
+      <div class="note-text">
+        DMSI panels designed to fit Corning CCH-series enclosures including rack-mount (CCH-01U through CCH-04U) and wall-mount (SPH-01P, WCH-02P, WCH-04P) housings. Standard industry fiber adapter mounting.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">DMSI Manufacturing</div>
+    <div class="footer-code">CCH Compatible</div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="title">DMSI Fiber Adapter Panel Specifications</div>
+
+  <div class="section">
+    <div class="section-title">OM1 Multimode 62.5/125 Models</div>
+    <table class="part-table">
+      <thead>
+        <tr>
+          <th>Part Number</th>
+          <th>Fibers</th>
+          <th>Connector</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">FBRCCHCP0615TDMSI</td>
+          <td>6</td>
+          <td>ST</td>
+          <td>6-Fiber ST Panel 62.5/125</td>
+        </tr>
+        <tr>
+          <td class="mono">FBRCCHCP0691DMSI</td>
+          <td>6</td>
+          <td>SC</td>
+          <td>6-Fiber SC Panel 62.5/125</td>
+        </tr>
+        <tr>
+          <td class="mono">FBRCCHCP06A8DMSI</td>
+          <td>6</td>
+          <td>LC</td>
+          <td>6-Fiber LC Panel 62.5/125</td>
+        </tr>
+        <tr>
+          <td class="mono">FBRCCHCP12A8DMSI</td>
+          <td>12</td>
+          <td>LC</td>
+          <td>12-Fiber LC Panel 62.5/125</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">OM3/OM4 Multimode 50/125 Models</div>
+    <table class="part-table">
+      <thead>
+        <tr>
+          <th>Part Number</th>
+          <th>Fibers</th>
+          <th>Connector</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">FBRCCHCP06E4DMSI</td>
+          <td>6</td>
+          <td>LC</td>
+          <td>6-Fiber LC Panel 50/125</td>
+        </tr>
+        <tr>
+          <td class="mono">FBRCCHCP12E4DMSI</td>
+          <td>12</td>
+          <td>LC</td>
+          <td>12-Fiber LC Panel 50/125</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Single Mode OS2 9/125 Models</div>
+    <table class="part-table">
+      <thead>
+        <tr>
+          <th>Part Number</th>
+          <th>Fibers</th>
+          <th>Connector</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">FBRCCHCP0615TDMSI</td>
+          <td>6</td>
+          <td>ST</td>
+          <td>6-Fiber ST Panel SM</td>
+        </tr>
+        <tr>
+          <td class="mono">FBRCCHCP1219TDMSI</td>
+          <td>12</td>
+          <td>ST</td>
+          <td>12-Fiber ST Panel SM</td>
+        </tr>
+        <tr>
+          <td class="mono">FBRCCHCP0659DMSI</td>
+          <td>6</td>
+          <td>SC</td>
+          <td>6-Fiber SC Panel SM</td>
+        </tr>
+        <tr>
+          <td class="mono">FBRCCHCP06A9DMSI</td>
+          <td>6</td>
+          <td>LC</td>
+          <td>6-Fiber LC Panel SM</td>
+        </tr>
+        <tr>
+          <td class="mono">FBRCCHCP12A9DMSI</td>
+          <td>12</td>
+          <td>LC</td>
+          <td>12-Fiber LC Panel SM</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Features &amp; Benefits</div>
+    <div class="feature-grid">
+      <ul class="feature-list">
+        <li>CCH compatible design</li>
+        <li>Standard industry mounting</li>
+        <li>High-density fiber termination</li>
+        <li>Durable construction</li>
+        <li>Easy installation</li>
+      </ul>
+      <ul class="feature-list">
+        <li>Multiple connector types</li>
+        <li>6 or 12 fiber configurations</li>
+        <li>Multimode and single mode</li>
+        <li>Cost-effective solution</li>
+        <li>Field-proven reliability</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <div class="info-title">CCH Compatible Enclosures</div>
+    <div class="info-text">
+      <strong>Rack Mount:</strong> CCH-01U, CCH-02U, CCH-03U, CCH-04U<br>
+      <strong>Wall Mount:</strong> SPH-01P, WCH-02P, WCH-04P, WCH-06P<br><br>
+      DMSI panels designed to fit standard Corning CCH-series enclosure mounting patterns.
+    </div>
+  </div>
+
+  <div class="info-box">
+    <div class="info-title">Connector Type Guide</div>
+    <div class="info-text">
+      <strong>ST:</strong> Bayonet-style connector, common in legacy installations<br>
+      <strong>SC:</strong> Push-pull connector, reliable and widely used<br>
+      <strong>LC:</strong> Small form factor, high-density applications
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/dmsi-fiber-adapter-panel-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-text">
+      <span class="footer-brand">DMSI Manufacturing</span> • CCH Compatible
+    </div>
+    <div class="footer-text">Fiber Adapter Panels</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

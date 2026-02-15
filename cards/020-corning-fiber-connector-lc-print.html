@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corning Fiber Connector LC - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #E74C3C 0%, #C44033 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E74C3C 0%, #FF5745 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 4px; }
+  .sku-count { font-size: 10px; font-weight: 600; color: #002B5C; margin-bottom: 10px; }
+  .product-image { padding: 0 20px 12px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 180px; object-fit: contain; border-radius: 4px; filter: brightness(0.95); }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; }
+  .sku-table { width: 100%; border-collapse: collapse; }
+  .sku-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #fff; background: #002B5C; text-align: left; padding: 10px; }
+  .sku-table tbody td { padding: 8px 10px; border-bottom: 1px solid #E9ECF0; font-size: 9.5px; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 18px; color: #002B5C; margin-bottom: 8px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .features-section { margin-bottom: 25px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 8px 0; padding-left: 20px; position: relative; font-size: 10.5px; color: #4B5563; line-height: 1.5; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #E87722; font-weight: bold; }
+  .specs-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 25px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 8px 12px; background: #F7F8FA; border-radius: 4px; }
+  .spec-label { font-size: 10px; color: #6B7280; font-weight: 600; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #002B5C; font-weight: 700; }
+  .fiber-types { margin-bottom: 25px; }
+  .fiber-type { display: flex; align-items: center; padding: 8px 12px; margin-bottom: 6px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #E87722; }
+  .fiber-type .type-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 700; color: #002B5C; flex: 1; }
+  .fiber-type .boot-color { font-size: 9px; color: #6B7280; }
+  .footer { margin-top: auto; text-align: center; padding-top: 20px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 13px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .footer-text { font-size: 9px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">Corning</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Fiber Connector — LC</div>
+  </div>
+  <div class="hero">
+    <h1>LC Fiber Connector</h1>
+    <div class="subtitle">Corning UniCam®</div>
+    <div class="description">Field-Installable • No-Epoxy/No-Polish</div>
+    <div class="sku-count">3 SKUs</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/FBR9520099.png" alt="Corning LC Fiber Connector">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference</div>
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>Fiber Type</th>
+          <th>Mayer Part #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>OM1 62.5/125 Multi-Mode</td>
+          <td class="part-num">FBR9500099</td>
+        </tr>
+        <tr>
+          <td>OM3/OM4 50/125 Multi-Mode</td>
+          <td class="part-num">FBR9505099X</td>
+        </tr>
+        <tr>
+          <td>OS2 Single-Mode</td>
+          <td class="part-num">FBR9520099</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us fiber type &amp; quantity</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>LC Fiber Connector</h2>
+    <div class="category">Corning UniCam® Technology</div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>No-Epoxy/No-Polish field installation</li>
+      <li>LC connector type (small form factor)</li>
+      <li>Ceramic ferrule material with UPC polish</li>
+      <li>500 remating durability cycles</li>
+      <li>Temperature range: -40°C to 75°C</li>
+      <li>Includes trigger, crimp band, and multiple boot sizes</li>
+      <li>Ideal for high-density data center applications</li>
+    </ul>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-row">
+      <div class="spec-label">Insertion Loss (Max)</div>
+      <div class="spec-value">0.5 dB</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-label">Tensile Strength</div>
+      <div class="spec-value">44-50 N (9.89-11.24 lbf)</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-label">Fiber Diameter</div>
+      <div class="spec-value">125 µm</div>
+    </div>
+  </div>
+
+  <div class="fiber-types">
+    <div class="section-title">Fiber Types</div>
+    <div class="fiber-type">
+      <div class="type-label">OM1 Multi-Mode</div>
+      <div class="boot-color">Beige Housing &amp; Boot</div>
+    </div>
+    <div class="fiber-type">
+      <div class="type-label">OM3/OM4 Multi-Mode</div>
+      <div class="boot-color">Black Housing, Aqua Boot</div>
+    </div>
+    <div class="fiber-type">
+      <div class="type-label">OS2 Single-Mode</div>
+      <div class="boot-color">Blue Housing &amp; Boot</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/corning-fiber-connector-lc-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Ask our team for installation guidance and technical support</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

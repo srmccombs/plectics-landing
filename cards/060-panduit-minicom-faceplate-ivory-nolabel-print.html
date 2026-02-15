@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit Mini-Com Faceplate - Electric Ivory No Label - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  
+  .front .top-band { background: linear-gradient(135deg, #0088CC 0%, #0073AD 100%); padding: 14px 20px 12px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .front .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0088CC 0%, #009CEA 100%); }
+  .brand-mark { display: flex; align-items: center; gap: 8px; }
+  .brand-mark .logo-text { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; }
+  .brand-mark .system-badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; color: #E87722; background: rgba(232, 119, 34, 0.15); padding: 3px 8px; border-radius: 3px; }
+  .top-band .card-id { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+  .front .category-stripe { background: #F7F8FA; padding: 10px 20px; border-bottom: 1px solid #E9ECF0; }
+  .category-stripe .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #002B5C; }
+  .front .hero { padding: 16px 20px 12px; display: flex; gap: 16px; }
+  .hero .product-image { flex: 0 0 130px; height: 130px; background: #F7F8FA; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .hero .product-info h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 4px; }
+  .hero .product-info .subtitle { font-size: 11.5px; color: #6B7280; margin-bottom: 10px; }
+  .spec-pills .pill { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; padding: 3px 8px; border-radius: 4px; background: #FFF7ED; color: #92400E; display: inline-block; margin: 2px; }
+  .spec-pills .pill.highlight { background: #002B5C; color: #fff; }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .sku-section .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; text-transform: uppercase; color: #002B5C; margin-bottom: 12px; }
+  .sku-table { width: 100%; border-collapse: collapse; }
+  .sku-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #fff; background: #002B5C; text-align: left; padding: 10px; border-bottom: 2px solid #E87722; }
+  .sku-table tbody td { padding: 8px 10px; border-bottom: 1px solid #E9ECF0; }
+  .sku-table .config-label { font-weight: 600; }
+  .sku-table .part-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; position: relative; }
+  .bottom-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #0088CC 0%, #009CEA 100%); }
+  .bottom-cta .cta-text { font-size: 10px; font-weight: 600; color: #fff; }
+  .bottom-cta .cta-text .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back .top-band { background: linear-gradient(135deg, #0088CC 0%, #0073AD 100%); padding: 12px 20px; position: relative; }
+  .back .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0088CC 0%, #009CEA 100%); }
+  .back .top-band .title { font-size: 12px; font-weight: 700; color: #fff; }
+  .specs-section { padding: 14px 20px; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 5px 8px; background: #FAFBFC; border-radius: 4px; }
+  .spec-row .spec-label { font-size: 8.5px; color: #6B7280; }
+  .spec-row .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; color: #1A1A2E; }
+  .install-section { padding: 10px 20px; }
+  .install-box { background: linear-gradient(135deg, #0088CC 0%, #0073AD 100%); border: 1px solid #FED7AA; border-radius: 8px; padding: 12px; }
+  .install-box h3 { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; }
+  .install-box p { font-size: 9px; color: #4B5563; line-height: 1.4; }
+  .bottom-section { margin-top: auto; padding: 10px 20px; }
+  .contact-info { text-align: right; }
+  .contact-info .company { font-size: 11px; font-weight: 700; color: #002B5C; }
+  .contact-info .details { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #9CA3AF; }
+  .bottom-bar { background: #002B5C; padding: 8px 20px; text-align: center; position: relative; }
+  .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #0088CC 0%, #009CEA 100%); }
+  .bottom-bar .return-text { font-size: 9px; font-weight: 700; color: #fff; }
+  .bottom-bar .return-text .highlight { color: #E87722; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="brand-mark">
+      <div class="logo-text">Panduit</div>
+      <div class="system-badge">Mini-Com®</div>
+    </div>
+    <div class="card-id">DC-MC-CFP-EI</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Faceplate — No Label • Electric Ivory</div>
+  </div>
+  <div class="hero">
+    <div class="product-image">
+      <img src="../cards/PANCFP2EI.jpeg" alt="Panduit Faceplate" style="width:100%;height:100%;object-fit:contain">
+    </div>
+    <div class="product-info">
+      <h1>Mini-Com®<br>Faceplate</h1>
+      <div class="subtitle">Single Gang without Label<br>Pocket • Electric Ivory</div>
+      <div class="spec-pills">
+        <span class="pill highlight">KEYSTONE</span>
+        <span class="pill">ELECTRIC IVORY</span>
+        <span class="pill">NO LABEL</span>
+      </div>
+    </div>
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Part Number Reference</div>
+    <table class="sku-table">
+      <thead><tr><th>Ports</th><th>Mayer Part #</th></tr></thead>
+      <tbody>
+        <tr><td class="config-label">1-Port</td><td class="part-num">PANCFP1EI</td></tr>
+        <tr><td class="config-label">2-Port</td><td class="part-num">PANCFP2EI</td></tr>
+        <tr><td class="config-label">4-Port</td><td class="part-num">PANCFP4EI</td></tr>
+        <tr><td class="config-label">6-Port</td><td class="part-num">PANCFP6EI</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull this card → Take to counter → <span class="highlight">Tell us the ports &amp; quantity</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="title">Mini-Com® Faceplate — Electric Ivory, No Label</div>
+  </div>
+  <div class="specs-section">
+    <div class="section-label">Technical Specifications</div>
+    <div class="specs-grid">
+      <div class="spec-row"><span class="spec-label">Type</span><span class="spec-value">Classic</span></div>
+      <div class="spec-row"><span class="spec-label">Material</span><span class="spec-value">ABS Plastic</span></div>
+      <div class="spec-row"><span class="spec-label">Mounting</span><span class="spec-value">Single Gang</span></div>
+      <div class="spec-row"><span class="spec-label">Orientation</span><span class="spec-value">Vertical</span></div>
+      <div class="spec-row"><span class="spec-label">Color</span><span class="spec-value">Electric Ivory</span></div>
+      <div class="spec-row"><span class="spec-label">Outlet</span><span class="spec-value">Flat</span></div>
+      <div class="spec-row"><span class="spec-label">Width</span><span class="spec-value">2.75"</span></div>
+      <div class="spec-row"><span class="spec-label">Height</span><span class="spec-value">4.5"</span></div>
+      <div class="spec-row"><span class="spec-label">Depth</span><span class="spec-value">0.68"</span></div>
+      <div class="spec-row"><span class="spec-label">Standards</span><span class="spec-value">RoHS</span></div>
+    </div>
+  </div>
+  <div class="install-section">
+    <div class="install-box">
+      <h3>Mini-Com® Classic Series Features</h3>
+      <p><strong>Modular design</strong> - Accepts all Mini-Com® modules (UTP, STP, fiber, A/V). <strong>Snap in/out</strong> - Easy moves, adds, and changes. <strong>No label pocket</strong> - Clean, streamlined appearance. <strong>Screw mount</strong> - Retention tabs for secure installation. <strong>Matching screws</strong> - Color-coordinated mounting hardware included. <strong>Electric Ivory finish</strong> - Warm traditional aesthetic for classic installations.</p>
+    </div>
+  </div>
+  <div class="bottom-section">
+    <div class="contact-info">
+      <div class="company">Mayer Electric Supply</div>
+      <div class="details">panduit.com/mini-com<br>Questions? Ask your counter rep</div>
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/panduit-minicom-faceplate-ivory-nolabel-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>  <div class="bottom-bar">
+    <div class="return-text">Please <span class="highlight">return this card</span> to the display after ordering</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

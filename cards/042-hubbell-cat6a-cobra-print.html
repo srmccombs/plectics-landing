@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hubbell Cat 6A COBRA-LOCK Jack - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+   .top-band { background: linear-gradient(135deg, #8E44AD 0%, #783993 100%); padding: 14px 20px; position: relative; } .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #8E44AD 0%, #A34EC6 100%); } .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; } .category-stripe { background: #F7F8FA; padding: 10px 20px; } .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; } .hero { padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; } .hero .product-image { flex: 0 0 140px; height: 140px; background: #F7F8FA; border-radius: 8px; border: 1px solid #E9ECF0; display: flex; align-items: center; justify-content: center; padding: 12px; } .hero .product-image img { width: 100%; height: 100%; object-fit: contain; } .hero .product-info { flex: 1; } h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 6px; line-height: 1.2; } .subtitle { font-size: 10px; color: #6B7280; margin-bottom: 8px; font-weight: 600; } .description { font-size: 8.5px; color: #4B5563; line-height: 1.4; } .sku-section { padding: 0 20px 16px; flex: 1; } .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; } .sku-table { width: 100%; border-collapse: collapse; } .sku-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #fff; background: #002B5C; text-align: left; padding: 10px; } .sku-table tbody td { padding: 8px 10px; border-bottom: 1px solid #E9ECF0; font-size: 9px; vertical-align: middle; } .sku-table tbody tr:last-child td { border-bottom: none; } .sku-table .swatch-cell { display: flex; align-items: center; gap: 6px; } .swatch-cell .mini-swatch { width: 16px; height: 16px; border-radius: 3px; border: 1.5px solid rgba(0,0,0,0.15); flex-shrink: 0; } .swatch-cell .color-label { font-size: 9px; font-weight: 600; color: #1A1A2E; } .part-num { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #002B5C; } .bottom-cta { background: #002B5C; padding: 10px 20px; } .cta-text { font-size: 10px; color: #fff; } .highlight { color: #E87722; }
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+   .top-band { background: linear-gradient(135deg, #8E44AD 0%, #783993 100%); padding: 12px 20px; position: relative; } .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #8E44AD 0%, #A34EC6 100%); } .title { font-size: 12px; font-weight: 700; color: #fff; } .install-box { background: linear-gradient(135deg, #8E44AD 0%, #783993 100%); border: 1px solid #C8D9F0; border-radius: 8px; padding: 12px; margin: 20px; } .install-box h3 { font-size: 11px; font-weight: 700; color: #002B5C; margin-bottom: 3px; } .install-box p { font-size: 9px; color: #4B5563; line-height: 1.4; } .bottom-section { margin-top: auto; padding: 10px 20px; text-align: right; } .company { font-size: 11px; font-weight: 700; color: #002B5C; } .bottom-bar { background: #002B5C; padding: 8px 20px; text-align: center; position: relative; } .bottom-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #8E44AD 0%, #A34EC6 100%); } .return-text { font-size: 9px; font-weight: 700; color: #fff; } .highlight { color: #E87722; }
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+<div class="top-band"><div class="logo-text">Hubbell</div></div><div class="category-stripe"><div class="cat-label">COBRA-LOCK — Category 6A UTP Jack</div></div><div class="hero"><div class="product-image"><img src="../cards/HUBHJU6AB.webp" alt="Hubbell Category 6A COBRA-LOCK Jack"></div><div class="product-info"><h1>Category 6A<br>COBRA-LOCK Jack</h1><div class="subtitle">Ascent System • 3rd Party Verified</div><div class="description">COBRA-LOCK™ termination reduces installation time by over 75%. Wires secured under constant compression for reliable 10GBASE-T connections. Qualified to 150% of 802.3bt PoE current level. Exceeds Category 6A performance with headroom beyond 500MHz for 10 Gigabit Ethernet assurance.</div></div></div><div class="sku-section"><div class="section-label">Part Number Reference</div><table class="sku-table"><thead><tr><th>Color</th><th>Mayer Part #</th></tr></thead><tbody><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#2563EB"></div><span class="color-label">Blue</span></div></td><td class="part-num">HUBHJU6AB</td></tr><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#F5F5DC; border-color:rgba(0,0,0,0.2)"></div><span class="color-label">Ivory</span></div></td><td class="part-num">HUBHJU6AEI</td></tr><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#22C55E"></div><span class="color-label">Green</span></div></td><td class="part-num">HUBHJU6AGN</td></tr><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#F97316"></div><span class="color-label">Orange</span></div></td><td class="part-num">HUBHJU6AOR</td></tr><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#EF4444"></div><span class="color-label">Red</span></div></td><td class="part-num">HUBHJU6AR</td></tr><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#8B5CF6"></div><span class="color-label">Purple</span></div></td><td class="part-num">HUBHJU6AP</td></tr><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#fff; border-color:rgba(0,0,0,0.2)"></div><span class="color-label">White</span></div></td><td class="part-num">HUBHJU6AW</td></tr><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#EAB308"></div><span class="color-label">Yellow</span></div></td><td class="part-num">HUBHJU6AY</td></tr><tr><td><div class="swatch-cell"><div class="mini-swatch" style="background:#1A1A1A"></div><span class="color-label">Black</span></div></td><td class="part-num">HUBHJU6ABK</td></tr></tbody></table></div><div class="bottom-cta"><div class="cta-text">Pull card → Counter → <span class="highlight">Tell us quantity</span></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+<div class="top-band"><div class="title">Category 6A COBRA-LOCK Jack</div></div><div class="install-box"><h3>COBRA-LOCK™ Category 6A Technology</h3><p><strong>75% Faster Terminations</strong> - Revolutionary tool-free design eliminates punch-down tools. <strong>Constant Compression</strong> - Wires secured under continuous pressure for reliable 10GBASE-T connections. <strong>Easy Re-Termination</strong> - Simple to fix mistakes (25+ re-termination cycles). <strong>3rd Party Verified Component</strong> - Independently tested Category 6A performance. <strong>PoE Ready</strong> - Qualified to 150% of IEEE 802.3bt current levels. <strong>Ascent System</strong> - Tuned components designed to work together for performance beyond 500MHz and 10 Gigabit Ethernet assurance. <strong>750+ Mating Cycles</strong> - Durable construction with 100 micro-inch gold over plating.</p></div><div class="bottom-section"><div class="company">Mayer Electric Supply</div></div><div class="bottom-bar"><div class="return-text">Please <span class="highlight">return this card</span> to the display</div></div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/hubbell-cat6a-cobra-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

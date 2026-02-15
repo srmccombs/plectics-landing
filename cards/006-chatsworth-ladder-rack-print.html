@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatsworth Universal Cable Runway - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #0D6EFD 0%, #0B5DD7 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0D6EFD 0%, #0E7EFF 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 10px; }
+  .product-image { padding: 0 20px 16px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 180px; object-fit: contain; }
+  .sku-section { padding: 0 20px 16px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 10px; text-transform: uppercase; }
+  .size-grid { display: flex; flex-direction: column; gap: 8px; }
+  .size-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #F7F8FA; border-radius: 4px; border-left: 4px solid #1F2937; }
+  .size-box { display: flex; align-items: center; justify-content: center; width: 50px; height: 32px; background: #002B5C; color: #fff; border-radius: 4px; flex-shrink: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; }
+  .size-info { display: flex; align-items: center; justify-content: space-between; flex: 1; min-width: 0; }
+  .size-name { font-size: 10px; font-weight: 600; color: #1A1A2E; min-width: 80px; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; }
+  .features-grid { display: grid; gap: 8px; margin-top: 12px; }
+  .feature-badge { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #E87722; }
+  .feature-icon { width: 28px; height: 28px; background: #002B5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; flex-shrink: 0; }
+  .feature-text { flex: 1; }
+  .feature-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 2px; }
+  .feature-desc { font-size: 8px; color: #6B7280; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 18px; color: #002B5C; margin-bottom: 8px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .features-section { margin-bottom: 25px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 6px 0; padding-left: 20px; position: relative; font-size: 10px; color: #4B5563; line-height: 1.5; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #E87722; font-weight: bold; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+  .spec-box { padding: 10px; background: #F7F8FA; border-radius: 4px; text-align: center; }
+  .spec-label { font-size: 9px; color: #6B7280; margin-bottom: 4px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #002B5C; font-weight: 700; }
+  .applications { margin-bottom: 20px; }
+  .app-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .app-badge { font-size: 9px; padding: 6px 10px; background: #002B5C; color: #fff; border-radius: 3px; white-space: nowrap; }
+  .note-box { background: #FFF3E0; border-left: 3px solid #E87722; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
+  .note-title { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 6px; }
+  .note-text { font-size: 9px; color: #4B5563; line-height: 1.5; }
+  .footer { margin-top: auto; text-align: center; padding-top: 20px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 13px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .footer-text { font-size: 9px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">Chatsworth</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Cable Management — Ladder Rack</div>
+  </div>
+  <div class="hero">
+    <h1>Universal Cable<br>Runway</h1>
+    <div class="subtitle">Ladder Rack • 9'-11½" Length</div>
+    <div class="description">Black Finish • Welded Steel Construction</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/CHT10250712.png" alt="Chatsworth Ladder Rack">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Available Widths &amp; Part Numbers</div>
+    <div class="size-grid">
+      <div class="size-item">
+        <div class="size-box">12"</div>
+        <div class="size-info">
+          <div class="size-name">12" Width</div>
+          <div class="part-num">CHT10250712</div>
+        </div>
+      </div>
+      <div class="size-item">
+        <div class="size-box">18"</div>
+        <div class="size-info">
+          <div class="size-name">18" Width</div>
+          <div class="part-num">CHT10250718</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top: 16px;">Key Features</div>
+    <div class="features-grid">
+      <div class="feature-badge">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-text">
+          <div class="feature-title">Heavy-Duty Construction</div>
+          <div class="feature-desc">Max load 132 lb/ft with minimal deflection</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">🔧</div>
+        <div class="feature-text">
+          <div class="feature-title">Welded Cross Members</div>
+          <div class="feature-desc">12" intervals for superior strength</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">✓</div>
+        <div class="feature-text">
+          <div class="feature-title">UL Classified</div>
+          <div class="feature-desc">Equipment grounding conductor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us width &amp; quantity</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>Universal Cable Runway</h2>
+    <div class="category">Chatsworth • 119.5" Standard Length</div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>3/8" x 1-1/2" x .065" wall rectangular steel tubing</li>
+      <li>Cross members welded at 12" (300 mm) intervals</li>
+      <li>Individually boxed to prevent scratches</li>
+      <li>UL Classified as equipment grounding conductor</li>
+      <li>Black powder coat finish</li>
+      <li>Value conscious design with industry standard features</li>
+      <li>Supports every 5' for maximum load capacity</li>
+    </ul>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-box">
+      <div class="spec-label">Standard Length</div>
+      <div class="spec-value">9'-11½"</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Max Load</div>
+      <div class="spec-value">132 lb/ft</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Cross Members</div>
+      <div class="spec-value">12" Intervals</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Finish</div>
+      <div class="spec-value">Black</div>
+    </div>
+  </div>
+
+  <div class="applications">
+    <div class="section-title">Applications</div>
+    <div class="app-list">
+      <div class="app-badge">Data Centers</div>
+      <div class="app-badge">Commercial Buildings</div>
+      <div class="app-badge">Industrial Facilities</div>
+      <div class="app-badge">Overhead Cable Management</div>
+      <div class="app-badge">Campus Networks</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">💡 Installation Note</div>
+    <div class="note-text">Support runway every 5 feet (1.5 m) for maximum load capacity with minimal deflection. Must remove paint or use ground straps for grounding conductor applications.</div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/chatsworth-ladder-rack-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Value-conscious cable runway with industry standard features</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatsworth Wall to Rack Kit - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #0D6EFD 0%, #0B5DD7 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0D6EFD 0%, #0E7EFF 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 10px; }
+  .product-image { padding: 0 20px 16px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 160px; object-fit: contain; }
+  .sku-section { padding: 0 20px 8px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 6px; text-transform: uppercase; }
+  .part-box { background: #F7F8FA; padding: 12px; border-radius: 6px; border-left: 4px solid #1F2937; text-align: center; margin-bottom: 8px; }
+  .part-label { font-size: 10px; color: #6B7280; margin-bottom: 6px; font-weight: 600; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #002B5C; }
+  .contents-section { margin-bottom: 8px; }
+  .contents-list { list-style: none; }
+  .contents-list li { padding: 4px 0; padding-left: 20px; position: relative; font-size: 8px; color: #4B5563; line-height: 1.4; }
+  .contents-list li:before { content: '✓'; position: absolute; left: 0; color: #E87722; font-weight: bold; }
+  .features-grid { display: grid; gap: 6px; }
+  .feature-badge { display: flex; align-items: flex-start; gap: 8px; padding: 7px 8px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #E87722; min-height: 50px; }
+  .feature-icon { width: 22px; height: 22px; background: #002B5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+  .feature-text { flex: 1; overflow: visible; }
+  .feature-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 2px; line-height: 1.25; }
+  .feature-desc { font-size: 8px; color: #6B7280; line-height: 1.3; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 18px; color: #002B5C; margin-bottom: 8px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .features-section { margin-bottom: 25px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 6px 0; padding-left: 20px; position: relative; font-size: 10px; color: #4B5563; line-height: 1.5; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #E87722; font-weight: bold; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+  .spec-box { padding: 10px; background: #F7F8FA; border-radius: 4px; text-align: center; }
+  .spec-label { font-size: 9px; color: #6B7280; margin-bottom: 4px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #002B5C; font-weight: 700; }
+  .applications { margin-bottom: 20px; }
+  .app-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .app-badge { font-size: 9px; padding: 6px 10px; background: #002B5C; color: #fff; border-radius: 3px; white-space: nowrap; }
+  .note-box { background: #FFF3E0; border-left: 3px solid #E87722; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
+  .note-title { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 6px; }
+  .note-text { font-size: 9px; color: #4B5563; line-height: 1.5; }
+  .footer { margin-top: auto; text-align: center; padding-top: 20px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 13px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .footer-text { font-size: 9px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">Chatsworth</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Cable Management — Complete Kit</div>
+  </div>
+  <div class="hero">
+    <h1>Wall to Rack Kit</h1>
+    <div class="subtitle">Complete Cable Runway Solution • Black</div>
+    <div class="description">12" Width • 54" Length • All Hardware Included</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/CHT11911712.png" alt="Chatsworth Wall to Rack Kit">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Part Number</div>
+    <div class="part-box">
+      <div class="part-label">12" Wide • Complete Kit</div>
+      <div class="part-num">CHT11911712</div>
+    </div>
+
+    <div class="contents-section">
+      <div class="section-label">Complete Kit Includes</div>
+      <ul class="contents-list">
+        <li>1 each 4'6" (54") Universal Cable Runway - 12" wide</li>
+        <li>1 each Wall angle support bracket</li>
+        <li>1 each Rack to runway mounting plate</li>
+        <li>1 pair of end caps</li>
+        <li>6 each J-bolts</li>
+      </ul>
+    </div>
+
+    <div class="section-label">Key Features</div>
+    <div class="features-grid">
+      <div class="feature-badge">
+        <div class="feature-icon">📦</div>
+        <div class="feature-text">
+          <div class="feature-title">Complete Solution</div>
+          <div class="feature-desc">One part number for wall-to-rack cable support</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">📏</div>
+        <div class="feature-text">
+          <div class="feature-title">54" Length</div>
+          <div class="feature-desc">Ideal distance for rack to wall connections</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">🔧</div>
+        <div class="feature-text">
+          <div class="feature-title">All Hardware Included</div>
+          <div class="feature-desc">Everything needed for installation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us quantity needed</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>Wall to Rack Kit</h2>
+    <div class="category">Chatsworth • Complete Cable Solution</div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>One part number solution for wall-to-rack cable support</li>
+      <li>4'6" (54" / 1370 mm) Universal Cable Runway included</li>
+      <li>12" (300 mm) runway width</li>
+      <li>Wall angle support bracket for secure wall mounting</li>
+      <li>Rack to runway mounting plate for rack attachment</li>
+      <li>End caps for professional finished appearance</li>
+      <li>All J-bolts and hardware included</li>
+      <li>For Standard/Universal Racks with 3"D mounting channels</li>
+    </ul>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-box">
+      <div class="spec-label">Runway Width</div>
+      <div class="spec-value">12"</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Runway Length</div>
+      <div class="spec-value">54"</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Shipping Weight</div>
+      <div class="spec-value">32 lbs</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Finish</div>
+      <div class="spec-value">Black</div>
+    </div>
+  </div>
+
+  <div class="applications">
+    <div class="section-title">Applications</div>
+    <div class="app-list">
+      <div class="app-badge">Data Center Racks</div>
+      <div class="app-badge">Server Room Installations</div>
+      <div class="app-badge">Wall-to-Rack Cable Routing</div>
+      <div class="app-badge">Equipment Row Setups</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">💡 Installation Note</div>
+    <div class="note-text">Complete kit includes everything needed to run cable from wall to rack. Rack not included. For Standard/Universal Racks with 3" deep mounting channels. 54" runway length is ideal for typical wall-to-rack distances.</div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.15in; text-align: left;"><img src="../qr-codes/chatsworth-wall-to-rack-kit-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Complete wall-to-rack cable management solution in one kit</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

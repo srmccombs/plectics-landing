@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatsworth Standard Rack - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .top-band { background: linear-gradient(135deg, #0D6EFD 0%, #0B5DD7 100%); padding: 14px 20px; position: relative; }
+  .top-band::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0D6EFD 0%, #0E7EFF 100%); }
+  .logo-text { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; }
+  .category-stripe { background: #F7F8FA; padding: 10px 20px; }
+  .cat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; text-transform: uppercase; color: #002B5C; }
+  .hero { padding: 16px 20px 12px; }
+  h1 { font-size: 17px; font-weight: 700; color: #1A1A2E; margin-bottom: 8px; line-height: 1.3; }
+  .subtitle { font-size: 11px; color: #6B7280; margin-bottom: 6px; }
+  .description { font-size: 10px; color: #4B5563; margin-bottom: 10px; }
+  .product-image { padding: 0 20px 16px; text-align: center; }
+  .product-image img { max-width: 100%; height: auto; max-height: 240px; object-fit: contain; }
+  .sku-section { padding: 0 20px 8px; flex: 1; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 6px; text-transform: uppercase; }
+  .part-box { background: #F7F8FA; padding: 12px; border-radius: 6px; border-left: 4px solid #1F2937; text-align: center; margin-bottom: 8px; }
+  .part-label { font-size: 10px; color: #6B7280; margin-bottom: 6px; font-weight: 600; }
+  .part-num { font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #002B5C; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+  .spec-box { padding: 8px; background: #F7F8FA; border-radius: 4px; text-align: center; }
+  .spec-label { font-size: 8px; color: #6B7280; margin-bottom: 3px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #002B5C; font-weight: 700; }
+  .features-grid { display: grid; gap: 6px; }
+  .feature-badge { display: flex; align-items: flex-start; gap: 8px; padding: 7px 8px; background: #F7F8FA; border-radius: 4px; border-left: 3px solid #E87722; min-height: 50px; }
+  .feature-icon { width: 22px; height: 22px; background: #002B5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+  .feature-text { flex: 1; overflow: visible; }
+  .feature-title { font-size: 9px; font-weight: 700; color: #002B5C; margin-bottom: 2px; line-height: 1.25; }
+  .feature-desc { font-size: 8px; color: #6B7280; line-height: 1.3; }
+  .bottom-cta { background: #002B5C; padding: 10px 20px; }
+  .cta-text { font-size: 10px; color: #fff; }
+  .highlight { color: #E87722; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+  .back-header { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #E9ECF0; }
+  .back-header h2 { font-size: 18px; color: #002B5C; margin-bottom: 8px; }
+  .back-header .category { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .features-section { margin-bottom: 25px; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #002B5C; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { padding: 6px 0; padding-left: 20px; position: relative; font-size: 10px; color: #4B5563; line-height: 1.5; }
+  .features-list li:before { content: '▸'; position: absolute; left: 0; color: #E87722; font-weight: bold; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+  .spec-box { padding: 10px; background: #F7F8FA; border-radius: 4px; text-align: center; }
+  .spec-label { font-size: 9px; color: #6B7280; margin-bottom: 4px; }
+  .spec-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #002B5C; font-weight: 700; }
+  .applications { margin-bottom: 20px; }
+  .app-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .app-badge { font-size: 9px; padding: 6px 10px; background: #002B5C; color: #fff; border-radius: 3px; white-space: nowrap; }
+  .note-box { background: #FFF3E0; border-left: 3px solid #E87722; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
+  .note-title { font-size: 10px; font-weight: 700; color: #002B5C; margin-bottom: 6px; }
+  .note-text { font-size: 9px; color: #4B5563; line-height: 1.5; }
+  .footer { margin-top: auto; text-align: center; padding-top: 20px; border-top: 2px solid #E9ECF0; }
+  .footer-logo { font-size: 13px; font-weight: 700; color: #002B5C; margin-bottom: 5px; }
+  .footer-text { font-size: 9px; color: #6B7280; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="top-band">
+    <div class="logo-text">Chatsworth</div>
+  </div>
+  <div class="category-stripe">
+    <div class="cat-label">Equipment Racks — 2-Post Rack</div>
+  </div>
+  <div class="hero">
+    <h1>Standard Rack<br>2-Post</h1>
+    <div class="subtitle">7' Height • 19" EIA Width • Black</div>
+    <div class="description">45U • 3" Deep Channels • UL Listed • Grounded</div>
+  </div>
+  <div class="product-image">
+    <img src="../cards/CHT55053703.png" alt="Chatsworth Standard Rack">
+  </div>
+  <div class="sku-section">
+    <div class="section-label">Part Number</div>
+    <div class="part-box">
+      <div class="part-label">84" (7') • Aluminum • Black</div>
+      <div class="part-num">CHT55053703</div>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-box">
+        <div class="spec-label">Height</div>
+        <div class="spec-value">84" / 45U</div>
+      </div>
+      <div class="spec-box">
+        <div class="spec-label">Width</div>
+        <div class="spec-value">19" EIA</div>
+      </div>
+      <div class="spec-box">
+        <div class="spec-label">Channel Depth</div>
+        <div class="spec-value">3" (80mm)</div>
+      </div>
+      <div class="spec-box">
+        <div class="spec-label">Material</div>
+        <div class="spec-value">Aluminum</div>
+      </div>
+    </div>
+
+    <div class="section-label">Key Features</div>
+    <div class="features-grid">
+      <div class="feature-badge">
+        <div class="feature-icon">✓</div>
+        <div class="feature-text">
+          <div class="feature-title">UL Listed &amp; Grounded</div>
+          <div class="feature-desc">Certified safety &amp; proper grounding</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">⊞</div>
+        <div class="feature-text">
+          <div class="feature-title">45U Capacity</div>
+          <div class="feature-desc">7-foot height for network equipment</div>
+        </div>
+      </div>
+      <div class="feature-badge">
+        <div class="feature-icon">🏗</div>
+        <div class="feature-text">
+          <div class="feature-title">OSHPD Certified</div>
+          <div class="feature-desc">Earthquake safety compliance</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="cta-text">Pull card → Counter → <span class="highlight">Tell us quantity needed</span></div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="back-header">
+    <h2>Standard Rack 2-Post</h2>
+    <div class="category">Chatsworth • 45U 19" EIA</div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-title">Key Features</div>
+    <ul class="features-list">
+      <li>7-foot (84") height provides 45U of rack space</li>
+      <li>19" EIA standard width for equipment compatibility</li>
+      <li>3" (80 mm) deep mounting channels</li>
+      <li>2-post open frame design for easy cable access</li>
+      <li>UL Listed for safety compliance</li>
+      <li>Grounded for electrical safety</li>
+      <li>OSHPD certified for earthquake safety</li>
+      <li>Aluminum construction - lightweight yet durable</li>
+      <li>Black powder coat finish</li>
+      <li>Supports vertical and horizontal cable managers</li>
+    </ul>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-box">
+      <div class="spec-label">Height</div>
+      <div class="spec-value">7' / 84"</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Rack Units</div>
+      <div class="spec-value">45U</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Width</div>
+      <div class="spec-value">19" EIA</div>
+    </div>
+    <div class="spec-box">
+      <div class="spec-label">Channel Depth</div>
+      <div class="spec-value">3" (80mm)</div>
+    </div>
+  </div>
+
+  <div class="applications">
+    <div class="section-title">Applications</div>
+    <div class="app-list">
+      <div class="app-badge">Telecommunication Rooms</div>
+      <div class="app-badge">Equipment Rooms</div>
+      <div class="app-badge">Data Centers</div>
+      <div class="app-badge">Network Equipment</div>
+      <div class="app-badge">Patch Panels</div>
+      <div class="app-badge">Cable Management</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">💡 Installation Note</div>
+    <div class="note-text">2-post open frame design ideal for network and telecom equipment. Use with vertical and horizontal cable managers for organized installations. OSHPD certification ensures earthquake safety compliance. Standard 19" EIA width accepts all industry-standard rack-mount equipment.</div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/chatsworth-standard-rack-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-logo">Mayer Electric Supply</div>
+    <div class="footer-text">Professional rack infrastructure for data centers and telecom rooms</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduit Spiral Wrap - Print Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* PRINT-READY SETUP: 5.5" × 8.5" with 0.125" bleed                        */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+
+  @page {
+    size: 5.75in 8.75in; /* Bleed size: trim + 0.125" on all sides */
+    margin: 0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .screen-only { display: none; }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e0e0e0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Print preview container (hidden in print) */
+  .print-preview {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  @media print {
+    .print-preview { padding: 0; background: none; }
+  }
+
+  /* ─── CARD BASE ─── */
+  .card {
+    width: 5.75in;      /* Bleed width */
+    height: 8.75in;     /* Bleed height */
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .card:last-child {
+    page-break-after: auto;
+  }
+
+  /* Content container with safe margins */
+  .card-content {
+    position: absolute;
+    top: 0.375in;     /* 0.125" bleed + 0.25" margin */
+    left: 0.375in;
+    right: 0.375in;
+    bottom: 0.375in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Background extends to bleed */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* FRONT SIDE STYLES                                                        */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .header { background: linear-gradient(135deg, #16A085 0%, #128871 100%); color: #fff; padding: 20px; border-radius: 6px 6px 0 0; }
+  .brand { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.9; margin-bottom: 4px; }
+  .product-name { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+  .tagline { font-size: 10px; opacity: 0.8; font-style: italic; }
+
+  .image-section { background: linear-gradient(to bottom, #f8f8f8 0%, #ffffff 100%); padding: 25px 20px; display: flex; align-items: center; justify-content: center; min-height: 200px; border-bottom: 1px solid #e0e0e0; }
+  .product-image { max-width: 90%; max-height: 180px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
+
+  .content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+  .intro { font-size: 9px; color: #333; line-height: 1.5; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
+
+  .section-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; margin-top: 12px; border-bottom: 2px solid #2d2d2d; padding-bottom: 4px; display: inline-block; width: 100%; }
+  .section-title:first-of-type { margin-top: 0; }
+
+  .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 6.5px; }
+  .specs-table th { background: #2d2d2d; color: #fff; padding: 4px 2px; text-align: left; font-weight: 600; font-size: 6px; }
+  .specs-table td { padding: 4px 2px; border-bottom: 1px solid #e0e0e0; }
+  .specs-table tr:hover { background: #f8f8f8; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 6px; }
+
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { font-size: 7.5px; line-height: 1.4; margin-bottom: 3px; padding-left: 10px; position: relative; color: #333; }
+  .features-list li:before { content: "▸"; position: absolute; left: 0; color: #2d2d2d; font-weight: bold; font-size: 7px; }
+
+  .note-box { background: #f8f8f8; border-left: 3px solid #2d2d2d; padding: 8px; border-radius: 4px; margin-top: auto; }
+  .note-title { font-size: 8px; font-weight: 700; color: #1a1a1a; margin-bottom: 3px; }
+  .note-text { font-size: 7.5px; color: #333; line-height: 1.4; }
+
+  .footer { background: #1a1a1a; color: #fff; padding: 12px 20px; border-radius: 0 0 6px 6px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-size: 10px; font-weight: 600; opacity: 0.9; }
+  .footer-code { font-family: 'JetBrains Mono', monospace; font-size: 9px; opacity: 0.7; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════ */
+/* BACK SIDE STYLES                                                         */
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+  
+  
+  
+
+  .title { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid #2d2d2d; }
+
+  .section { margin-bottom: 12px; }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px; background: #f8f8f8; padding: 4px 8px; border-radius: 3px; }
+
+  .info-box { background: #f8f8f8; border-left: 3px solid #2d2d2d; padding: 10px; border-radius: 4px; margin-bottom: 12px; }
+  .info-title { font-size: 9px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .info-text { font-size: 8px; color: #333; line-height: 1.4; }
+
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+  .features-list { list-style: none; }
+  .features-list li { font-size: 8px; line-height: 1.4; margin-bottom: 4px; padding-left: 12px; position: relative; color: #333; }
+  .features-list li:before { content: "▸"; position: absolute; left: 0; color: #2d2d2d; font-weight: bold; }
+
+  .footer { margin-top: auto; padding-top: 12px; border-top: 2px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; }
+  .footer-text { font-size: 8px; color: #666; }
+  .footer-brand { font-weight: 700; color: #1a1a1a; }
+
+</style>
+</head>
+<body>
+
+<div class="print-preview">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- FRONT SIDE                                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card front">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="header">
+    <div class="brand">Panduit</div>
+    <div class="product-name">Spiral Wrap</div>
+    <div class="tagline">Abrasion Protection • 600V Rated</div>
+  </div>
+
+  <div class="image-section">
+    <img src="../cards/PANT50FC0.png" alt="Panduit Spiral Wrap" class="product-image">
+  </div>
+
+  <div class="content">
+    <div class="intro">
+      Spiral wrap provides abrasion protection for wire, cable, hoses, and tubing. Harnesses multiple cables into a single manageable bundle and allows for breakouts of single or multiple cables. Tool supplied in each package.
+    </div>
+
+    <div class="section-title">Available Models</div>
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Mayer Part Number</th>
+          <th>OD</th>
+          <th>Color</th>
+          <th>Features</th>
+          <th>Length</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">PANT25FC0</td>
+          <td>0.25"</td>
+          <td>Black</td>
+          <td>Weather Resistant</td>
+          <td>100 ft</td>
+        </tr>
+        <tr>
+          <td class="mono">PANT50FC</td>
+          <td>0.50"</td>
+          <td>Natural</td>
+          <td>600V Rated</td>
+          <td>100 ft</td>
+        </tr>
+        <tr>
+          <td class="mono">PANT50FC0</td>
+          <td>0.50"</td>
+          <td>Black</td>
+          <td>Weather Resistant</td>
+          <td>250 ft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">Key Features</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>600V voltage rating</li>
+        <li>Abrasion protection</li>
+        <li>Easy cable breakouts</li>
+        <li>Tool included</li>
+      </ul>
+      <ul class="features-list">
+        <li>Weather resistant options</li>
+        <li>Multiple materials</li>
+        <li>Flame retardant available</li>
+        <li>Bundle management</li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <div class="note-title">Applications</div>
+      <div class="note-text">
+        Ideal for bundling and protecting wires, cables, hoses, and tubing in industrial, commercial, and outdoor applications. Allows for easy routing and organization while providing abrasion resistance.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Panduit</div>
+    <div class="footer-code">T Series</div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BACK SIDE                                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="card back">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+  <div class="title">Panduit Spiral Wrap Specifications</div>
+
+  <div class="info-box">
+    <div class="info-title">Product Overview</div>
+    <div class="info-text">
+      Panduit Spiral Wrap provides superior abrasion protection while allowing for flexible cable management. The spiral design enables easy bundling of multiple cables into a single, organized run while maintaining the ability to branch out individual cables at any point along the length. Each package includes an installation tool for easy application.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Material Options</div>
+    <div class="info-box">
+      <div class="info-title">Polyethylene</div>
+      <div class="info-text">
+        General purpose material offering good flexibility, abrasion resistance, and chemical resistance. Natural or black color options available. Suitable for most indoor and outdoor applications.
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="info-title">Nylon 6.6</div>
+      <div class="info-text">
+        Enhanced mechanical properties with superior strength and temperature resistance. Excellent abrasion resistance and durability in demanding environments. Natural color.
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="info-title">Flame Retardant Polyethylene</div>
+      <div class="info-text">
+        Special formulation meeting flame retardant requirements for safety-critical applications. Black color. Maintains flexibility while providing enhanced fire safety characteristics.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Installation &amp; Use</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>Tool included in package</li>
+        <li>Wraps around cable bundles</li>
+        <li>Easy cable insertion/removal</li>
+        <li>No cutting required</li>
+        <li>Allows mid-run breakouts</li>
+        <li>Reusable and adjustable</li>
+      </ul>
+      <ul class="features-list">
+        <li>600V voltage rating</li>
+        <li>Weather resistant options</li>
+        <li>Flexible routing</li>
+        <li>Clean appearance</li>
+        <li>Multiple size options</li>
+        <li>Color coding available</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <div class="info-title">Sizing Guide</div>
+    <div class="info-text">
+      <strong>0.25" OD:</strong> Small cable bundles, control wiring, thin hoses<br>
+      <strong>0.38" OD:</strong> Medium cable bundles, data cables, small power cables<br>
+      <strong>0.50" OD:</strong> Standard cable bundles, multiple data cables, medium power cables<br>
+      <strong>1.00" OD:</strong> Large cable bundles, thick cables, larger hoses and tubing
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Common Applications</div>
+    <div class="features-grid">
+      <ul class="features-list">
+        <li>Control panels</li>
+        <li>Machinery wiring</li>
+        <li>Automotive harnesses</li>
+        <li>Industrial equipment</li>
+        <li>Robotics</li>
+        <li>HVAC systems</li>
+      </ul>
+      <ul class="features-list">
+        <li>Data center cabling</li>
+        <li>Outdoor installations</li>
+        <li>Marine applications</li>
+        <li>Telecommunications</li>
+        <li>Hydraulic hoses</li>
+        <li>Pneumatic tubing</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <div class="info-title">Benefits of Spiral Design</div>
+    <div class="info-text">
+      The spiral wrap design provides unique advantages over solid sleeving or other bundling methods. Individual cables can be easily routed in or out at any point without unwrapping the entire bundle. This allows for flexible installation and easy modifications. The overlapping spiral layers provide excellent abrasion protection while maintaining flexibility for routing around corners and through tight spaces.
+    </div>
+  </div>
+
+  <div class="qr-code-section" style="padding-left: 20px; padding-bottom: 0.25in; text-align: left;"><img src="../qr-codes/panduit-spiral-wrap-qr.png" alt="Scan for product details" style="width: 72px; height: 72px; border: 2px solid #002B5C; border-radius: 6px; display: block; margin-bottom: 4px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 7px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; line-height: 1.2;">Scan for Info</div></div>
+  <div class="footer">
+    <div class="footer-text">
+      <span class="footer-brand">Panduit</span> • 600V Rated
+    </div>
+    <div class="footer-text">Tool Included</div>
+  </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
